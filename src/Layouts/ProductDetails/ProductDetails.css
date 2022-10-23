@@ -1,0 +1,259 @@
+.productDetails-top {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  min-height: 650px;
+  height: fit-content;
+}
+.productDetails-top-left {
+  background: url(https://cdn.shopify.com/s/files/1/0422/2441/8983/t/101/assets/texture_4_2880x.png?v=141024063350381755161642685295)
+    bottom / 100% no-repeat;
+  position: relative;
+}
+.productDetails-top-left .main-thumbs {
+  position: absolute;
+  height: 700px;
+  width: 700px;
+  top: 20px;
+  left: 40px;
+}
+
+
+
+.productDetails-top-right {
+  background: #fff5cc
+    url(https://cdn.shopify.com/s/files/1/0422/2441/8983/t/101/assets/texture_4_2880x.png?v=141024063350381755161642685295)
+    center / 100% no-repeat;
+  padding: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.productDetails-top-right img {
+  height: 100px;
+}
+.productDetails-reviews-number,
+.productDetails-price {
+  font-family: Helvetica, sans-serif;
+  font-size: 24px;
+  font-weight: 800;
+}
+.productDetails-title {
+  font-family: Jacques, sans-serif;
+  font-size: 80px;
+  line-height: 0.9;
+  text-align: left;
+}
+.productDetails-button {
+  background: url(../../images/button.svg) center / 100% no-repeat;
+  height: 70px;
+  width: 250px;
+  border: none;
+  outline: none;
+  font-family: Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: 800;
+  transition: 0.3s;
+  cursor: url(https://cdn.shopify.com/s/files/1/0475/8759/0310/files/gloved-hand-32x23.png?v=1636957093),
+    pointer;
+}
+.productDetails-button:hover {
+  transition: 0.3s;
+  background: url(../../images/buttonHover.svg) center / 100% no-repeat;
+  color: #fff;
+}
+.productDetails-disc {
+  font-family: Babydoll, sans-serif;
+  font-size: 20px;
+  /* padding: 50px 0; */
+}
+.productDetails-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+.logo-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  font-family: Babydoll, sans-serif;
+  font-size: 18px;
+}
+.productDetails-mid {
+  position: relative;
+  height: fit-content;
+  min-height: 60vh;
+  background: #ffd419 center / 100% no-repeat;
+  padding: 100px 400px;
+}
+.productDetails-mid button {
+  outline: none;
+  background-color: #ffd419;
+  border: none;
+}
+.accordion-title {
+  display: flex;
+  justify-content: space-between;
+  align-self: center;
+  cursor: url(https://cdn.shopify.com/s/files/1/0475/8759/0310/files/gloved-hand-32x23.png?v=1636957093),
+    pointer;
+  padding: 30px;
+  font-family: Jacques, sans-serif;
+  font-size: 80px;
+  position: relative;
+}
+.accordion-title button {
+  height: 30px;
+  width: 30px;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  transition: 0.3s;
+  position: absolute;
+  right: 100px;
+  top: 80px;
+}
+.accordion-button1 {
+  background: url(https://cdn.shopify.com/s/files/1/0422/2441/8983/files/Accordion-Plus-Sign.svg?v=9933471651934601377)
+    center / 100% no-repeat;
+  height: 30px;
+  width: 30px;
+  transition: 0.3s;
+
+  transform: rotate(0deg);
+}
+.accordion-button2 {
+  background: url(https://cdn.shopify.com/s/files/1/0422/2441/8983/files/Accordion-Plus-Sign.svg?v=9933471651934601377)
+    center / 100% no-repeat;
+  height: 30px;
+  width: 30px;
+
+  transition: 0.3s;
+
+  transform: rotate(50deg);
+}
+.accordion-ingredients-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.accordion-ingredients-image img {
+  height: 200px;
+}
+.accordion-ingredients {
+  font-family: Babydoll, sans-serif;
+  line-height: 1.2;
+  font-size: 20px;
+  font-weight: normal;
+}
+.ingredients {
+  padding: 50px 0px;
+}
+.allergens {
+  padding-bottom: 50px;
+}
+
+.ingredients-title {
+  margin-bottom: 10px;
+  font-size: 20px;
+  font-family: Helvetica, sans-serif;
+  font-weight: 800;
+}
+.productDetails-bot {
+  position: relative;
+  min-height: 150vh;
+  height: fit-content;
+  background: url(//cdn.shopify.com/s/files/1/0422/2441/8983/t/101/assets/texture_5_2009x.png?v=22199937448886215501642685296)
+    center / 100% no-repeat;
+}
+
+.productDetails-bot-image-1 .main-image {
+  mask: url(//cdn.shopify.com/s/files/1/0422/2441/8983/files/image-mask_1024x_cb6fa004-6062-4396-8395-89bf9aa6059d_1024x.png?v=1639383019)
+    center / 100% no-repeat;
+  height: 550px;
+  position: absolute;
+  z-index: 1;
+  top: 200px;
+  left: 300px;
+}
+.productDetails-bot-image-1 .background-image {
+  height: 550px;
+  position: absolute;
+  top: 220px;
+  left: 270px;
+}
+.productDetails-bot-image-1 .character {
+  height: 90px;
+  position: absolute;
+  top: 130px;
+  left: 400px;
+  z-index: 2;
+}
+.productDetails-bot-image-1 .text-box {
+  width: 250px;
+  height: 100px;
+  background-color: #ffd419;
+  border-radius: 50px;
+  box-shadow: -10px 10px #000;
+  position: absolute;
+  top: 100px;
+  left: 500px;
+  z-index: 2;
+  font-family: Babydoll, sans-serif;
+  font-size: 18px;
+  text-align: center;
+  padding-top: 30px;
+}
+.productDetails-bot-image-2 .text-box {
+  width: 250px;
+  height: 100px;
+  background-color: #ffd419;
+  border-radius: 50px;
+  box-shadow: -10px 10px #000;
+  position: absolute;
+  top: 250px;
+  right: 300px;
+  z-index: 2;
+  font-family: Babydoll, sans-serif;
+  font-size: 18px;
+  text-align: center;
+  padding-top: 30px;
+}
+.productDetails-bot-image-2 .main-image {
+  position: absolute;
+  height: 350px;
+  mask: url(//cdn.shopify.com/s/files/1/0422/2441/8983/files/image-mask_1024x_cb6fa004-6062-4396-8395-89bf9aa6059d_1024x.png?v=1639383019)
+    center / 100% no-repeat;
+  z-index: 1;
+  top: 350px;
+  right: 250px;
+}
+.productDetails-bot-image-2 .background-image {
+  position: absolute;
+  height: 350px;
+  top: 370px;
+  right: 270px;
+}
+.productDetails-bot-image-2 .character {
+  height: 160px;
+  position: absolute;
+  top: 300px;
+  right: 200px;
+  z-index: 1;
+}
+.side-image-left,
+.side-image-right {
+  height: 350px;
+  position: absolute;
+}
+.side-image-left {
+  left: 0px;
+}
+.side-image-right {
+  right: 0px;
+}

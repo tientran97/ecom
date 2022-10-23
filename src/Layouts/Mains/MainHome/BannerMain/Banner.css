@@ -1,0 +1,94 @@
+.banner-container1 {
+  font-family: Babydoll, sans-serif;
+  background-image: url(../../../../images/Banner.jpg);
+  background-size: cover;
+  height: 700px;
+  background-repeat: no-repeat;
+  color: white;
+  padding: 90px;
+  position: relative;
+}
+.banner-container2 {
+  font-family: Babydoll, sans-serif;
+  background-image: url(../../../../images/Banner-2.webp);
+  background-size: cover;
+  height: 700px;
+  background-repeat: no-repeat;
+  color: white;
+  padding: 90px;
+  position: relative;
+}
+.banner-container3 {
+  font-family: Babydoll, sans-serif;
+  background-image: url(../../../../images/salmon.webp);
+  background-size: cover;
+  height: 700px;
+  background-repeat: no-repeat;
+  color: white;
+  padding: 90px;
+  position: relative;
+}
+.banner-container3 p {
+  font-family: Jacques, sans-serif;
+  font-size: 80px;
+  color: #356da0;
+}
+.banner-container--content {
+  font-size: 26px;
+}
+.banner-container--content-button {
+  background-image: url(../../../../images/button.svg);
+  background-repeat: no-repeat;
+  position: relative;
+  color: #ffd419;
+  height: 60px;
+  font-size: 20px;
+  margin-top: 20px;
+  font-weight: bold;
+}
+.banner-container--content-button:hover {
+  background-image: url(../../../../images/buttonHover.svg);
+  background-repeat: no-repeat;
+  transition: all 0.3s;
+  cursor: url(https://cdn.shopify.com/s/files/1/0475/8759/0310/files/gloved-hand-32x23.png?v=1636957093),
+    pointer;
+}
+
+.banner-container--content-button:hover .button-arrow {
+  background-image: url(../../../../images/ArrowHover.svg);
+  transition: all 0.3s;
+}
+.banner-container--content-button:hover .button-text {
+  color: #ffd419;
+}
+.button-text {
+  color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  position: absolute;
+  top: 15px;
+  left: 20px;
+  font-family: Helvetica, sans-serif;
+}
+.button-arrow {
+  background-image: url(../../../../images/Arrow-black.svg);
+  background-repeat: no-repeat;
+  height: 30px;
+  width: 70px;
+}
+
+.banner-container--content-bottom {
+  font-family: Helvetica, sans-serif;
+  position: absolute;
+  bottom: 70px;
+  left: 20px;
+}
+.banner-container--float {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  height: 30px;
+  width: 100%;
+}

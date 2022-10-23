@@ -1,0 +1,52 @@
+.story-wrapper {
+  background: url(https://cdn.shopify.com/s/files/1/0422/2441/8983/t/101/assets/texture_3_2880x.png?v=15004560659256832661642685295)
+    center / 100% no-repeat;
+}
+
+.story-ingredients {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  background-image: url(https://cdn.shopify.com/s/files/1/0422/2441/8983/files/PressBackground_1800x.png?v=1637219747);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+  height: 450px;
+  width: 1300px;
+  margin: 100px;
+  font-family: Babydoll, sans-serif;
+}
+.story-ingredients--item {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+}
+.story-ingredients--item span {
+  margin-top: 20px;
+  font-weight: bold;
+  font-size: 24px;
+  width: 200px;
+  text-align: center;
+}
+
+.story-ingredients--item p {
+  width: 250px;
+  font-size: 18px;
+  text-align: center;
+}
+.story-ingredients--item_character1 {
+  position: absolute;
+  top: 0px;
+  left: -20px;
+  transform: rotate(0.05turn);
+  animation: float 3s ease-in-out infinite;
+}
+.story-ingredients--item_character2 {
+  position: absolute;
+  bottom: -30px;
+  right: 50px;
+  animation: float 3s ease-in-out infinite;
+}

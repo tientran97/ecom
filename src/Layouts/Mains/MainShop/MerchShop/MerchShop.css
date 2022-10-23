@@ -1,0 +1,40 @@
+.merch-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 100px 0;
+  align-items: center;
+  padding-bottom: 100px;
+  font-family: Babydoll, sans-serif;
+  text-align: center;
+  background-image: url(//cdn.shopify.com/s/files/1/0422/2441/8983/t/101/assets/texture_4_2880x.png?v=141024063350381755161642685295);
+  background-repeat: no-repeat;
+  background-size: 80%;
+  background-position: center;
+}
+.merch-container {
+  background-color: #ffd419;
+  padding-bottom: 100px;
+}
+.item-background {
+  mask-image: url(../../../../images/svgexport-24.svg);
+  mask-repeat: no-repeat;
+  width: 300px;
+  height: 400px;
+  background-color: #fff;
+}
+.merch-content .items-content--title {
+  font-size: 20px;
+  width: 200px;
+  height: 60px;
+}
+.merch-content img {
+  left: 100px;
+  width: 150px;
+}
+.merch-title {
+  text-align: center;
+  font-size: 80px;
+  font-family: Jacques, sans-serif;
+  padding-top: 100px;
+}

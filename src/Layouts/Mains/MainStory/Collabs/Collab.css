@@ -1,0 +1,51 @@
+.collab-container {
+  min-height: 100vh;
+  height: fit-content;
+  padding: 50px 0;
+  width: 100%;
+  background: #000
+    url(https://cdn.shopify.com/s/files/1/0422/2441/8983/t/101/assets/texture_6_2880x.png?v=7659131597866323551642685297)
+    center / 100% no-repeat;
+}
+.collab-title {
+  font-family: Jacques, sans-serif;
+  font-size: 80px;
+  color: #ffd419;
+  text-align: center;
+  padding: 100px 0 50px 0;
+}
+.collab-title span {
+  padding: 0 10px;
+}
+.collab-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
+  padding: 0 70px;
+}
+.collab-content--item {
+  display: flex;
+  flex-direction: column;
+  height: 600px;
+  color: #ffd419;
+}
+.collab-content--item_image {
+  mask-image: url(../../../../images/Mask.svg);
+  mask-repeat: no-repeat;
+  mask-size: 400px 400px;
+  mask-position: center center;
+  position: relative;
+  z-index: 5;
+}.collab-content--item span {
+  font-size: 30px;
+  font-family: Jacques, sans-serif;
+  padding: 30px 0 10px;
+}
+.collab-content--item p {
+  font-family: Babydoll, sans-serif;
+  font-size: 16px;
+}
+.collab-content--item img {
+  height: 400px;
+}

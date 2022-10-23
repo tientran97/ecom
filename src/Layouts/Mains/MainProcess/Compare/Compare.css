@@ -1,0 +1,48 @@
+.compare-title {
+  font-size: 80px;
+  font-family: Jacques, sans-serif;
+  text-align: center;
+  margin: 50px 0;
+}
+.compare-background img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: 500px;
+  opacity: 0.5;
+}
+.compare-container {
+  position: relative;
+  font-size: 18px;
+  padding-bottom: 50px;
+  background: url(https://cdn.shopify.com/s/files/1/0422/2441/8983/t/101/assets/texture_5_2880x.png?v=22199937448886215501642685296)
+    center / 100% no-repeat;
+}
+.compare-container p {
+  font-family: Jacques, sans-serif;
+  font-size: 60px;
+  margin-bottom: 30px;
+}
+.compare-text--left {
+  font-family: Babydoll, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  position: absolute;
+  bottom: 50px;
+  left: 500px;
+}
+.compare-text--right {
+  font-family: Babydoll, sans-serif;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  position: absolute;
+  bottom: 50px;
+  right: 420px;
+}

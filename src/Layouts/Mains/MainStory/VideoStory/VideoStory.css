@@ -1,0 +1,41 @@
+.story-video {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  padding: 50px 0;
+  background: #ffd419
+    url(https://cdn.shopify.com/s/files/1/0422/2441/8983/t/101/assets/texture_4_2880x.png?v=141024063350381755161642685295)
+    center / 100% no-repeat;
+}
+.story-video--tittle {
+  font-size: 80px;
+  font-family: Jacques, sans-serif;
+}
+.story-video button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  font-size: 20px;
+  background: url(../../../../images/button.svg) center / 100% no-repeat;
+  width: 250px;
+  height: 100px;
+  outline: none;
+  border: none;
+}
+.story-video button:hover {
+  background: url(../../../../images/buttonHover.svg) center / 100% no-repeat;
+  color: #fff;
+}
+.story-video button .arrow {
+    background: url(../../../../images/Arrow-black.svg)center / 100% no-repeat;
+    width: 50px;
+    height: 50px;
+}
+.story-video button:hover .arrow {
+    background: url(../../../../images/Arrow-white.svg)center / 100% no-repeat;
+    width: 50px;
+    height: 50px;
+}

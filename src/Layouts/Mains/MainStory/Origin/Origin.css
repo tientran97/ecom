@@ -1,0 +1,68 @@
+.story-content--title {
+  font-family: Jacques, sans-serif;
+  font-size: 90px;
+  line-height: 70px;
+  text-align: center;
+  margin: 100px 0;
+}
+
+.story-content--slider_item_main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url(//cdn.shopify.com/s/files/1/0422/2441/8983/t/101/assets/texture_2_2880x.png?v=51736331721891025011642685296)
+    right/100% no-repeat;
+  cursor: grab;
+}
+.story-content--slider_item_main:active {
+  cursor: grabbing;
+}
+.story-content--slider_item {
+  position: relative;
+  height: 500px;
+}
+
+.story-content--slider_item img {
+  height: 300px;
+}
+.story-content--slider_item__year {
+  font-family: Jacques, sans-serif;
+  background-color: #000;
+  color: #ffd419;
+  font-size: 50px;
+  padding: 10px;
+  height: 80px;
+  margin-top: 50px;
+}
+.story-content--slider_item__box {
+  position: absolute;
+  background-image: url(../../../../images/StoryBox.svg);
+  background-size: 70%;
+  background-repeat: no-repeat;
+  height: 225px;
+  width: 569px;
+  bottom: 0px;
+  left: 100px;
+  padding: 10px 40px;
+  font-family: Babydoll, sans-serif;
+  font-weight: bold;
+  font-size: 18px;
+}
+.story-content--slider_item__box::before {
+  content: "";
+  background-image: url(../../../../images/StoryBox-Black.svg);
+  background-size: 70%;
+  background-repeat: no-repeat;
+  height: 225px;
+  width: 569px;
+  position: absolute;
+  bottom: -15px;
+  left: -15px;
+  z-index: -1;
+}
+.story-content--slider_item__box p {
+  position: absolute;
+  top: 40px;
+  width: 340px;
+  text-align: center;
+}

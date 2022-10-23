@@ -1,0 +1,26 @@
+.term-container {
+    padding: 100px 400px;
+    font-family: Babydoll,sans-serif;
+}
+
+.term-container li {
+    list-style-type: decimal;
+}
+.term-heading {
+    font-size: 80px;
+    font-family: Jacques,sans-serif;
+    text-align: center;
+    margin-bottom: 50px;
+}
+.term-title {
+    font-size: 24px;
+    margin: 20px 0px;
+    font-weight: semi-bold;
+}
+.nested li {
+    padding-left: 30px;
+    list-style-position: inside;
+}
+ li {
+    margin-left: 10px;
+}

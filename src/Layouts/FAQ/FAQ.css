@@ -1,0 +1,79 @@
+.FAQcontainer {
+  padding: 100px 350px;
+}
+.FAQcontainer .heading {
+  font-size: 90px;
+  font-family: Jacques, sans-serif;
+}
+.FAQcontainer .top {
+  margin-bottom: 50px;
+}
+.FAQcontainer .section .title {
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 800;
+}
+.FAQcontainer .section {
+  margin-bottom: 20px;
+}
+.FAQcontainer .section .content {
+  padding: 20px;
+}
+.FAQcontainer .section a {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.FAQcontainer .section p,
+ul {
+  font-family: Babydoll, sans-serif;
+  font-size: 20px;
+  font-weight: normal;
+  padding: 20px 0;
+}
+
+
+.FAQcontainer .section li {
+  font-size: 20px;
+  font-weight: normal;
+  list-style-type: disc;
+  list-style-position: inside;
+  text-indent: 20px;
+}
+.FAQcontainer .title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+   cursor: url(https://cdn.shopify.com/s/files/1/0475/8759/0310/files/gloved-hand-32x23.png?v=1636957093),
+    pointer;
+}
+.FAQcontainer .section button {
+  height: 30px;
+  width: 30px;
+  outline: none;
+  border: none;
+  cursor: url(https://cdn.shopify.com/s/files/1/0475/8759/0310/files/gloved-hand-32x23.png?v=1636957093),
+    pointer;
+  background-color: transparent;
+  transition: 0.3s;
+}
+.FAQcontainer .section .button1 {
+  background: url(https://cdn.shopify.com/s/files/1/0422/2441/8983/files/Accordion-Plus-Sign.svg?v=9933471651934601377)
+    center / 100% no-repeat;
+  height: 30px;
+  width: 30px;
+  transition: 0.3s;
+
+  transform: rotate(0deg);
+}
+.FAQcontainer .section .button2 {
+  background: url(https://cdn.shopify.com/s/files/1/0422/2441/8983/files/Accordion-Plus-Sign.svg?v=9933471651934601377)
+    center / 100% no-repeat;
+  height: 30px;
+  width: 30px;
+  cursor: url(https://cdn.shopify.com/s/files/1/0475/8759/0310/files/gloved-hand-32x23.png?v=1636957093),
+    pointer;
+  transition: 0.3s;
+
+  transform: rotate(50deg);
+}

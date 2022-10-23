@@ -1,0 +1,100 @@
+.slider-container {
+  padding: 0 50px;
+  background: url(//cdn.shopify.com/s/files/1/0422/2441/8983/t/101/assets/texture_2_2880x.png?v=51736331721891025011642685296)
+    center center / 100% no-repeat;
+}
+.slider-container--items {
+  height: 600px;
+  width: 480px;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  position: relative;
+}
+.slider-container--items_image {
+  mask: url(../../../../../images/svgexport-25.svg) center / 100% no-repeat;
+  width: 300px;
+  height: 400px;
+  position: relative;
+  transition: 0.5s;
+}
+.slider-container--items_image:hover {
+  background: #fff center / 100% no-repeat;
+  transition: 0.5s;
+}
+.slider-container--items_image img {
+  transition: 0.5s;
+  position: absolute;
+}
+
+.slider-container--items_image:hover img {
+  top: 30px;
+}
+
+.slider-container--items_image button {
+  position: absolute;
+  bottom: -100px;
+  left: 70px;
+  width: 180px;
+  opacity: 0;
+  padding: 10px 20px;
+  border-radius: 50px;
+  background-color: #fff;
+  border: 5px solid black;
+  font-family: Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 16px;
+  transition: 0.5s;
+  cursor: url(https://cdn.shopify.com/s/files/1/0475/8759/0310/files/gloved-hand-32x23.png?v=1636957093),
+    pointer;
+}
+.slider-container--items_image button:hover {
+  background-color: #ffd419;
+}
+.slider-container--items_image:hover .button-add {
+  opacity: 1;
+  bottom: 100px;
+}
+.slider-container--items_image:hover .button-info {
+  opacity: 1;
+  bottom: 40px;
+}
+
+.slider-container--items_image__main {
+  height: 200px;
+  position: absolute;
+  top: 100px;
+  left: 60px;
+}
+.slider-container--items_content {
+  font-family: Babydoll, sans-serif;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  width: 200px;
+  text-transform: uppercase;
+  font-size: 20px;
+  margin-left: 50px;
+  cursor: grab;
+}
+.slider-container--items_content:active {
+  cursor: grabbing;
+}
+.slider-container--items_content__title {
+  height: 60px;
+}
+.slider-container--items_content__star {
+  color: #ffd419;
+}
+.slider-container--items_content span {
+  font-size: 16px;
+  color: black;
+}
+.slider-container--items_content_price {
+  font-size: 30px;
+  padding: 5px 0;
+}

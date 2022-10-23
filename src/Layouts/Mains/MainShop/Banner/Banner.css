@@ -1,0 +1,57 @@
+
+.banner-container {
+  background-image: url(../../../../images/Banner.jpg);
+  background-repeat: no-repeat;
+  background-size: 90% 100%;
+  width: 120%;
+  height: 600px;
+  position: relative;
+}
+.banner-shop--content {
+  padding: 100px;
+  font-family: Babydoll, sans-serif;
+}
+.banner-shop--content .code {
+  padding-left: 100px;
+}
+.banner-shop--content .enjoy {
+  color: #fff;
+  font-size: 30px;
+  padding-left: 80px;
+}
+.sale-end {
+  font-size: 50px;
+  color: #ffd419;
+  padding: 20px 0px 20px 50px;
+  text-transform: uppercase;
+}
+.time-countdown {
+  display: flex;
+  gap: 20px;
+  margin-left: 40px;
+  margin-bottom: 20px;
+}
+.time {
+  color: #fff;
+  font-size: 60px;
+  font-family: Jacques, sans-serif;
+  padding: 0px 50px;
+}
+.unit {
+  color: #ffd419;
+  font-family: Babydoll, sans-serif;
+  font-size: 24px;
+}
+.day,
+.hours,
+.minutes,
+.seconds {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.banner-container--float {
+  position: absolute;
+  bottom: 0px;
+}

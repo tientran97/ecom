@@ -1,0 +1,23 @@
+.story-banner {
+  margin-top: 60px;
+  position: relative;
+}
+.story-banner img {
+  width: 100%;
+}
+.story-banner p {
+  position: absolute;
+  top: 100px;
+  left: 100px;
+  font-size: 90px;
+  width: 400px;
+  font-family: Jacques, sans-serif;
+  line-height: 70px;
+}
+.story-banner span {
+  font-family: Babydoll, sans-serif;
+  position: absolute;
+  top: 260px;
+  left: 100px;
+  font-size: 24px;
+}

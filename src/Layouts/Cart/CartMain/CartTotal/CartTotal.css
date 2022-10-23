@@ -1,0 +1,88 @@
+.cartTotal-container {
+  background: url(https://cdn.shopify.com/s/files/1/0422/2441/8983/t/101/assets/cart_summary_800x.png?v=141979644661353595901642685295)
+    center / 100% no-repeat;
+  height: 650px;
+  width: 500px;
+  padding: 40px;
+}
+.free-delivery {
+  background: url(https://cdn.shopify.com/s/files/1/0422/2441/8983/t/101/assets/cart_summary_free_delivery_400x.png?v=129436690060137931251642685297)
+    center / 100% no-repeat;
+  width: 400px;
+  height: 150px;
+  position: relative;
+}
+.cartTotal-container .title {
+  font-size: 20px;
+  font-family: Babydoll, sans-serif;
+}
+.cartTotal-container .totalAmount {
+  font-size: 90px;
+  text-align: left;
+  font-family: Babydoll, sans-serif;
+}
+
+.free-delivery p {
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  text-align: center;
+  font-family: Babydoll, sans-serif;
+  font-size: 30px;
+  font-weight: bold;
+  width: 300px;
+}
+.delivery {
+  font-family: Babydoll, sans-serif;
+  font-size: 20px;
+}
+.cartTotal-container button {
+  background: url(../../../../images/buttonHover.svg) center / 100% no-repeat;
+  outline: none;
+  border: none;
+  height: 100px;
+  width: 250px;
+  margin-left: 80px;
+  transition: 0.3s;
+  font-size: 20px;
+  color: #ffd419;
+  font-weight: bold;
+  font-family: Helvetica, sans-serif;
+  cursor: url(https://cdn.shopify.com/s/files/1/0475/8759/0310/files/gloved-hand-32x23.png?v=1636957093),
+    pointer;
+}
+.cartTotal-container button:hover {
+  background: url(../../../../images/button.svg) center / 100% no-repeat;
+  color: #000;
+}
+.cartTotal-container .term {
+  font-family: Babydoll,sans-serif;
+  font-size: 18px;
+  text-align: center;
+  width: 300px;
+  margin-left: 50px;
+}
+.cartTotal-container .term a {
+  text-decoration: underline;
+  color:#ce9a10;
+   cursor: url(https://cdn.shopify.com/s/files/1/0475/8759/0310/files/gloved-hand-32x23.png?v=1636957093),
+    pointer;
+    transition: 0.3s;
+}
+.cartTotal-container .term a:hover {
+  color: #fff;
+  background-color: #000;
+}
+.deposit-card {
+  padding: 15px 0px;
+  display: flex;
+  justify-content: space-evenly;
+}
+.cartTotal-container .text {
+  font-family: Babydoll,sans-serif;
+  text-align: center;
+}
+.totalAmount span {
+  font-family:Jacques,sans-serif ;
+  margin-left: 10px;
+}

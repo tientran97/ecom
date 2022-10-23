@@ -1,0 +1,60 @@
+
+.flavor-container {
+  margin-top: 100px;
+}
+.flavor-container--title {
+  font-family: Jacques, serif;
+  text-align: center;
+  font-size: 84px;
+  margin-bottom: 30px;
+}
+.flavor-container--filter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0px;
+}
+.flavor-container--filter button {
+  background-color: #fff5cc;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 35px;
+  width: 130px;
+  margin: 0px 10px;
+  font-size: 24px;
+  font-family: Helvetica, sans-serif;
+  text-transform: uppercase;
+  font-weight: bold;
+  border: none;
+  outline: none;
+  cursor: url(https://cdn.shopify.com/s/files/1/0475/8759/0310/files/gloved-hand-32x23.png?v=1636957093),
+    pointer;
+  transition: ease-in-out 0.3s;
+}
+.flavor-container--filter button:hover {
+  background-image: url(../../../../../images/Rectangle-3.svg);
+}
+.flavor-container--filter button:active {
+  background-image: url(../../../../../images/rectangleBlack.svg);
+  color: #fff5cc;
+}
+
+.flavor-button {
+  background: url(../../../../../images/FlavorButton.svg) center / 100% no-repeat;
+  width: 250px;
+  height: 70px;
+  border: none;
+  outline: none;
+  font-family: Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 18px;
+  margin-left: 630px;
+  margin-top: 50px;
+   cursor: url(https://cdn.shopify.com/s/files/1/0475/8759/0310/files/gloved-hand-32x23.png?v=1636957093),
+    pointer;
+    margin-bottom: 50px;
+}
+.flavor-button:hover {
+  background: url(../../../../../images/FlavorButtonHover.svg) center / 100% no-repeat;
+  transition: 0.5s;
+}

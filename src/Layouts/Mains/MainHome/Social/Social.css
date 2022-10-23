@@ -1,0 +1,80 @@
+
+.feed-container {
+  margin-bottom: 100px;
+}
+.feed-cotaniner--top {
+
+  background: url(//cdn.shopify.com/s/files/1/0422/2441/8983/t/101/assets/texture_1_2880x.png?v=133829917100679285621642685297)
+  left / 30% no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  width: 300%;
+}
+.feed-container--caption {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 50px 0;
+  height: 100px;
+  color: #000;
+  font-family: Jacques;
+  font-size: 80px;
+  gap: 30px;
+  animation: run 30s  infinite ;
+}
+
+
+@keyframes run {
+  0% {
+    transform: translateX(0vw);
+  }
+
+  100% {
+    transform: translateX(-150vw);
+  }
+}
+.feed-container--caption div {
+  background-color: #ffd419;
+  padding: 10px 20px;
+  border-radius: 12px;
+}
+.feed-container--main {
+  position: relative;
+}
+.feed-container--main img {
+  display: block;
+  height: 500px;
+  width: 500px;
+}
+
+.feed-container--main:hover .overlay {
+  opacity: 1;
+  cursor: url(https://cdn.shopify.com/s/files/1/0475/8759/0310/files/gloved-hand-32x23.png?v=1636957093),
+    pointer;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: 0.5s ease;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.overlay-text {
+  color: white;
+  width: 400px;
+  font-size: 16px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}

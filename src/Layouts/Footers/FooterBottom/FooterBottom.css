@@ -1,0 +1,31 @@
+.footerBot-container {
+  height: 60px;
+  background: repeating-linear-gradient(
+    -45deg,
+    #ffd419,
+    #ffd419 10px,
+    #000 10px,
+    #000 25px
+  );
+}
+.footerBot-container--content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #ffd419;
+}
+.footerBot-container--content_left {
+  background-color: #000;
+  width: fit-content;
+  padding: 5px;
+  border-radius: 5px;
+}
+.footerBot-container--content_right {
+  background-color: #000;
+  width: fit-content;
+  padding: 5px;
+  border-radius: 5px;
+}

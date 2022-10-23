@@ -1,0 +1,38 @@
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+@font-face {
+  font-family: Jacques;
+  src: url(../src/Font/CFJacquesParizeau-Regular.ttf);
+}
+@font-face {
+  font-family: Babydoll;
+  src: url(../src/Font/Baby\ Doll.ttf);
+}
+li {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+  color: #000
+}
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+.wrapper {
+  width: 100%;
+  min-height: 100vh;
+  height: fit-content;
+  background-color: #fff5cc;
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+.story-container {
+  height: fit-content;
+  min-height: 100vh;
+}

@@ -1,0 +1,30 @@
+
+.footerTop-container {
+  background-color: #ffd419;
+  height: 40vh;
+  position: relative;
+  background-image: url(https://cdn.shopify.com/s/files/1/0422/2441/8983/t/101/assets/texture_1_2880x.png?v=133829917100679285621642685297);
+  background-repeat: no-repeat;
+  background-size: 80%;
+  background-position: center;
+}
+.footerTop-container--content_title {
+  font-size: 90px;
+  padding-top: 50px;
+  text-align: center;
+  font-family: Jacques, sans-serif;
+}
+.footerTop-container-content_social {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  cursor: url(https://cdn.shopify.com/s/files/1/0475/8759/0310/files/gloved-hand-32x23.png?v=1636957093),
+    pointer;
+}
+.footerTop-container--content_character img {
+  position: absolute;
+  top: 80px;
+  right: 250px;
+}

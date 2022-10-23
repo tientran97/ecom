@@ -1,0 +1,37 @@
+.real-container {
+  margin-top: 150px;
+  text-align: center;
+  padding: 0 50px 200px 50px;
+  background: url(https://cdn.shopify.com/s/files/1/0422/2441/8983/t/101/assets/texture_2_2880x.png?v=51736331721891025011642685296)
+    center / 100% no-repeat;
+}
+.real-container--title {
+  font-size: 80px;
+  font-family: Jacques, sans-serif;
+}
+
+.real-container--content_item {
+  font-family: Babydoll;
+  font-size: 16px;
+  text-align: center;
+  margin-top: 80px;
+  height: 500px;
+  font-weight: bold;
+  cursor: grab;
+}
+.real-container--content_item:active {
+  cursor: grabbing;
+}
+.real-container--content img {
+  height: 300px;
+  margin-left: 80px;
+  margin-bottom: 20px;
+}
+.real-container--content_item__text {
+  width: 400px;
+  height: fit-content;
+  padding: 20px 40px;
+  background-color: #ffd419;
+  border-radius: 12px;
+  box-shadow: 10px 10px 0px 0px rgba(0, 0, 0, 1);
+}

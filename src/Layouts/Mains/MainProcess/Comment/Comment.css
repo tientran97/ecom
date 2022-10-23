@@ -1,0 +1,52 @@
+.comment-container {
+  min-height: 100vh;
+  height: fit-content;
+  background: #000
+    url(https://cdn.shopify.com/s/files/1/0422/2441/8983/t/101/assets/texture_6_2880x.png?v=7659131597866323551642685297)
+    center / 100% no-repeat;
+  position: relative;
+}
+.comment-left img {
+  position: absolute;
+  top: 70px;
+  left: 50px;
+}
+.comment-right {
+  font-size: 16px;
+  font-family: Babydoll, sans-serif;
+}
+
+.comment-1 {
+  background-image: url(../../../../images/CommentBox.svg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  padding: 30px 60px;
+  height: 200px;
+  width: 400px;
+  position: absolute;
+  top: 100px;
+  right: 350px;
+}
+.comment-2 {
+  background-image: url(../../../../images/CommentBox2.svg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  padding: 20px 30px;
+
+  height: 150px;
+  width: 250px;
+  position: absolute;
+  top: 350px;
+  right: 100px;
+}
+.comment-3 {
+  background-image: url(../../../../images/CommentBox.svg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  padding: 30px 50px;
+  height: 200px;
+  width: 350px;
+  position: absolute;
+  top: 500px;
+  right: 200px;
+}

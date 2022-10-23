@@ -1,0 +1,55 @@
+.singapore-container {
+  padding: 50px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+.singapore-title {
+  font-size: 80px;
+  font-family: Jacques, sans-serif;
+  text-align: center;
+  padding: 50px 0;
+}
+.singapore-container--content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+.singapore-item--title {
+  font-size: 30px;
+  font-weight: bold;
+}
+.singapore-item img {
+  height: 340px;
+  padding: 20px 0;
+}
+.singapore-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.singapore-item--text {
+  background-color: #ffd419;
+  border: 5px solid #000;
+  height: 110px;
+  width: 470px;
+  padding: 10px 50px;
+  border-radius: 20px;
+  text-align: center;
+  font-weight: bold;
+}
+.singapore-item--text span {
+  font-size: 20px;
+}
+.singapore-item--text p {
+  padding: 10px 0;
+  font-size: 14px;
+}
+.retail {
+  width: 100%;
+}

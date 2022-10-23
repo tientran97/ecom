@@ -1,0 +1,59 @@
+.footerMid-container {
+  background-color: #000;
+  height: 40vh;
+  background: #000
+    url(https://cdn.shopify.com/s/files/1/0422/2441/8983/t/101/assets/texture_7_2880x.png?v=120805904565134885351642685296)
+    center / 100% no-repeat;
+}
+.footerMid-container--content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #ffd419;
+}
+.footerMid-container--content_left {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding-left: 50px;
+  padding-top: 50px;
+  font-size: 24px;
+  font-weight: bold;
+}
+.footerMid-container--content_left1 img {
+  height: 50px;
+  cursor: url(https://cdn.shopify.com/s/files/1/0475/8759/0310/files/gloved-hand-32x23.png?v=1636957093),
+    pointer;
+}
+.footerMid-container--content_left2 p {
+  color: #ffd419;
+  margin-bottom: 10px;
+  cursor: url(https://cdn.shopify.com/s/files/1/0475/8759/0310/files/gloved-hand-32x23.png?v=1636957093),
+    pointer;
+}
+.footerMid-container--content_left2 p:hover {
+  color: #fff;
+}
+.footerMid-container--content_left3 p {
+  color: #ffd419;
+  margin-bottom: 10px;
+  cursor: url(https://cdn.shopify.com/s/files/1/0475/8759/0310/files/gloved-hand-32x23.png?v=1636957093),
+    pointer;
+}
+.footerMid-container--content_left3 p:hover {
+  color: #fff;
+
+}
+.footerMid-container--content_right {
+  display: flex;
+  justify-content: center;
+  text-align: right;
+  gap: 30px;
+  padding-top: 50px;
+  font-family: Babydoll, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+}
+.footerMid-container--content_right2 img {
+  margin-top: -20px;
+}

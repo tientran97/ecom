@@ -1,0 +1,118 @@
+.cartItem-wrapper {
+  display: grid;
+  grid-template-columns: 65% 1fr;
+  grid-template-rows: 1fr;
+  grid-column-gap: 20px;
+  margin-bottom: 100px;
+}
+
+.cartItem-container {
+  width: 100%;
+  min-height: 20vh;
+  height: fit-content;
+}
+
+th {
+  font-family: Babydoll, sans-serif;
+  font-size: 20px;
+  font-weight: normal;
+  text-align: left;
+  padding: 10px 10px;
+}
+tr {
+  font-family: Babydoll, sans-serif;
+  font-size: 24px;
+}
+.cartItem-container img {
+  mask: url(../../../../images/Cart-Item-Mask.svg) center / 100% no-repeat;
+  background-color: #fff;
+  height: 150px;
+}
+.item-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 20px 0 20px 20px;
+}
+.item-info span {
+  display: block;
+  margin-top: 20px;
+}
+.item-info p {
+  font-weight: bold;
+}
+.quantity,
+.remove,
+.amount {
+  width: 150px;
+  text-align: center;
+}
+.remove-btn {
+  padding: 5px 15px;
+  background: #fff;
+  border-radius: 50px;
+  border: 1px solid #000;
+  cursor: url(https://cdn.shopify.com/s/files/1/0475/8759/0310/files/gloved-hand-32x23.png?v=1636957093),
+    pointer;
+}
+.minus-btn,
+.plus-btn {
+  cursor: url(https://cdn.shopify.com/s/files/1/0475/8759/0310/files/gloved-hand-32x23.png?v=1636957093),
+    pointer;
+  padding: 0 15px;
+  font-size: 40px;
+}
+.number {
+  font-size: 30px;
+  font-weight: bold;
+}
+th {
+  border-top: 2px solid black;
+  border-bottom: 1px solid black;
+}
+td {
+  border-top: 3px solid black;
+  border-bottom: 3px solid black;
+}
+table {
+  border-collapse: collapse;
+}
+.clear-cart {
+  font-family: Babydoll, sans-serif;
+  font-size: 20px;
+  padding: 50px 0px;
+  text-align: center;
+  color: #be1e2d;
+}
+.clear-cart span {
+  cursor: url(https://cdn.shopify.com/s/files/1/0475/8759/0310/files/gloved-hand-32x23.png?v=1636957093),
+    pointer;
+}
+.cart-empty {
+  margin-left: 600px;
+}
+.cart-empty p {
+  font-family: Jacques, sans-serif;
+  font-size: 80px;
+  margin-bottom: 20px;
+}
+.cart-empty button {
+  background: url(../../../../images/buttonHover.svg) center / 100% no-repeat;
+  outline: none;
+  border: none;
+  height: 100px;
+  width: 370px;
+  margin-left: -20px;
+  transition: 0.3s;
+  font-size: 30px;
+  color: #ffd419;
+  font-weight: bold;
+  font-family: Helvetica, sans-serif;
+  cursor: url(https://cdn.shopify.com/s/files/1/0475/8759/0310/files/gloved-hand-32x23.png?v=1636957093),
+    pointer;
+}
+.cart-empty button:hover {
+  background: url(../../../../images/button.svg) center / 100% no-repeat;
+  color: #000;
+}
