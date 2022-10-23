@@ -53,6 +53,7 @@ const CartTotal = () => {
         <Card7 />
       </div>
       <p className="text">
+        console.log('abc')
         Delivery date is estimated, please select delivery method and the
         delivery fees will be reflected at the later step.
       </p>
