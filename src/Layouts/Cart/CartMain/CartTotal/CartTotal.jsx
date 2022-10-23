@@ -50,6 +50,7 @@ const CartTotal = () => {
         <Card4 />
         <Card5 />
         <Card6 />
+        console.log('kjdksljf')
         <Card7 />
       </div>
       <p className="text">
