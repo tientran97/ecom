@@ -18,7 +18,6 @@ const Testimonial = () => {
           >
             <p>These Buttery, Savory Salted Egg Snacks Have Our Undying Love</p>
             <img
-              style={{ height: "30px" }}
               src="https://cdn.shopify.com/s/files/1/0422/2441/8983/files/Logo-Food-WIne_x48.png?v=1637219545"
               alt="foodandwine"
             />
@@ -30,7 +29,6 @@ const Testimonial = () => {
           >
             <p>Let me spell it out for you: fried fish skin is delicious</p>
             <img
-              style={{ height: "30px" }}
               src="https://cdn.shopify.com/s/files/1/0422/2441/8983/files/Logo-Esquire_x64.png?v=1637219546"
               alt="foodandwine"
             />
@@ -45,7 +43,6 @@ const Testimonial = () => {
               brand’s global success
             </p>
             <img
-              style={{ height: "30px" }}
               src="https://cdn.shopify.com/s/files/1/0422/2441/8983/files/Logo-Forbes_x48.png?v=1637219560"
               alt=""
             />

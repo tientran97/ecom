@@ -1,0 +1,90 @@
+.account-container {
+  margin-top: 100px;
+  padding: 50px 300px;
+}
+.account-top {
+  background: url(//cdn.shopify.com/s/files/1/0422/2441/8983/t/101/assets/texture_1_2880x.png?v=133829917100679285621642685297)
+    left / 100% no-repeat;
+  margin-bottom: 50px;
+}
+.account-top img {
+  height: 200px;
+}
+.account-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.account-top .infomation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.infomation .user-fullname {
+  font-family: Babydoll, sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 50px;
+}
+.infomation .user-email {
+  font-family: Babydoll, sans-serif;
+  font-size: 30px;
+  font-weight: bold;
+}
+.log-out p {
+  font-size: 84px;
+  font-family: Jacques, sans-serif;
+}
+.log-out button {
+  font-family: Helvetica, sans-serif;
+  font-weight: 800;
+  background: url("../../../images/buttonHover.svg") center / 100% no-repeat;
+  height: 100px;
+  width: 200px;
+  color: #fff5cc;
+  font-size: 20px;
+  border: none;
+  outline: none;
+  cursor: url(https://cdn.shopify.com/s/files/1/0475/8759/0310/files/gloved-hand-32x23.png?v=1636957093),
+    pointer;
+}
+.account-main-button button {
+  outline: none;
+  border: none;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  background-color: #ffd419;
+  width: 200px;
+  height: 140px;
+  margin-right: 20px;
+  margin-bottom: 0px;
+  font-size: 24px;
+  font-family: Babydoll, sans-serif;
+  cursor: url(https://cdn.shopify.com/s/files/1/0475/8759/0310/files/gloved-hand-32x23.png?v=1636957093),
+    pointer;
+}
+.account-main-button button:hover {
+  text-decoration: underline;
+}
+
+.account-main-container {
+  background-color: #ffd419;
+  min-height: 200px;
+  height: fit-content;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+.account-main-text {
+  padding-top: 50px;
+  font-size: 24px;
+  font-family: Babydoll, sans-serif;
+}
+.account-main-text span {
+  font-weight: bold;
+  margin-right: 10px;
+}
+.account-main-text p {
+  padding: 10px 50px;
+}

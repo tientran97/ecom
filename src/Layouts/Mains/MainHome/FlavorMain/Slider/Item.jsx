@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -8,10 +8,15 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import "./Item.css";
 
-import { useDispatch } from "react-redux";
-import { addToCart } from "../../../../../redux/Slice/cartSlice";
-import { useGetAllProductsQuery } from "../../../../../redux/Slice/productsApi";
+import { useDispatch, useSelector } from "react-redux";
+import { ADD_TO_CART } from "../../../../../redux/Slice/cartSlice";
 import { useNavigate } from "react-router-dom";
+import useFetchCollection from "../../../../../customHooks/useFetchCollection";
+import LoadingSpinner from "../../../../../components/Loader/LoadingSpinner";
+import {
+  selectProducts,
+  STORE_PRODUCTS,
+} from "../../../../../redux/Slice/productsSlice";
 const Item = () => {
   const settings = {
     dots: true,
@@ -21,25 +26,35 @@ const Item = () => {
     slidesToScroll: 4,
     autoplay: true,
     autoplaySpeed: 4000,
-
     nextArrow: <ArrowRight />,
     prevArrow: <ArrowLeft />,
   };
   AOS.init();
   const navigate = useNavigate();
-  const { data, error, isLoading } = useGetAllProductsQuery();
-
   const dispatch = useDispatch();
+  const { data, isLoading } = useFetchCollection("products");
+  const products = useSelector(selectProducts);
+
   const handleAddToCart = (product) => {
-    dispatch(addToCart(product));
+    dispatch(ADD_TO_CART(product));
   };
+  useEffect(() => {
+    dispatch(
+      STORE_PRODUCTS({
+        products: data,
+      })
+    );
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }, [dispatch, data]);
   return (
     <>
       <div className="slider-container">
         {isLoading ? (
-          <p> Loading....</p>
-        ) : error ? (
-          <p>An error occured....</p>
+          <LoadingSpinner />
         ) : (
           <Slider {...settings}>
             {data.map((product) => {
@@ -78,14 +93,6 @@ const Item = () => {
                     </p>
                     <p className="slider-container--items_content_price">
                       ${Number(product.price).toFixed(2)} SGD
-                    </p>
-                    <p className="slider-container--items_content__star">
-                      <i className="fa-solid fa-star"></i>
-                      <i className="fa-solid fa-star"></i>
-                      <i className="fa-solid fa-star"></i>
-                      <i className="fa-solid fa-star"></i>
-                      <i className="fa-solid fa-star"></i>
-                      <span>{product.review_number} reviews</span>
                     </p>
                   </div>
                 </div>

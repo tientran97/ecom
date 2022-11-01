@@ -3,8 +3,7 @@ const dataSocial = [
     id: 1,
 
     text: "A quick behind the scenes of what went on on last Tuesday (4 Oct) for our Media guests!! 🤩 We had stations to bring them through the RND process from start to finish on how our Truffle Potato Chips were made and a chance for them to try out ",
-    img_url:
-      "https://scp2.elfsightcdn.com/?url=https%3A%2F%2Fscontent-lax3-1.cdninstagram.com%2Fv%2Ft51.29350-15%2F311091852_5419940894759227_3461144778477393078_n.jpg%3F_nc_cat%3D102%26ccb%3D1-7%26_nc_sid%3D8ae9d6%26_nc_ohc%3DyQwIIXJ0wFcAX9V7MHX%26_nc_ht%3Dscontent-lax3-1.cdninstagram.com%26edm%3DAM6HXa8EAAAA%26oh%3D00_AT8UInU1MkoFfjc-qUNMO3zC3U4Atv5PQvMNdm3zJdLp0g%26oe%3D6344605F",
+    img_url: '../images/social/tải xuống.jfif',
     link: "https://www.instagram.com/p/CjZfnK9NRZl/",
   },
   {

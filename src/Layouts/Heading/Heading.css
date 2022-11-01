@@ -37,7 +37,7 @@
   font-weight: normal;
   padding: 40px;
   transition: all 0.5s ease-in-out;
-  box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.75);
+  box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.75);
   border-bottom-right-radius: 20px;
 }
 .subnav-container {
@@ -98,11 +98,23 @@
   transition: 0.5s;
 }
 .header-main--right li {
-  font-family: Helvectica,sans-serif;
+  font-family: Helvectica, sans-serif;
   margin-left: 20px;
 }
 .header-main--tile img {
   height: 47px;
+  cursor: url(https://cdn.shopify.com/s/files/1/0475/8759/0310/files/gloved-hand-32x23.png?v=1636957093),
+    pointer;
+}
+.header-main--right .admin-btn button {
+  background-color: #ffd419;
+  outline: none;
+  border: none;
+  border-radius: 12px;
+  width: 100px;
+  padding: 10px;
+  font-size: 20px;
+  font-weight: bold;
   cursor: url(https://cdn.shopify.com/s/files/1/0475/8759/0310/files/gloved-hand-32x23.png?v=1636957093),
     pointer;
 }

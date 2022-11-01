@@ -5,24 +5,7 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
-import { configureStore } from "@reduxjs/toolkit";
-import cartReducer, { getTotals } from "../src/redux/Slice/cartSlice";
-import productsReducer, {
-  productsFetch,
-} from "../src/redux/Slice/productSlice";
-import { productsApi } from "./redux/Slice/productsApi";
-
-const store = configureStore({
-  reducer: {
-    products: productsReducer,
-    cart: cartReducer,
-    [productsApi.reducerPath]: productsApi.reducer,
-  },
-  middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().concat(productsApi.middleware),
-});
-store.dispatch(productsFetch());
-store.dispatch(getTotals())
+import store from "./redux/store/store";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 export default store;

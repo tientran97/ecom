@@ -116,3 +116,6 @@ table {
   background: url(../../../../images/button.svg) center / 100% no-repeat;
   color: #000;
 }
+.serial {
+  padding-left: 20px;
+}

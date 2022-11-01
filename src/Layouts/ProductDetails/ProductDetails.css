@@ -20,8 +20,6 @@
   left: 40px;
 }
 
-
-
 .productDetails-top-right {
   background: #fff5cc
     url(https://cdn.shopify.com/s/files/1/0422/2441/8983/t/101/assets/texture_4_2880x.png?v=141024063350381755161642685295)
@@ -256,4 +254,16 @@
 }
 .side-image-right {
   right: 0px;
+}
+.back-to-shop-button {
+  border-radius: 12px;
+  padding: 10px;
+  cursor: url(https://cdn.shopify.com/s/files/1/0475/8759/0310/files/gloved-hand-32x23.png?v=1636957093),
+    pointer;
+    transition: all 0.3s;
+    width: fit-content;
+}
+.back-to-shop-button:hover {
+  background-color: #966d51;
+  color: #ffd419;
 }
