@@ -1,11 +1,9 @@
-
 .feed-container {
   margin-bottom: 100px;
 }
 .feed-cotaniner--top {
-
   background: url(//cdn.shopify.com/s/files/1/0422/2441/8983/t/101/assets/texture_1_2880x.png?v=133829917100679285621642685297)
-  left / 30% no-repeat;
+    left / 30% no-repeat;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -18,13 +16,15 @@
   align-items: center;
   margin: 50px 0;
   height: 100px;
+
+  gap: 30px;
+  animation: run 30s infinite;
+}
+.feed-container--caption p {
   color: #000;
   font-family: Jacques;
   font-size: 80px;
-  gap: 30px;
-  animation: run 30s  infinite ;
 }
-
 
 @keyframes run {
   0% {
@@ -39,6 +39,9 @@
   background-color: #ffd419;
   padding: 10px 20px;
   border-radius: 12px;
+  color: #000;
+  font-family: Jacques;
+  font-size: 80px;
 }
 .feed-container--main {
   position: relative;

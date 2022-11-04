@@ -1,0 +1,26 @@
+.access-denied-container {
+  min-height: 40vh;
+  height: fit-content;
+  margin-top: 100px;
+  text-align: center;
+}
+.access-denied-container p {
+  font-size: 80px;
+  font-family: Jacques, sans-serif;
+}
+.access-denied-container button {
+  background: url(../../images/button.svg) center / 100% no-repeat;
+  height: 150px;
+  width: 300px;
+  outline: none;
+  border: none;
+  font-family: Helvetica, sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+}
+.access-denied-container button:hover {
+  background: url(../../images/buttonHover.svg) center / 100% no-repeat;
+  color: #ffd419;
+  cursor: url(https://cdn.shopify.com/s/files/1/0475/8759/0310/files/gloved-hand-32x23.png?v=1636957093),
+    pointer;
+}

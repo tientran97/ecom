@@ -1,0 +1,8 @@
+.order-details-container li,
+ul {
+  font-family: Helvetica, sans-serif;
+}
+.order-details-container li {
+  margin-top: 10px;
+  font-size: 18px;
+}

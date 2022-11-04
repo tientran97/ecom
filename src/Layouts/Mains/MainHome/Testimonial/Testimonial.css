@@ -1,10 +1,12 @@
 .testimonial-wrapper {
   background: url(//cdn.shopify.com/s/files/1/0422/2441/8983/t/101/assets/texture_3_2880x.png?v=15004560659256832661642685295)
-    left / 100% no-repeat;
+    right / 100% no-repeat;
+    height: fit-content;
+    min-height: 50vh;
 }
 .testimonial-container {
   position: relative;
-  background-image: url(../../../../images/Testimonial\ Rectangle.svg);
+  background-image: url(//cdn.shopify.com/s/files/1/0422/2441/8983/files/PressBackground_1800x.png?v=1637219747);
   background-repeat: no-repeat;
   background-size: contain;
   height: 300px;
@@ -20,14 +22,17 @@
   text-align: center;
   gap: 60px;
 }
+.testimonial-container--content img {
+  height: 30px;
+}
 .testimonial-container--content p {
   width: 320px;
   margin: 50px 0px;
 }
 
-.testimonial-container--left {
+.testimonial-container--left  {
   position: absolute;
-  top: 0px;
+  top: -250px;
   left: 0px;
   transform: rotate(0.05turn);
   animation: float 3s ease-in-out infinite;
@@ -38,14 +43,13 @@
 .testimonial-container--right {
   position: absolute;
   transform: rotateY(180deg);
-  top: 0px;
-  right: 450px;
+  bottom: -30px;
+  right: 400px;
   animation: float 3s ease-in-out infinite;
 }
 .testimonial-container--bottom {
   position: absolute;
-  bottom: -40px;
-
+  bottom: -100px;
   animation: fly 10s ease-in-out infinite;
 }
 @keyframes float {

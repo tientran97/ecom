@@ -1,0 +1,26 @@
+.order-history-container {
+  width: 100%;
+}
+.order-history-container th,
+tr {
+  text-align: center;
+}
+.order-history-row {
+  height: 100px;
+  cursor: url(https://cdn.shopify.com/s/files/1/0475/8759/0310/files/gloved-hand-32x23.png?v=1636957093),
+    pointer;
+}
+
+.order-history-time {
+  width: 200px;
+}
+.order-history-id {
+  width: 400px;
+}
+.pending {
+  color: red;
+  width: 200px;
+}
+.delivered {
+  color: green;
+}

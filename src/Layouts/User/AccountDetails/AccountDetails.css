@@ -1,0 +1,51 @@
+.account-container {
+  margin-top: 100px;
+  padding: 50px 300px;
+}
+.account-top {
+  background: url(//cdn.shopify.com/s/files/1/0422/2441/8983/t/101/assets/texture_1_2880x.png?v=133829917100679285621642685297)
+    left / 100% no-repeat;
+  margin-bottom: 50px;
+}
+.account-top img {
+  height: 200px;
+}
+.account-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.account-top .infomation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.infomation .user-fullname {
+  font-family: Babydoll, sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 50px;
+}
+.infomation .user-email {
+  font-family: Babydoll, sans-serif;
+  font-size: 30px;
+  font-weight: bold;
+}
+.log-out p {
+  font-size: 84px;
+  font-family: Jacques, sans-serif;
+}
+.log-out button {
+  font-family: Helvetica, sans-serif;
+  font-weight: 800;
+  background: url("../../../images/buttonHover.svg") center / 100% no-repeat;
+  height: 100px;
+  width: 200px;
+  color: #fff5cc;
+  font-size: 20px;
+  border: none;
+  outline: none;
+  cursor: url(https://cdn.shopify.com/s/files/1/0475/8759/0310/files/gloved-hand-32x23.png?v=1636957093),
+    pointer;
+}

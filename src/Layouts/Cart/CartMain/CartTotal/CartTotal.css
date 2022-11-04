@@ -12,12 +12,16 @@
   height: 150px;
   position: relative;
 }
-.cartTotal-container .title {
+.cartTotal-container .title,
+.quantity {
   font-size: 20px;
   font-family: Babydoll, sans-serif;
 }
+.quantity span {
+  font-size: 30px;
+}
 .cartTotal-container .totalAmount {
-  font-size: 90px;
+  font-size: 80px;
   text-align: left;
   font-family: Babydoll, sans-serif;
 }
@@ -56,7 +60,7 @@
   color: #000;
 }
 .cartTotal-container .term {
-  font-family: Babydoll,sans-serif;
+  font-family: Babydoll, sans-serif;
   font-size: 18px;
   text-align: center;
   width: 300px;
@@ -64,10 +68,10 @@
 }
 .cartTotal-container .term a {
   text-decoration: underline;
-  color:#ce9a10;
-   cursor: url(https://cdn.shopify.com/s/files/1/0475/8759/0310/files/gloved-hand-32x23.png?v=1636957093),
+  color: #ce9a10;
+  cursor: url(https://cdn.shopify.com/s/files/1/0475/8759/0310/files/gloved-hand-32x23.png?v=1636957093),
     pointer;
-    transition: 0.3s;
+  transition: 0.3s;
 }
 .cartTotal-container .term a:hover {
   color: #fff;
@@ -79,10 +83,10 @@
   justify-content: space-evenly;
 }
 .cartTotal-container .text {
-  font-family: Babydoll,sans-serif;
+  font-family: Babydoll, sans-serif;
   text-align: center;
 }
 .totalAmount span {
-  font-family:Jacques,sans-serif ;
+  font-family: Jacques, sans-serif;
   margin-left: 10px;
 }

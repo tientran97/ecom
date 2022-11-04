@@ -1,34 +1,30 @@
-
 .critical-container {
   position: relative;
-  min-height: 100vh;
+  min-height: 130vh;
+
   height: fit-content;
-  padding: 450px 0 550px 0;
   background: #000
     url(//cdn.shopify.com/s/files/1/0422/2441/8983/t/101/assets/texture_6_2880x.png?v=7659131597866323551642685297)
     center / 100% no-repeat;
-}
-.texture {
-  position: absolute;
 }
 
 .critical-container--content img {
   height: 120px;
 }
-.critical-container--content_title {
+.critical-container--content_title p {
   font-family: Jacques, sans-serif;
   color: #ffd419;
   font-size: 90px;
   position: absolute;
   left: 100px;
-  top: 100px;
+  top: 30px;
+  line-height: 0.8;
 }
 .critical-container--content_title span {
   display: block;
 }
 
 .critical-container--content_1 {
-  position: relative;
   background-image: url(../../../../images/Rectangle\ Copy\ 9.svg);
   background-repeat: no-repeat;
   width: 600px;
@@ -42,7 +38,7 @@
   font-size: 40px;
   position: absolute;
   top: 150px;
-  right: 200px;
+  right: 300px;
 }
 .critical-container--content_1 span {
   font-family: Jacques, sans-serif;
@@ -58,7 +54,6 @@
   background-image: url(../../../../images/Rectangle\ Copy\ 10.svg);
   width: 400px;
   height: 200px;
-  position: relative;
   border-radius: 30px;
   display: flex;
   justify-content: center;
@@ -68,7 +63,7 @@
   font-size: 16px;
   position: absolute;
   top: 400px;
-  right: 550px;
+  left: 450px;
 }
 .author {
   font-weight: 600;
@@ -89,19 +84,17 @@
 .critical-container--content_3 {
   font-family: Babydoll, sans-serif;
   background-image: url(../../../../images/Rectangle\ Copy\ 10.svg);
-  position: relative;
   width: 400px;
   height: 200px;
-
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 30px;
   padding: 30px 10px;
-  font-size: 14px;
+  font-size: 16px;
   position: absolute;
-  top: 450px;
-  right: 100px;
+  top: 500px;
+  right: 200px;
 }
 .critical-container--content_3 .path {
   position: absolute;
@@ -112,10 +105,8 @@
   font-family: Babydoll, sans-serif;
 
   background-image: url(../../../../images/Rectangle\ Copy\ 10.svg);
-  position: relative;
   width: 400px;
   height: 200px;
-
   display: flex;
   justify-content: center;
   align-items: center;
@@ -123,8 +114,8 @@
   padding: 30px 10px;
   font-size: 14px;
   position: absolute;
-  bottom: 150px;
-  right: 450px;
+  top: 680px;
+  left: 500px;
 }
 .critical-container--content_4 .path {
   position: absolute;
@@ -134,9 +125,10 @@
 .critical-container--content_images_left {
   position: absolute;
   height: 400px;
+  top: 300px
 }
 .critical-container--content_images_right {
   position: absolute;
   right: 0px;
-  top: 0px;
+  top: 300px;
 }

@@ -1,0 +1,67 @@
+.checkout-container {
+  padding: 50px;
+  display: grid;
+  grid-template-columns: 60% 40%;
+  grid-template-rows: 1fr;
+  gap: 10px;
+  min-height: 100vh;
+  
+}
+.checkout-heading {
+  font-size: 50px;
+  font-weight: semi-bold;
+  margin-top: 100px;
+}
+.checkout-container label {
+  display: block;
+  padding: 10px 0px;
+  font-size: 20px;
+  font-weight: 600;
+}
+.checkout-container input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 18px;
+}
+.checkout-container h3 {
+  font-size: 40px;
+  font-weight: 500;
+}
+.checkout-container-left {
+  box-shadow: 3px 4px 16px 0px rgba(0, 0, 0, 0.2);
+  padding: 20px ;
+  border-radius: 8px;
+  height: 110vh;
+}
+.checkout-container-left button {
+  width: 100%;
+  height: 50px;
+  margin-top: 30px;
+  background-color: #ffd419;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 24px;
+  font-weight: bold;
+}
+.checkout-container-right {
+  box-shadow: 3px 4px 16px 0px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  padding: 20px;
+  height: fit-content;
+}
+
+
+
+
+.country {
+    width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 18px;
+}
+.checkout-heading {
+    text-align: center;
+    font-family: Jacques,sans-serif;
+    font-size: 80px;
+}

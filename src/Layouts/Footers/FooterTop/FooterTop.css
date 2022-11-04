@@ -8,9 +8,9 @@
   background-size: 80%;
   background-position: center;
 }
-.footerTop-container--content_title {
-  font-size: 90px;
+.footerTop-container--content_title p  {
   padding-top: 50px;
+  font-size: 84px;
   text-align: center;
   font-family: Jacques, sans-serif;
 }

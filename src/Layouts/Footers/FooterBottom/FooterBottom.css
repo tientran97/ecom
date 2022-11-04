@@ -16,12 +16,17 @@
   font-size: 14px;
   font-weight: 700;
   color: #ffd419;
+
 }
 .footerBot-container--content_left {
   background-color: #000;
   width: fit-content;
   padding: 5px;
   border-radius: 5px;
+}
+.footerBot-container--content_left p {
+  font-family: Babydoll, sans-serif;
+  
 }
 .footerBot-container--content_right {
   background-color: #000;

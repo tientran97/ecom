@@ -1,0 +1,32 @@
+.pagination-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.pagination-container .pages {
+  background-color: #ffd419;
+  width: fit-content;
+  padding: 5px 10px;
+  border-radius: 6px;
+  cursor: url(https://cdn.shopify.com/s/files/1/0475/8759/0310/files/gloved-hand-32x23.png?v=1636957093),
+    pointer;
+}
+.pagination-container .pages-active {
+  background-color: #000;
+  color: #fff5cc;
+  width: fit-content;
+  padding: 5px 10px;
+  border-radius: 6px;
+  cursor: url(https://cdn.shopify.com/s/files/1/0475/8759/0310/files/gloved-hand-32x23.png?v=1636957093),
+    pointer;
+}
+.pagination-container .pages-hidden {
+    width: 0;
+    opacity: 0;
+}
+.pagination-container .current-pages {
+  margin-left: 30px;
+  display: flex;
+  gap: 10px;
+  font-size: 30px;
+}

@@ -8,7 +8,7 @@ import Video from "./VideoMain/Video";
 
 const MainHome = () => {
   useEffect(() => {
-    window.scrollTo({ top: 0 });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
   return (
     <>

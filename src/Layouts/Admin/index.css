@@ -1,0 +1,46 @@
+.admin-wrapper {
+  width: 100%;
+  min-height: 100vh;
+  height: fit-content;
+  margin-top: 65px;
+}
+.admin-home-container {
+  display: grid;
+  grid-template-columns: 20% 80%;
+  grid-template-rows: 1fr;
+}
+.admin-home-container h1 {
+  text-align: center;
+}
+.admin-home-container .admin-container-left {
+  border-right: 1px solid #000;
+  min-height: 100vh;
+}
+.admin-home-container .admin-identity {
+  background-color: #ffd419;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  font-weight: bold;
+}
+.admin-home-container .admin-identity i {
+  padding: 0 10px;
+}
+.admin-home-container .admin-routes .route {
+  display: block;
+  width: 100%;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+.admin-home-container .admin-routes button:focus {
+  border-right: 5px solid red;
+}
+.admin-home-container .admin-container-right {
+  padding: 40px;
+}
+.admin-home-container .admin-container-right .info {
+  display: flex;
+  flex-wrap: wrap;
+}

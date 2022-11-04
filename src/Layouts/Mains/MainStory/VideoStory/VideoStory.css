@@ -24,6 +24,8 @@
   height: 100px;
   outline: none;
   border: none;
+   cursor: url(https://cdn.shopify.com/s/files/1/0475/8759/0310/files/gloved-hand-32x23.png?v=1636957093),
+    pointer;
 }
 .story-video button:hover {
   background: url(../../../../images/buttonHover.svg) center / 100% no-repeat;

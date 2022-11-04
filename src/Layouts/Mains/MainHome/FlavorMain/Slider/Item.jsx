@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -8,10 +8,15 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import "./Item.css";
 
-import { useDispatch } from "react-redux";
-import { addToCart } from "../../../../../redux/Slice/cartSlice";
-import { useGetAllProductsQuery } from "../../../../../redux/Slice/productsApi";
-import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { ADD_TO_CART } from "../../../../../redux/Slice/cartSlice";
+import { Link, useNavigate } from "react-router-dom";
+import useFetchCollection from "../../../../../customHooks/useFetchCollection";
+import LoadingSpinner from "../../../../../components/Loader/LoadingSpinner";
+import {
+  selectProducts,
+  STORE_PRODUCTS,
+} from "../../../../../redux/Slice/productSlice";
 const Item = () => {
   const settings = {
     dots: true,
@@ -20,26 +25,34 @@ const Item = () => {
     slidesToShow: 4,
     slidesToScroll: 4,
     autoplay: true,
-    autoplaySpeed: 4000,
-
-    nextArrow: <ArrowRight />,
-    prevArrow: <ArrowLeft />,
+    autoplaySpeed: 2000,
   };
   AOS.init();
   const navigate = useNavigate();
-  const { data, error, isLoading } = useGetAllProductsQuery();
-
   const dispatch = useDispatch();
+  const { data, isLoading } = useFetchCollection("products");
+  const products = useSelector(selectProducts);
+
   const handleAddToCart = (product) => {
-    dispatch(addToCart(product));
+    dispatch(ADD_TO_CART(product));
   };
+  useEffect(() => {
+    dispatch(
+      STORE_PRODUCTS({
+        products: data,
+      })
+    );
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }, [dispatch, data]);
   return (
     <>
       <div className="slider-container">
         {isLoading ? (
-          <p> Loading....</p>
-        ) : error ? (
-          <p>An error occured....</p>
+          <LoadingSpinner />
         ) : (
           <Slider {...settings}>
             {data.map((product) => {
@@ -65,11 +78,10 @@ const Item = () => {
                     >
                       ADD TO CART
                     </button>
-                    <button
-                      className="button-info"
-                      onClick={() => navigate(`/products/${product.id}`)}
-                    >
-                      INFOMATION
+                    <button className="button-info">
+                      <Link to={`/products-details/${product.id}`}>
+                        INFOMATION
+                      </Link>
                     </button>
                   </div>
                   <div className="slider-container--items_content">
@@ -78,14 +90,6 @@ const Item = () => {
                     </p>
                     <p className="slider-container--items_content_price">
                       ${Number(product.price).toFixed(2)} SGD
-                    </p>
-                    <p className="slider-container--items_content__star">
-                      <i className="fa-solid fa-star"></i>
-                      <i className="fa-solid fa-star"></i>
-                      <i className="fa-solid fa-star"></i>
-                      <i className="fa-solid fa-star"></i>
-                      <i className="fa-solid fa-star"></i>
-                      <span>{product.review_number} reviews</span>
                     </p>
                   </div>
                 </div>

@@ -2,83 +2,113 @@ import React, { useState, useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import "./Product.css";
-import { useDispatch } from "react-redux";
-import { addToCart } from "../../../../redux/Slice/cartSlice";
-import { useGetAllProductsQuery } from "../../../../redux/Slice/productsApi";
+import { useDispatch, useSelector } from "react-redux";
+import { ADD_TO_CART } from "../../../../redux/Slice/cartSlice";
 import { useNavigate } from "react-router-dom";
+import {
+  selectProducts,
+  STORE_PRODUCTS,
+} from "../../../../redux/Slice/productSlice";
+import useFetchCollection from "../../../../customHooks/useFetchCollection";
+import LoadingSpinner from "../../../../components/Loader/LoadingSpinner";
+import { FILTER_BY_CATEGORY } from "../../../../redux/Slice/filterSlice";
+import { selectFilterProducts } from "../../../../redux/Slice/filterSlice";
+import Pagination from "../../../../components/Pagination/Pagination";
+
 const Item = () => {
   AOS.init();
-  const { data, error, isLoading } = useGetAllProductsQuery();
-  const navigate = useNavigate();
-  const [filteredProducts, setFilteredProducts] = useState("all");
-  useEffect(() => {
-    window.scrollTo({ top: 0 });
-  }, []);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const handleAddToCart = (product) => {
-    dispatch(addToCart(product));
-  };
-  const handleFilterButton = (e) => {
-    setFilteredProducts(e.target.value);
+    dispatch(ADD_TO_CART(product));
   };
 
+  const { data, isLoading } = useFetchCollection("products");
+
+  const products = useSelector(selectProducts);
+  let filteredProducts = useSelector(selectFilterProducts);
+
+  //pagination state
+  const [currentPage, setCurrentPage] = useState(1);
+  const [productsPerPage, setProductPerPage] = useState(12);
+  //get current product
+  const indexOfLastProduct = currentPage * productsPerPage;
+  const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
+
+  const currentProduct = filteredProducts.slice(
+    indexOfFirstProduct,
+    indexOfLastProduct
+  );
+
+  const url = window.location.href;
+  useEffect(() => {
+    dispatch(
+      STORE_PRODUCTS({
+        products: data,
+      })
+    );
+    if (url.includes("products")) {
+      window.scrollTo({
+        top: 550,
+        behavior: "smooth",
+      });
+    } else {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    }
+    if (category === "all") {
+      dispatch(FILTER_BY_CATEGORY({ products: data, category: "all" }));
+    } else {
+      handleFilterButton();
+    }
+  }, [dispatch, data, category]);
+  const allCategories = [
+    "all",
+    ...new Set(products.map((product) => product.category)),
+  ];
+
+  const [category, setCategory] = useState("all");
+
+  const handleFilterButton = (cat) => {
+    setCategory(cat);
+    dispatch(FILTER_BY_CATEGORY({ products, category: cat }));
+  };
   return (
     <>
-      {isLoading ? (
-        <p> Loading....</p>
-      ) : error ? (
-        <p>An error occured....</p>
-      ) : (
-        <>
-          <section className="filter-container">
-            <span className="title">Filter by:</span>
-            <div className="filter-content">
-              <button
-                autoFocus
-                onClick={(e) => handleFilterButton(e)}
-                value="all"
-              >
-                VIEW ALL
-              </button>
-              <button onClick={(e) => handleFilterButton(e)} value="truffle">
-                TRUFFLE
-              </button>
-              <button
-                onClick={(e) => handleFilterButton(e)}
-                value="salmon skin"
-              >
-                SALMON SKIN
-              </button>
-              <button onClick={(e) => handleFilterButton(e)} value="fish skin">
-                FISH SKIN
-              </button>
-              <button
-                onClick={(e) => handleFilterButton(e)}
-                value="crunchy roll"
-              >
-                CRUNCHY ROLL
-              </button>
-              <button
-                onClick={(e) => handleFilterButton(e)}
-                value="potato chips"
-              >
-                POTATO CHIPS
-              </button>
-              <button
-                onClick={(e) => handleFilterButton(e)}
-                value="cassava chips"
-              >
-                CASSAVA CHIPS
-              </button>
-              <button onClick={(e) => handleFilterButton(e)} value="gyoza skin">
-                GYOZA SKIN
-              </button>
-            </div>
-          </section>
-          <div className="shop-container">
-            {data
-              .filter((product) => product.category.includes(filteredProducts))
-              .map((product) => {
+      <>
+        {isLoading && <LoadingSpinner />}
+        <section className="filter-container">
+          <span className="title">Filter by:</span>
+          <div className="filter-content">
+            {allCategories.map((cat, index) => {
+              return (
+                <button
+                  className={
+                    `${category}` === cat
+                      ? "filterBtn-active filterBtn"
+                      : "filterBtn"
+                  }
+                  key={index}
+                  type="button"
+                  onClick={() => handleFilterButton(cat)}
+                >
+                  {cat}
+                </button>
+              );
+            })}
+          </div>
+        </section>
+        <div className="shop-container">
+          {products.length === 0 ? (
+            <>
+              <p>No product found</p>
+            </>
+          ) : (
+            <>
+              {isLoading && <LoadingSpinner />}
+              {currentProduct.map((product) => {
                 return (
                   <div
                     key={product.id}
@@ -105,7 +135,9 @@ const Item = () => {
                       </button>
                       <button
                         className="button-info"
-                        onClick={() => navigate(`/products/${product.id}`)}
+                        onClick={() =>
+                          navigate(`/products-details/${product.id}`)
+                        }
                       >
                         INFOMATION
                       </button>
@@ -115,21 +147,20 @@ const Item = () => {
                       <p className="items-content--price">
                         ${Number(product.price).toFixed(2)} SGD
                       </p>
-                      <p className="items-content--star">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <span>{product.review_number} reviews</span>
-                      </p>
                     </div>
                   </div>
                 );
               })}
-          </div>
-        </>
-      )}
+            </>
+          )}
+        </div>
+        <Pagination
+          productsPerPage={productsPerPage}
+          currentPage={currentPage}
+          setCurrentPage={setCurrentPage}
+          totalProducts={filteredProducts.length}
+        />
+      </>
     </>
   );
 };
