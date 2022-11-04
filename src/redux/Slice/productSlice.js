@@ -1,39 +1,21 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-
-import axios from "axios";
+import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  items: [],
-  status: null,
+  products: [],
 };
-export const productsFetch = createAsyncThunk(
-  "products/productsFetch",
-  async () => {
-    const response = await axios.get("http://localhost:5000/products");
-    return response?.data;
-  }
-);
-// export const productsFetch = createAsyncThunk("products/productsFetch", () => {
-//   return fetch(url)
-//     .then((resp) => resp.json())
-//     .catch((err) => console.log(err));
-// });
+
 const productsSlice = createSlice({
-  name: "products",
+  name: "product",
   initialState,
-  reducers: {},
-  extraReducers: {
-    [productsFetch.pending]: (state, action) => {
-      state.status = "pending";
-    },
-    [productsFetch.fulfilled]: (state, action) => {
-      state.status = "success";
-      state.items = action.payload;
-    },
-    [productsFetch.rejected]: (state, action) => {
-      state.status = "reject";
+  reducers: {
+    STORE_PRODUCTS(state, action) {
+      state.products = action.payload.products;
     },
   },
 });
+
+export const { STORE_PRODUCTS } = productsSlice.actions;
+
+export const selectProducts = (state) => state.product.products;
 
 export default productsSlice.reducer;

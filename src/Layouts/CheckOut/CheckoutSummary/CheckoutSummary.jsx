@@ -5,7 +5,7 @@ import {
   selectCartTotalAmount,
   selectCartTotalQuantity,
 } from "../../../redux/Slice/cartSlice";
-import {  useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 const CheckoutSummary = () => {
   const cartItems = useSelector(selectCartItems);
@@ -18,7 +18,10 @@ const CheckoutSummary = () => {
       {cartItems.length === 0 ? (
         <>
           <p>No item in cart</p>
-          <button onClick={() => navigate("/the-snack-shop")}>
+          <button
+            className="back-to-shopping"
+            onClick={() => navigate("/the-snack-shop")}
+          >
             Back to Shopping
           </button>
         </>

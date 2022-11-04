@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 import LoadingSpinner from "../../../components/Loader/LoadingSpinner";
 import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { selectProducts } from "../../../redux/Slice/productsSlice";
+import { selectProducts } from "../../../redux/Slice/productSlice";
 
 const categories = [
   { id: 1, name: "salmon skin" },
@@ -18,6 +18,8 @@ const categories = [
   { id: 5, name: "potato chips" },
   { id: 6, name: "cassava chips" },
   { id: 7, name: "gyoza skin" },
+  { id: 8, name: "bundle" },
+  { id: 9, name: "noodle" },
 ];
 const backgroundColors = [
   { id: 1, name: "#ffd419" },
@@ -26,6 +28,7 @@ const backgroundColors = [
   { id: 4, name: "#ffa65c" },
   { id: 5, name: "#ffd3b5" },
   { id: 6, name: "#f9c580" },
+  { id: 7, name: "#fff" },
 ];
 const AddProduct = () => {
   useEffect(() => {
@@ -35,19 +38,6 @@ const AddProduct = () => {
   const navigate = useNavigate();
   const [uploadProgress, setUploadProgress] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
-  const [images, setImages] = useState([]);
-  const [urls, setUrls] = useState([]);
-  // console.log('urls',urls)
-  // console.log('url-0', urls[0])
-  // console.log("url-1", urls[1]);
-  // console.log("url-2", urls[2]);
-  // console.log("url-3", urls[3]);
-  // console.log("url-4", urls[4]);
-  // console.log("url-5", urls[5]);
-  // console.log("url-6", urls[6]);
-  // console.log("url-7", urls[7]);
-  
-
   const { id } = useParams();
   const products = useSelector(selectProducts);
   const productEdit = products.find((item) => item.id === id);
@@ -64,14 +54,7 @@ const AddProduct = () => {
     name: "",
     price: 0,
     category: "",
-    main_image_url: urls[0],
-    sub_image_url: urls[1],
-    ingredient_image_url_1: urls[2],
-    ingredient_image_url_2: urls[3],
-    ingredient_image_url_3: urls[4],
-    ingredient_image_url_4: urls[5],
-    side_image_left: urls[6],
-    side_image_right: urls[7],
+    main_image_url: "",
     disc_text: "",
     ingredient_text: "",
     ellergens_text: "",
@@ -79,11 +62,6 @@ const AddProduct = () => {
     nutrition: "",
     character_box_1: "",
     character_box_2: "",
-    accordion_title_1: "",
-    accordion_title_2: "",
-    small_title_1: "",
-    small_title_2: "",
-    small_title_3: "",
     background_color: "",
   };
 
@@ -92,42 +70,31 @@ const AddProduct = () => {
     return newState;
   });
 
- 
-
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setProduct({ ...product, [name]: value });
   };
   const handleImageChange = (e) => {
-    for (let i = 0; i < e.target.files.length; i++) {
-      const newImage = e.target.files[i];
-      newImage["id"] = Math.random();
-      setImages((prevState) => [...prevState, newImage]);
-      images.map((image) => {
-        const storageRef = ref(storage, `images/${image.name}`);
-        const uploadTask = uploadBytesResumable(storageRef, image);
-        uploadTask.on(
-          "state_changed",
-          (snapshot) => {
-            const progress =
-              (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-            setUploadProgress(progress);
-          },
-          (error) => {
-            toast.error(error.message);
-            console.log(error.message);
-          },
-          () => {
-            getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-              // setProduct({ ...product, main_image_url: downloadURL });
-              setUrls((prevState) => [...prevState, downloadURL]);
-              console.log("🚀 ~ file: AddProduct.jsx ~ line 132 ~ getDownloadURL ~ downloadURL", downloadURL)
-              // urls.push(downloadURL);
-            });
-          }
-        );
-      });
-    }
+    // files.push(e.target.files[0])
+    const file = e.target.files[0];
+    const storageRef = ref(storage, `images/${file.name}`);
+    const uploadTask = uploadBytesResumable(storageRef, file);
+    uploadTask.on(
+      "state_changed",
+      (snapshot) => {
+        const progress =
+          (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+        setUploadProgress(progress);
+      },
+      (error) => {
+        toast.error(error.message);
+      },
+      () => {
+        getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+          setProduct({ ...product, main_image_url: downloadURL });
+        });
+      }
+    );
   };
   const addProduct = (e) => {
     e.preventDefault();
@@ -138,16 +105,7 @@ const AddProduct = () => {
         price: Number(product.price),
         category: product.category,
         background_color: product.background_color,
-
         main_image_url: product.main_image_url,
-        sub_image_url: product.sub_image_url,
-        ingredient_image_url_1: product.ingredient_image_url_1,
-        ingredient_image_url_2: product.ingredient_image_url_2,
-        ingredient_image_url_3: product.ingredient_image_url_3,
-        ingredient_image_url_4: product.ingredient_image_url_4,
-        side_image_left: product.side_image_left,
-        side_image_right: product.side_image_right,
-
         disc_text: product.disc_text,
         ingredient_text: product.ingredient_text,
         ellergens_text: product.ellergens_text,
@@ -155,26 +113,16 @@ const AddProduct = () => {
         nutrition: product.nutrition,
         character_box_1: product.character_box_1,
         character_box_2: product.character_box_2,
-
-        accordion_title_1: product.accordion_title_1,
-        accordion_title_2: product.accordion_title_2,
-
-        small_title_1: product.small_title_1,
-        small_title_2: product.small_title_2,
-        small_title_3: product.small_title_3,
-
         createAt: Timestamp.now().toDate(),
       });
       setIsLoading(false);
       setProduct(initialState);
-      setUrls([]);
       setUploadProgress(0);
       toast.success("Product uploaded successfully");
       navigate("/admin/view-product");
     } catch (error) {
       setIsLoading(false);
       toast.error(error.message);
-      console.log(error.message)
     }
   };
   const editProduct = (e) => {
@@ -187,16 +135,7 @@ const AddProduct = () => {
         price: Number(product.price),
         category: product.category,
         background_color: product.background_color,
-
         main_image_url: product.main_image_url,
-        sub_image_url: product.sub_image_url,
-        ingredient_image_url_1: product.ingredient_image_url_1,
-        ingredient_image_url_2: product.ingredient_image_url_2,
-        ingredient_image_url_3: product.ingredient_image_url_3,
-        ingredient_image_url_4: product.ingredient_image_url_4,
-        side_image_left: product.side_image_left,
-        side_image_right: product.side_image_right,
-
         disc_text: product.disc_text,
         ingredient_text: product.ingredient_text,
         ellergens_text: product.ellergens_text,
@@ -204,14 +143,6 @@ const AddProduct = () => {
         nutrition: product.nutrition,
         character_box_1: product.character_box_1,
         character_box_2: product.character_box_2,
-
-        accordion_title_1: product.accordion_title_1,
-        accordion_title_2: product.accordion_title_2,
-
-        small_title_1: product.small_title_1,
-        small_title_2: product.small_title_2,
-        small_title_3: product.small_title_3,
-
         createAt: product.createAt,
         editedAt: Timestamp.now().toDate(),
       });
@@ -269,146 +200,7 @@ const AddProduct = () => {
               value={product.main_image_url}
             />
           </div>
-          <label>PRODUCT SUB IMAGE:</label>
-          <div className="image-card">
-            <input
-              required
-              type="file"
-              accept="image/*"
-              placeholder="Product sub image "
-              name="sub_image_url"
-              onChange={(e) => handleImageChange(e)}
-            />
-            <span>Up load file progress: {uploadProgress} %</span>
-            <input
-              placeholder="MAIN IMAGE URL"
-              type="text"
-              required
-              name="sub_image_url"
-              readOnly
-              value={product.sub_image_url}
-            />
-          </div>
-          <label>PRODUCT INGREGREDIENT IMAGE 1:</label>
-          <div className="image-card">
-            <input
-              type="file"
-              required
-              accept="image/*"
-              placeholder="Product ingredient image 1"
-              name="ingredient_image_url_1"
-              onChange={(e) => handleImageChange(e)}
-            />
-            <span>Up load file progress: {uploadProgress} %</span>
-            <input
-              placeholder="MAIN IMAGE URL"
-              type="text"
-              required
-              name="sub_image_url"
-              readOnly
-              value={product.ingredient_image_url_1}
-            />
-          </div>
-          <label>PRODUCT INGREGREDIENT IMAGE 2:</label>
-          <div className="image-card">
-            <input
-              type="file"
-              required
-              accept="image/*"
-              placeholder="Product ingredient image 2"
-              name="ingredient_image_url_2"
-              onChange={(e) => handleImageChange(e)}
-            />
-            <span>Up load file progress: {uploadProgress} %</span>
-            <input
-              placeholder="MAIN IMAGE URL"
-              type="text"
-              required
-              name="sub_image_url"
-              readOnly
-              value={product.ingredient_image_url_2}
-            />
-          </div>
-          <label>PRODUCT INGREGREDIENT IMAGE 3:</label>
-          <div className="image-card">
-            <input
-              type="file"
-              required
-              accept="image/*"
-              placeholder="Product ingredient image 3"
-              name="ingredient_image_url_3"
-              onChange={(e) => handleImageChange(e)}
-            />
-            <span>Up load file progress: {uploadProgress} %</span>
-            <input
-              placeholder="MAIN IMAGE URL"
-              type="text"
-              required
-              name="sub_image_url"
-              readOnly
-              value={product.ingredient_image_url_3}
-            />
-          </div>
-          <label>PRODUCT INGREGREDIENT IMAGE 4:</label>
-          <div className="image-card">
-            <input
-              type="file"
-              required
-              accept="image/*"
-              placeholder="Product ingredient image 4"
-              name="ingredient_image_url_4"
-              onChange={(e) => handleImageChange(e)}
-            />
-            <span>Up load file progress: {uploadProgress} %</span>
-            <input
-              placeholder="MAIN IMAGE URL"
-              type="text"
-              required
-              name="sub_image_url"
-              readOnly
-              value={product.ingredient_image_url_4}
-            />
-          </div>
-          <label>PRODUCT SIDE IMAGE LEFT:</label>
-          <div className="image-card">
-            <input
-              type="file"
-              accept="image/*"
-              required
-              placeholder="Product side image left"
-              name="ingredient_image_url_4"
-              onChange={(e) => handleImageChange(e)}
-            />
-            <span>Up load file progress: {uploadProgress} %</span>
-            <input
-              placeholder="MAIN IMAGE URL"
-              type="text"
-              required
-              name="side_image_left"
-              readOnly
-              value={product.side_image_left}
-            />
-          </div>
-          <label>PRODUCT SIDE IMAGE RIGHT:</label>
-          <div className="image-card">
-            <input
-              type="file"
-              accept="image/*"
-              required
-              placeholder="Product side image right"
-              name="ingredient_image_url_4"
-              onChange={(e) => handleImageChange(e)}
-            />
-            <span>Up load file progress: {uploadProgress} %</span>
-            <input
-              placeholder="MAIN IMAGE URL"
-              type="text"
-              required
-              name="side_image_right"
-              readOnly
-              value={product.side_image_right}
-            />
-          </div>
+
           <label>PRODUCT CATEGORY:</label>
           <select
             required
@@ -509,51 +301,7 @@ const AddProduct = () => {
             value={product.character_box_2}
             onChange={(e) => handleInputChange(e)}
           />
-          <label>SMALL TITLE 1: </label>
-          <input
-            type="text"
-            required
-            placeholder="INGREDIENTS"
-            name="small_title_1"
-            value={product.small_title_1}
-            onChange={(e) => handleInputChange(e)}
-          />
-          <label>SMALL TITLE 2: </label>
-          <input
-            type="text"
-            required
-            placeholder="ALLERGENS"
-            name="small_title_2"
-            value={product.small_title_2}
-            onChange={(e) => handleInputChange(e)}
-          />
-          <label>SMALL TITLE 3: </label>
-          <input
-            type="text"
-            required
-            placeholder="NUTRITION"
-            name="small_title_3"
-            value={product.small_title_3}
-            onChange={(e) => handleInputChange(e)}
-          />
-          <label>ACCORDATION TITLE 1: </label>
-          <input
-            type="text"
-            required
-            placeholder="INGREDIENTS"
-            name="accordion_title_1"
-            value={product.accordion_title_1}
-            onChange={(e) => handleInputChange(e)}
-          />
-          <label>ACCORDATION 2: </label>
-          <input
-            type="text"
-            required
-            placeholder="PRODUCT INFO"
-            name="accordion_title_2"
-            value={product.accordion_title_2}
-            onChange={(e) => handleInputChange(e)}
-          />
+
           <button type="submit">
             {detectForm(id, "ADD PRODUCT", "EDIT PRODUCT")}
           </button>

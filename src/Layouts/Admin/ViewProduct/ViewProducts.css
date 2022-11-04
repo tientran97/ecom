@@ -4,6 +4,20 @@
     height: fit-content;
 
 }
+.all-products-table  input {
+    width: 300px;
+    padding: 10px 10px 10px 30px;
+    margin-bottom: 20px;
+}
+.all-products-table .search {
+    position: relative;
+}
+.all-products-table i {
+    position: absolute;
+    z-index: 1;
+    top: 10px;
+    left: 10px;
+}
 .table-row-name {
     width: 500px;
 }

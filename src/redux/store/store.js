@@ -1,33 +1,26 @@
-import { configureStore } from "@reduxjs/toolkit";
+import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import authReducer from "../Slice/authSlice";
-import productsReducers from "../Slice/productsSlice";
-
+import productReducer from "../Slice/productSlice";
+import orderReducer from "../Slice/orderSlice";
 import cartReducer from "../Slice/cartSlice";
-import productsReducer, { productsFetch } from "../Slice/productSlice";
-import { productsApi } from "../Slice/productsApi";
 import filterReducer from "../Slice/filterSlice";
 import checkoutReducer from "../Slice/checkoutSlice";
-// const rootReducer = combineReducers({
-//   auth: authReducer,
-// });
+const rootReducer = combineReducers({
+  auth: authReducer,
+  product: productReducer,
+  filter: filterReducer,
+  checkout: checkoutReducer,
+  cart: cartReducer,
+  orders: orderReducer,
+});
 
 const store = configureStore({
-  reducer: {
-    // rootReducer,
-    auth: authReducer,
-    filter: filterReducer,
-    products: productsReducer,
-    cart: cartReducer,
-    checkout: checkoutReducer,
+  reducer: rootReducer,
 
-    product: productsReducers,
-    [productsApi.reducerPath]: productsApi.reducer,
-  },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
       serializableCheck: false,
     }),
 });
-store.dispatch(productsFetch());
 
 export default store;

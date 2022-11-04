@@ -1,6 +1,5 @@
 .header-main {
   font-family: Helvetica, serif;
-  position: absolute;
   width: 100%;
   z-index: 10;
   display: flex;
@@ -14,34 +13,38 @@
   position: fixed;
 }
 .subnav {
-  float: left;
-  overflow: hidden;
+  position: relative;
 }
 .subnavbtn {
   padding: 22px;
 }
 
 .subnav-content {
-  position: absolute;
-  left: 0;
-  top: 64px;
   background-color: #fff5cc;
-  width: 250px;
-  height: 350px;
-  z-index: 1;
+  z-index: 99;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding: 40px;
+  
+
+}
+.subnav-content p {
   font-family: Jacques, sans-serif;
   font-size: 30px;
   font-weight: normal;
-  padding: 40px;
-  transition: all 0.5s ease-in-out;
-  box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.75);
-  border-bottom-right-radius: 20px;
 }
 .subnav-container {
   display: none;
+  position: absolute;
+  top: 64px;
+  left: -100px;
+  width: 250px;
+  height: 350px;
+  transition: all 0.5s ease-in-out;
+  box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.75);
+  border-bottom-right-radius: 20px;
+  overflow: hidden;
 }
 .subnav-content p {
   padding: 20px;
@@ -53,6 +56,7 @@
 }
 .subnav:hover .subnav-container {
   display: block;
+  z-index: 1;
 }
 
 .header-main--left,
@@ -102,6 +106,9 @@
   margin-left: 20px;
 }
 .header-main--tile img {
+  position: fixed;
+  top: 10px;
+  left: 700px;
   height: 47px;
   cursor: url(https://cdn.shopify.com/s/files/1/0475/8759/0310/files/gloved-hand-32x23.png?v=1636957093),
     pointer;

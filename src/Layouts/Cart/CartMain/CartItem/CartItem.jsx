@@ -52,11 +52,13 @@ const CartItem = () => {
           <section className="cartItem-container">
             <table>
               <thead>
-                <th className="serial">No.</th>
-                <th className="prodcut">Product</th>
-                <th className="quantity">Quantity</th>
-                <th className="amount">Amount</th>
-                <th className="remove">Remove</th>
+                <tr>
+                  <th className="serial">No.</th>
+                  <th className="prodcut">Product</th>
+                  <th className="quantity">Quantity</th>
+                  <th className="amount">Amount</th>
+                  <th className="remove">Remove</th>
+                </tr>
               </thead>
               <tbody>
                 {cartItems.map((cartItem, index) => {

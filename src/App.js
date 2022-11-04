@@ -18,13 +18,15 @@ import Heading from "./Layouts/Heading/Heading";
 import Footer from "./Layouts/Footers/index";
 import AdminOnlyRoute from "./components/AdminOnlyRoute/AdminOnlyRoute";
 import Admin from "./Layouts/Admin/index";
-import CheckOut from "./Layouts/CheckOut/CheckoutStripe/CheckoutStripe";
+import CheckOut from "./Layouts/CheckOut/Checkout/Checkout";
+import OrderDetails from './Layouts/User/OrderDetails/OrderDetails'
 import { Routes, Route } from "react-router-dom";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
 import ResetPassword from "./Layouts/User/ResetPassword/ResetPassword";
 import CheckoutDetails from "./Layouts/CheckOut/CheckoutDetail/CheckoutDetails";
-
+import CheckOutSuccess from "./Layouts/CheckOut/CheckoutSuccess/CheckoutSuccess";
+import ReviewProduct from "./Layouts/User/ReviewProduct/ReviewProduct";
 function App() {
   return (
     <div className="wrapper">
@@ -55,10 +57,13 @@ function App() {
         <Route path="/accounts/register" element={<Register />} />
         <Route path="/accounts/reset-password" element={<ResetPassword />} />
         <Route path="/accounts/profile" element={<Account />} />
+        <Route path="/order-details/:id" element={<OrderDetails />} />
+        <Route path="/review-product/:id" element={<ReviewProduct />} />
 
         <Route path="/cart" element={<Cart />} />
         <Route path="/checkout-details" element={<CheckoutDetails />} />
         <Route path="/checkout" element={<CheckOut />} />
+        <Route path="/checkout-success" element={<CheckOutSuccess />} />
 
         <Route
           path="/admin/*"

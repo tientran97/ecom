@@ -6,7 +6,7 @@ const initialState = {
     : [],
   cartTotalQuantity: 0,
   cartTotalAmount: 0,
-  previousURL: ''
+  previousURL: "",
 };
 
 const cartSlice = createSlice({
@@ -71,7 +71,6 @@ const cartSlice = createSlice({
 
     CLEAR_CART(state, action) {
       state.cartItems = [];
-      toast.error("Cart empty!");
       localStorage.setItem("cartItems", JSON.stringify(state.cartItems));
     },
     CALCULATE_SUBTOTAL(state, action) {
@@ -96,8 +95,8 @@ const cartSlice = createSlice({
       state.cartTotalQuantity = array.length;
     },
     SAVE_URL(state, action) {
-      state.previousURL =action.payload
-    }
+      state.previousURL = action.payload;
+    },
   },
 });
 
@@ -114,5 +113,5 @@ export const {
 export const selectCartItems = (state) => state.cart.cartItems;
 export const selectCartTotalQuantity = (state) => state.cart.cartTotalQuantity;
 export const selectCartTotalAmount = (state) => state.cart.cartTotalAmount;
-export const selectPreviousURL = (state) => state.cart.previousURL
+export const selectPreviousURL = (state) => state.cart.previousURL;
 export default cartSlice.reducer;

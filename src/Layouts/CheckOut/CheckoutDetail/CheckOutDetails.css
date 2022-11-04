@@ -50,44 +50,10 @@
   padding: 20px;
   height: fit-content;
 }
-.checkout-container-right p {
-  padding: 10px 0px;
-  font-size: 18px;
-}
-.checkout-container-right .subtotal {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.checkout-container-right .subtotal-title {
-  font-size: 24px;
-  font-weight: bold;
-}
-.checkout-container-right .subtotal-money {
-  color: orangered;
-  font-size: 40px;
-  text-align: right;
-  margin-right: 50px;
-}
-.product-card {
-  border: 2px solid skyblue;
-  padding: 10px;
-  border-radius: 12px;
-  box-shadow: 3px 4px 16px 0px rgba(0, 0, 0, 0.2);
-  margin-top: 20px;
-}
-.product-card-infomation {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.product-card-infomation img {
-  width: 150px;
-  height: 150px;
-}
-.product-card h4 {
-  font-size: 24px;
-}
+
+
+
+
 .country {
     width: 100%;
   padding: 10px;

@@ -89,13 +89,14 @@ table {
   cursor: url(https://cdn.shopify.com/s/files/1/0475/8759/0310/files/gloved-hand-32x23.png?v=1636957093),
     pointer;
 }
-.cart-empty {
-  margin-left: 600px;
-}
+
 .cart-empty p {
   font-family: Jacques, sans-serif;
-  font-size: 80px;
+  font-size: 50px;
   margin-bottom: 20px;
+  text-align: center;
+  margin-left: 530px;
+
 }
 .cart-empty button {
   background: url(../../../../images/buttonHover.svg) center / 100% no-repeat;
@@ -103,7 +104,7 @@ table {
   border: none;
   height: 100px;
   width: 370px;
-  margin-left: -20px;
+   margin-left: 570px;
   transition: 0.3s;
   font-size: 30px;
   color: #ffd419;
@@ -111,6 +112,7 @@ table {
   font-family: Helvetica, sans-serif;
   cursor: url(https://cdn.shopify.com/s/files/1/0475/8759/0310/files/gloved-hand-32x23.png?v=1636957093),
     pointer;
+
 }
 .cart-empty button:hover {
   background: url(../../../../images/button.svg) center / 100% no-repeat;

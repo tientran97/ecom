@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import "./ViewProducts.css";
 import LoadingSpinner from "../../../components/Loader/LoadingSpinner";
 import { toast } from "react-toastify";
@@ -11,23 +11,51 @@ import { db } from "../../../firebase/config";
 import {
   STORE_PRODUCTS,
   selectProducts,
-} from "../../../redux/Slice/productsSlice";
+} from "../../../redux/Slice/productSlice";
 import useFetchCollection from "../../../customHooks/useFetchCollection";
+import {
+  FILTER_BY_SEARCH,
+  selectFilterProducts,
+} from "../../../redux/Slice/filterSlice";
+import Pagination from "../../../components/Pagination/Pagination";
 
 const ViewProduct = () => {
   const { data, isLoading } = useFetchCollection("products");
+  const [search, setSearch] = useState("");
 
   const products = useSelector(selectProducts);
-
+  const filteredProducts = useSelector(selectFilterProducts);
   const dispatch = useDispatch();
 
+  //pagination state
+  const [currentPage, setCurrentPage] = useState(1);
+  const [productsPerPage, setProductPerPage] = useState(12);
+  //get current product
+  const indexOfLastProduct = currentPage * productsPerPage;
+  const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
+
+  const currentProduct = filteredProducts.slice(
+    indexOfFirstProduct,
+    indexOfLastProduct
+  );
+
   useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
     dispatch(
       STORE_PRODUCTS({
         products: data,
       })
     );
   }, [dispatch, data]);
+  useEffect(() => {
+    const delayDebounceFn = setTimeout(() => {
+      dispatch(FILTER_BY_SEARCH({ products, search }));
+    }, 1000);
+    return () => clearTimeout(delayDebounceFn);
+  }, [dispatch, products, search]);
 
   const confirmDelete = (id) => {
     Notiflix.Confirm.show(
@@ -65,7 +93,18 @@ const ViewProduct = () => {
       {isLoading && <LoadingSpinner />}
       <div className="all-products-table">
         <h1>VIEW ALL PRODUCTS</h1>
-        {products.length === 0 ? (
+        <div className="search">
+          <i className="fa-solid fa-magnifying-glass"></i>
+          <input
+            placeholder="Search by product's name"
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+          />
+        </div>
+        <p>
+          <b>{filteredProducts.length}</b> product(s) found !
+        </p>
+        {filteredProducts.length === 0 ? (
           <p>NO PRODUCT FOUND</p>
         ) : (
           <table>
@@ -80,7 +119,7 @@ const ViewProduct = () => {
               </tr>
             </thead>
             <tbody>
-              {products.map((product, index) => {
+              {currentProduct.map((product, index) => {
                 const { id, name, price, main_image_url, category } = product;
                 return (
                   <tr key={id}>
@@ -110,6 +149,12 @@ const ViewProduct = () => {
             </tbody>
           </table>
         )}
+        <Pagination
+          productsPerPage={productsPerPage}
+          currentPage={currentPage}
+          setCurrentPage={setCurrentPage}
+          totalProducts={filteredProducts.length}
+        />
       </div>
     </>
   );

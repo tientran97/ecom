@@ -50,7 +50,7 @@ const Testimonial = () => {
         </div>
         <div className="testimonial-container--character">
           <div className="testimonial-container--left" data-aos="fade-up">
-            <img src={Character} alt="character" />
+            <img  src={Character} alt="character" />
           </div>
           <div className="testimonial-container--right" data-aos="fade-up">
             <img src={Character} alt="character" />

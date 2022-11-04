@@ -23,12 +23,14 @@
   align-items: center;
   gap: 100px;
   padding: 0 70px;
+  
 }
 .collab-content--item {
   display: flex;
   flex-direction: column;
   height: 600px;
   color: #ffd419;
+  
 }
 .collab-content--item_image {
   mask-image: url(../../../../images/Mask.svg);
@@ -37,6 +39,7 @@
   mask-position: center center;
   position: relative;
   z-index: 5;
+  
 }.collab-content--item span {
   font-size: 30px;
   font-family: Jacques, sans-serif;
@@ -48,4 +51,6 @@
 }
 .collab-content--item img {
   height: 400px;
+   cursor: url(https://cdn.shopify.com/s/files/1/0475/8759/0310/files/gloved-hand-32x23.png?v=1636957093),
+    pointer;
 }

@@ -89,16 +89,17 @@ const Critical = () => {
             </div>
           </div>
         </div>
-        <div
-          className="critical-container--content_images"
-         
-        >
+        <div className="critical-container--content_images">
           <img
+            data-aos="slide-right"
+            data-aos-delay="350"
             className="critical-container--content_images_left"
             src={ChipLeft}
             alt="chip"
           />
           <img
+            data-aos="slide-left"
+            data-aos-delay="350"
             className="critical-container--content_images_right"
             src={ChipRight}
             alt="chip"

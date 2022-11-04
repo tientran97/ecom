@@ -15,7 +15,7 @@ const FooterMid = () => {
           <div className="footerMid-container--content_left2">
             <p onClick={() => navigate("/the-snack-shop")}>SHOP</p>
 
-            <p onClick={() => navigate("/login")}>MY ACCOUNT</p>
+            <p onClick={() => navigate("/accounts/profile")}>MY ACCOUNT</p>
 
             <p onClick={() => navigate("/frequently-asked-questions")}>FAQ</p>
             <p onClick={() => navigate("/find-irvins-near-you")}>FIND US</p>

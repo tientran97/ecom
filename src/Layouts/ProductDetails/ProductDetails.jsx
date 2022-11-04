@@ -9,39 +9,30 @@ import { ADD_TO_CART } from "../../redux/Slice/cartSlice";
 import { useDispatch } from "react-redux";
 import "aos/dist/aos.css";
 import AOS from "aos";
-import { doc, getDoc } from "firebase/firestore";
-import { db } from "../../firebase/config.js";
-import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
+import useFetchDocument from "../../customHooks/useFetchDocument.js";
+import useFetchCollection from "../../customHooks/useFetchCollection";
+import Review from "./Review/Review";
 const ProductDetails = () => {
   AOS.init();
   const navigate = useNavigate();
   const dispatch = useDispatch();
-
   const handleAddToCart = (product) => {
     dispatch(ADD_TO_CART(product));
   };
 
   const { id } = useParams();
   const [product, setProduct] = useState(null);
-  const getSingleProduct = async () => {
-    const docRef = doc(db, "products", id);
-    const docSnap = await getDoc(docRef);
+  //get product from custom hook
+  const { document } = useFetchDocument("products", id);
+  const { data } = useFetchCollection("reviews");
+  
+  const filterReviews = data?.filter((review) => review.productID === id);
+  console.log("🚀 ~ file: ProductDetails.jsx ~ line 32 ~ ProductDetails ~ filterReviews", filterReviews)
 
-    if (docSnap.exists()) {
-      // console.log("Product  data:", docSnap.data());
-      const obj = {
-        id: id,
-        ...docSnap.data(),
-      };
-      setProduct(obj);
-    } else {
-      toast.error("No such product!");
-    }
-  };
   useEffect(() => {
-    getSingleProduct();
-  }, []);
+    setProduct(document);
+  }, [document, data]);
 
   return (
     <>
@@ -132,39 +123,18 @@ const ProductDetails = () => {
                 </div>
               </div>
               <div className="productDetails-mid">
-                <img
-                  data-aos="fade-right"
-                  data-aos-easing="ease-in-out"
-                  data-aos-delay="250"
-                  src={product.side_image_left}
-                  alt=""
-                  className="side-image-left"
-                />
-                <img
-                  data-aos="fade-left"
-                  data-aos-easing="ease-in-out"
-                  data-aos-delay="350"
-                  src={product.side_image_right}
-                  alt=""
-                  className="side-image-right"
-                />
-
                 <Accordion
-                  title={product.accordion_title_1}
+                  title="INGREDIENT"
                   ingredients_text={product.ingredient_text}
-                  allergens={product.ellergens_text}
-                  ingredients_1_image={product.ingredient_image_url_1}
-                  ingredients_2_image={product.ingredient_image_url_2}
-                  ingredients_3_image={product.ingredient_image_url_3}
-                  ingredients_4_image={product.ingredient_image_url_4}
-                  small_title_1={product.small_title_1}
-                  small_title_2={product.small_title_2}
+                  nutrition={product.ellergens_text}
+                  small_title_1="INGREDIENT"
+                  small_title_2="ALLERGENS"
                 />
                 <Accordion
-                  title={product.accordion_title_2}
-                  small_title_2={product.small_title_3}
+                  title="PRODUCT INFO"
+                  small_title_2="NUTRITION"
                   ingredients_text={product.product_info}
-                  allergens={product.nutrition}
+                  nutrition={product.nutrition}
                 />
               </div>
               <Stripe />
@@ -176,8 +146,11 @@ const ProductDetails = () => {
                   data-aos-delay="200"
                 >
                   <img
+                    style={{
+                      backgroundColor: `${product.background_color}`,
+                    }}
                     className="main-image"
-                    src={product.sub_image_url}
+                    src={product.main_image_url}
                     alt=""
                   />
                   <img
@@ -218,11 +191,8 @@ const ProductDetails = () => {
                 </div>
               </div>
             </div>
-            {/* <Review
-            review_number={selectedProduct.review_number}
-            review_rate={selectedProduct.review_rate}
-            reviews={selectedProduct.review}
-          /> */}
+
+            <Review filterReviews={filterReviews} />
           </>
         </div>
       )}

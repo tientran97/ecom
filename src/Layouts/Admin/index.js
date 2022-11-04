@@ -5,6 +5,7 @@ import ViewProduct from "./ViewProduct/ViewProduct";
 import { Routes, Route, useNavigate } from "react-router-dom";
 import AdminHome from "./Home/AdminHome";
 import "./index.css";
+import OrderDetail from "./OrderDetail/OrderDetail";
 const Admin = () => {
   const navigate = useNavigate();
   useEffect(() => {
@@ -41,7 +42,7 @@ const Admin = () => {
               </button>
               <button
                 className="route"
-                onClick={() => navigate("/admin/order")}
+                onClick={() => navigate("/admin/orders")}
               >
                 VIEW ORDERS
               </button>
@@ -51,7 +52,8 @@ const Admin = () => {
             <Routes>
               <Route path="/home" element={<AdminHome />} />
               <Route path="/add-products/:id" element={<AddProduct />} />
-              <Route path="/order" element={<Order />} />
+              <Route path="/orders" element={<Order />} />
+              <Route path="/order-details/:id" element={<OrderDetail />} />
               <Route path="/view-product" element={<ViewProduct />} />
             </Routes>
           </div>

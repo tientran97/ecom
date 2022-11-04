@@ -43,7 +43,6 @@ const Real = () => {
                   data-aos="fade-up"
                   data-aos-easing="ease-in-out"
                   data-aos-delay="100"
-                  data-aos-duration="350"
                 >
                   <p>{item.text}</p>
                 </div>

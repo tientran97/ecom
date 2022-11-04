@@ -2,14 +2,9 @@ import React, { useState } from "react";
 import "./CheckOutDetails.css";
 import { CountryDropdown } from "react-country-region-selector";
 import { SAVE_SHIPPING_ADDRESS } from "../../../redux/Slice/checkoutSlice";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import LoadingSpinner from "../../../components/Loader/LoadingSpinner";
 import { useNavigate } from "react-router-dom";
-import {
-  selectCartItems,
-  selectCartTotalAmount,
-  selectCartTotalQuantity,
-} from "../../../redux/Slice/cartSlice";
 import CheckoutSummary from "../CheckoutSummary/CheckoutSummary";
 
 const initialAddressState = {
@@ -23,13 +18,11 @@ const initialAddressState = {
 };
 const CheckoutDetails = () => {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
-
+  const navigate = useNavigate()
   const [isLoading, setIsLoading] = useState(false);
   const [shippingAddress, setShippingAddress] = useState({
     ...initialAddressState,
   });
-
 
   const handleShipping = (e) => {
     const { name, value } = e.target;
@@ -42,8 +35,7 @@ const CheckoutDetails = () => {
     e.preventDefault();
     dispatch(SAVE_SHIPPING_ADDRESS(shippingAddress));
     setShippingAddress({ ...initialAddressState });
-    // navigate('/checkout')
-    console.log(shippingAddress);
+    navigate('/checkout')
   };
   return (
     <>
@@ -134,12 +126,12 @@ const CheckoutDetails = () => {
                 }}
                 required
               />
-              <button type="submit">Submit</button>
+              <button type="submit">Proceed to check out</button>
             </form>
           </div>
           <div className="checkout-container-right">
             <h3>Checkout Summary</h3>
-                <CheckoutSummary/>
+            <CheckoutSummary />
           </div>
         </div>
       </section>

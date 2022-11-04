@@ -10,13 +10,13 @@ import "./Item.css";
 
 import { useDispatch, useSelector } from "react-redux";
 import { ADD_TO_CART } from "../../../../../redux/Slice/cartSlice";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import useFetchCollection from "../../../../../customHooks/useFetchCollection";
 import LoadingSpinner from "../../../../../components/Loader/LoadingSpinner";
 import {
   selectProducts,
   STORE_PRODUCTS,
-} from "../../../../../redux/Slice/productsSlice";
+} from "../../../../../redux/Slice/productSlice";
 const Item = () => {
   const settings = {
     dots: true,
@@ -25,9 +25,7 @@ const Item = () => {
     slidesToShow: 4,
     slidesToScroll: 4,
     autoplay: true,
-    autoplaySpeed: 4000,
-    nextArrow: <ArrowRight />,
-    prevArrow: <ArrowLeft />,
+    autoplaySpeed: 2000,
   };
   AOS.init();
   const navigate = useNavigate();
@@ -80,11 +78,10 @@ const Item = () => {
                     >
                       ADD TO CART
                     </button>
-                    <button
-                      className="button-info"
-                      onClick={() => navigate(`/products/${product.id}`)}
-                    >
-                      INFOMATION
+                    <button className="button-info">
+                      <Link to={`/products-details/${product.id}`}>
+                        INFOMATION
+                      </Link>
                     </button>
                   </div>
                   <div className="slider-container--items_content">

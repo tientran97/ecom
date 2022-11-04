@@ -1,26 +1,26 @@
-import React from 'react'
+import React from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import dataOrigin from "../../../../data/data.origin";
-import './Origin.css'
+import "./Origin.css";
 const Origin = () => {
-     AOS.init();
-     const settings = {
-       dots: true,
-       infinite: true,
-       slidesToShow: 3,
-       slidesToScroll: 3,
-       speed: 1000,
-     };
+  AOS.init();
+  const settings = {
+    dots: true,
+    infinite: true,
+    slidesToShow: 3,
+    slidesToScroll: 3,
+    speed: 1000,
+  };
   return (
     <div className="story-content">
       <div
         className="story-content--title"
         data-aos="fade-up"
-        data-aos-delay="1000"
+        data-aos-delay="300"
       >
         <p>
           STARTED FROM A RESTAURANT <br /> NOW WE’RE HERE
@@ -56,6 +56,6 @@ const Origin = () => {
       </div>
     </div>
   );
-}
+};
 
-export default Origin
+export default Origin;

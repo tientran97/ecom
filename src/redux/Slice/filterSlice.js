@@ -10,6 +10,7 @@ const filterSlice = createSlice({
   reducers: {
     FILTER_BY_CATEGORY(state, action) {
       const { products, category } = action.payload;
+
       let tempProduct = [];
       if (category === "all") {
         tempProduct = products;
@@ -20,10 +21,19 @@ const filterSlice = createSlice({
       }
       state.filteredProducts = tempProduct;
     },
+    FILTER_BY_SEARCH(state, action) {
+      const { products, search } = action.payload;
+      const tempProduct = products.filter(
+        (product) =>
+          product.name.toLowerCase().includes(search.toLowerCase()) ||
+          product.category.toLowerCase().includes(search.toLowerCase())
+      );
+      state.filteredProducts = tempProduct
+    },
   },
 });
 
-export const { FILTER_BY_CATEGORY } = filterSlice.actions;
+export const { FILTER_BY_CATEGORY, FILTER_BY_SEARCH } = filterSlice.actions;
 
-export const selecteFilterProducts = (state) => state.filter.filteredProducts;
+export const selectFilterProducts = (state) => state.filter.filteredProducts;
 export default filterSlice.reducer;

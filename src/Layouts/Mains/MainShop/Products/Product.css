@@ -3,7 +3,6 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  padding-bottom: 100px;
   background: url(https://cdn.shopify.com/s/files/1/0422/2441/8983/t/101/assets/texture_5_2880x.png?v=22199937448886215501642685296)
     top / 100% no-repeat;
 }
@@ -116,7 +115,7 @@
   font-size: 16px;
   width: 700px;
 }
-.filter-content button {
+.filter-content .filterBtn {
   background-color: transparent;
   font-size: 16px;
   font-weight: bold;
@@ -136,7 +135,7 @@
 .filter-content button:hover {
   background-color: #ffd419;
 }
-.filter-content button:focus {
+.filter-content .filterBtn-active {
   background-color: #000;
   color: #fff5cc;
 }

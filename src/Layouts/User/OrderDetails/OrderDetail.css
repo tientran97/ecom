@@ -1,0 +1,51 @@
+.order-details-container {
+  margin: 100px 0px;
+  padding: 0 50px;
+  min-height: 80vh;
+  height: fit-content;
+}
+.order-details-title {
+  font-size: 84px;
+  text-align: center;
+  font-family: Jacques, sans-serif;
+}
+.back-to-orders  {
+  border-radius: 12px;
+  padding: 10px;
+  cursor: url(https://cdn.shopify.com/s/files/1/0475/8759/0310/files/gloved-hand-32x23.png?v=1636957093),
+    pointer;
+  transition: all 0.3s;
+  width: fit-content;
+  font-size: 20px;
+}
+.back-to-orders:hover {
+  background-color: #966d51;
+}
+.order-details-container table {
+  width: 100%;
+}
+.order-details-container tr,
+th,
+td {
+  text-align: center;
+}
+.order-details-container table button {
+  padding: 10px 20px;
+  border-radius: 12px;
+  background-color: #8d9eff;
+  color: #fff;
+  border: none;
+  outline: none;
+  cursor: url(https://cdn.shopify.com/s/files/1/0475/8759/0310/files/gloved-hand-32x23.png?v=1636957093),
+    pointer;
+}
+.order-details-container textarea {
+  padding: 20px;
+  margin: 10px 0px;
+}
+.text-review {
+  width: 400px;
+}
+.rating-start {
+  margin: 0px 20px;
+}

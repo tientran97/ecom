@@ -8,6 +8,7 @@ import { toast } from "react-toastify";
 import LoadingSpinner from "../../../components/Loader/LoadingSpinner";
 import { REMOVE_ACTIVE_USER } from "../../../redux/Slice/authSlice";
 import { useDispatch } from "react-redux";
+import OrderHistory from "../OrderHistory/OrderHistory";
 const AccountDetails = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [displayEmail, setDisplayEmail] = useState("");
@@ -54,14 +55,7 @@ const AccountDetails = () => {
           </div>
         </div>
         <div className="account-main">
-          <div className="account-main-button">
-            <button>PAST ORDERS</button>
-          </div>
-          <div className="account-main-container">
-            <div className="account-main-text">
-              <p>You haven't placed any order yet</p>
-            </div>
-          </div>
+          <OrderHistory />
         </div>
       </section>
     </>

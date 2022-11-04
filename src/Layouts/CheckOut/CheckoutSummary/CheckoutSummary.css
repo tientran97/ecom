@@ -1,0 +1,62 @@
+.summary-container {
+    box-shadow: 3px 4px 16px 0px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  padding: 20px;
+  height: fit-content;  
+}
+.back-to-shopping {
+  cursor: url(https://cdn.shopify.com/s/files/1/0475/8759/0310/files/gloved-hand-32x23.png?v=1636957093),
+    pointer;
+  margin-top: 50px;
+  width: 500px;
+  padding: 20px 50px;
+  background-color: #ffd419;
+  font-size: 24px;
+  font-family: Helvetica, sans-serif;
+  border-radius: 50px;
+  border: 5px solid #000;
+  font-weight: bold;
+  transition: 0.3s all;
+}
+.back-to-shopping:hover {
+  color: #fff;
+  background-color: #000;
+}
+p {
+  padding: 10px 0px;
+  font-size: 18px;
+}
+.subtotal {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.subtotal-title {
+  font-size: 24px;
+  font-weight: bold;
+}
+.subtotal-money {
+  color: orangered;
+  font-size: 40px;
+  text-align: right;
+  margin-right: 50px;
+}
+.product-card {
+  border: 2px solid skyblue;
+  padding: 10px;
+  border-radius: 12px;
+  box-shadow: 3px 4px 16px 0px rgba(0, 0, 0, 0.2);
+  margin-top: 20px;
+}
+.product-card-infomation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.product-card-infomation img {
+  width: 150px;
+  height: 150px;
+}
+.product-card h4 {
+  font-size: 24px;
+}

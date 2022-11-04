@@ -1,0 +1,69 @@
+.payment-wrapper {
+  margin: 100px 0px;
+  padding: 0 100px;
+}
+.payment-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
+  gap: 20px;
+  min-height: 100vh;
+}
+.payment-title {
+  font-family: Jacques, sans-serif;
+  font-size: 84px;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.payment-container-left p {
+  padding: 10px 0px;
+}
+.payment-container-left {
+  height: fit-content;
+  min-height: 60vh;
+  padding: 20px;
+  box-shadow: 3px 4px 16px 0px rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+}
+.payment-container-right {
+  min-height: 60vh;
+  padding: 20px;
+  box-shadow: 3px 4px 16px 0px rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+}
+.payment-container-right {
+  height: fit-content;
+}
+.payment-container-right button {
+  background-color: rgb(37, 37, 192);
+  width: 100%;
+  margin: 20px 0px;
+  padding: 20px 0px;
+  color: #fff;
+  border-radius: 12px;
+  font-size: 24px;
+  font-family: Helvetica, sans-serif;
+  font-weight: bold;
+  cursor: url(https://cdn.shopify.com/s/files/1/0475/8759/0310/files/gloved-hand-32x23.png?v=1636957093),
+    pointer;
+}
+
+.payment-container-right label {
+  display: block;
+  margin: 10px 0;
+  font-size: 24px;
+  font-weight: semi-bold;
+  font-family: Helvetica, sans-serif;
+}
+.payment-container-right input {
+  width: 100%;
+  padding: 10px 20px;
+  border-radius: 6px;
+}
+.payment-detail {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
+  gap: 30px;
+}

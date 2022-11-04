@@ -5,7 +5,7 @@
   background: url(https://cdn.shopify.com/s/files/1/0422/2441/8983/t/101/assets/texture_2_2880x.png?v=51736331721891025011642685296)
     center / 100% no-repeat;
 }
-.real-container--title {
+.real-container--title p {
   font-size: 80px;
   font-family: Jacques, sans-serif;
 }

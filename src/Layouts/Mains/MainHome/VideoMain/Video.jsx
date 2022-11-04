@@ -3,6 +3,7 @@ import { ReactComponent as Chili } from "../../../../images/noun_Chili_3057434.s
 import { ReactComponent as Egg } from "../../../../images/noun_Egg_1775207.svg";
 import { ReactComponent as Potato } from "../../../../images/noun_Potato Chips_3846037.svg";
 import { ReactComponent as Leaves } from "../../../../images/noun_leaves_1840727.svg";
+import Brand_Video from "../../../../images/Brand_Video.mp4";
 import Pile from "../../../../images/pile_600x.png";
 import Stripe from "../../Stripe";
 import AOS from "aos";
@@ -21,24 +22,16 @@ const Video = () => {
           data-aos="fade-up"
           data-aos-anchor-placement="top-bottom"
           data-aos-delay="200"
-          data-aos-duration="1000"
         >
           <p>WE PERFECTED THE SALTED EGG CHIP</p>
         </div>
         <div className="video-container--content_main">
-          <div className="video-container--content_main__video">
-            <video width="1400" height="700" autoPlay loop muted>
-              <source src="https://cdn.shopify.com/s/files/1/0475/8759/0310/files/Brand_Video.mp4?v=1634628457" />
-            </video>
-          </div>
           <div className="video-container--content_main__text">
-            <p
-              className="video-container--content_main__text1"
-              data-aos="fade-right"
-              data-aos-duration="1000"
-            >
-              SALTED EGG
-            </p>
+            <div className="video-container--content_main__text1">
+              <p data-aos="fade-right" data-aos-duration="1000">
+                SALTED EGG
+              </p>
+            </div>
             <p
               className="video-container--content_main__text2"
               data-aos="fade-right"
@@ -79,6 +72,11 @@ const Video = () => {
             >
               CASSAVA ROOT
             </p>
+          </div>
+          <div className="video-container--content_main__video">
+            <video width="1400" height="700" autoPlay loop muted>
+              <source src={Brand_Video} />
+            </video>
           </div>
         </div>
 
