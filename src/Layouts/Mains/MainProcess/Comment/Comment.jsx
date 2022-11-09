@@ -29,7 +29,6 @@ const Comment = () => {
             to the city. They’re in charge of everything now.
           </p>
           <br />
-          <span>- Christopher</span>
         </div>
         <div
           className="comment-2"
@@ -39,7 +38,6 @@ const Comment = () => {
         >
           <p>Get it before you die, or else you're missing out.</p>
           <br />
-          <span>- Angelo</span>
         </div>
         <div
           className="comment-3"
@@ -52,7 +50,6 @@ const Comment = () => {
             is completely covered in salty egg bites. Very crunchy and savory.
           </p>
           <br />
-          <span>- Szee</span>
         </div>
       </div>
     </div>

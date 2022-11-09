@@ -1,51 +1,109 @@
 .account-container {
-  margin-top: 100px;
-  padding: 50px 300px;
+  margin-top: 6.25rem;
+  padding: 3.125rem 20%;
 }
 .account-top {
   background: url(//cdn.shopify.com/s/files/1/0422/2441/8983/t/101/assets/texture_1_2880x.png?v=133829917100679285621642685297)
     left / 100% no-repeat;
-  margin-bottom: 50px;
-}
-.account-top img {
-  height: 200px;
-}
-.account-top {
+  margin-bottom: 3.125rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 1rem;
 }
+.account-top img {
+  height: 12.5rem;
+}
+
 .account-top .infomation {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 20px;
+  gap: 1.25rem;
 }
-.infomation .user-fullname {
+
+.infomation p {
   font-family: Babydoll, sans-serif;
-  font-size: 24px;
-  font-weight: bold;
-  margin-top: 50px;
-}
-.infomation .user-email {
-  font-family: Babydoll, sans-serif;
-  font-size: 30px;
+  font-size: 1.875rem;
   font-weight: bold;
 }
 .log-out p {
-  font-size: 84px;
+  font-size: 5.25rem;
   font-family: Jacques, sans-serif;
 }
 .log-out button {
   font-family: Helvetica, sans-serif;
   font-weight: 800;
   background: url("../../../images/buttonHover.svg") center / 100% no-repeat;
-  height: 100px;
-  width: 200px;
+  height: 6.25rem;
+  width: 12.5rem;
   color: #fff5cc;
-  font-size: 20px;
+  font-size: 1.25rem;
   border: none;
   outline: none;
   cursor: url(https://cdn.shopify.com/s/files/1/0475/8759/0310/files/gloved-hand-32x23.png?v=1636957093),
     pointer;
+}
+.log-in {
+  text-align: center;
+  margin-top: 6.25rem;
+  min-height: 40vh;
+}
+.log-in p {
+  font-size: 5.25rem;
+  margin-left: 5.625rem;
+  font-family: Jacques, sans-serif;
+}
+.log-in button {
+  font-family: Helvetica, sans-serif;
+  font-weight: 800;
+  background: url("../../../images/buttonHover.svg") center / 100% no-repeat;
+  height: 6.25rem;
+  width: 12.5rem;
+  color: #fff5cc;
+  font-size: 1.25rem;
+  border: none;
+  outline: none;
+  cursor: url(https://cdn.shopify.com/s/files/1/0475/8759/0310/files/gloved-hand-32x23.png?v=1636957093),
+    pointer;
+}
+@media screen and (max-width: 1024px) {
+  .account-top {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  .account-container {
+    padding: 3.125rem 5%;
+  }
+
+  .account-top {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  .account-top {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+  }
+  .infomation {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .account-container .log-in p {
+    font-size: 3.75rem;
+    margin-left: 0%;
+  }
 }

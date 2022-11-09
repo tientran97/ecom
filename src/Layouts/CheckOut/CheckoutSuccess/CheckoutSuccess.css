@@ -1,27 +1,36 @@
 .success {
-  margin: 200px 0;
+  margin: 12.5rem 0;
   text-align: center;
 }
 .success p {
-  font-size: 84px;
+  font-size: 5.25rem;
   font-family: Jacques, sans-serif;
 }
 .success button {
   cursor: url(https://cdn.shopify.com/s/files/1/0475/8759/0310/files/gloved-hand-32x23.png?v=1636957093),
     pointer;
-  margin-top: 50px;
-  width: 300px;
-  padding: 20px 50px;
+  margin-top: 3.125rem;
+  width: 18.75rem;
+  padding: 1.25rem 3.125rem;
   background-color: #ffd419;
-  font-size: 24px;
+  font-size: 1.5rem;
   font-family: Helvetica, sans-serif;
-  border-radius: 50px;
-  border: 5px solid #000;
+  border-radius: 3.125rem;
+  border: 0.3125rem solid #000;
   font-weight: bold;
   transition: 0.3s all;
-  margin-bottom: 20px;
+  margin-bottom: 1.25rem;
 }
 .success button:hover {
   color: #fff;
   background-color: #000;
+}
+@media screen and (max-width: 1024px){
+  
+}
+@media screen and (max-width: 768px){
+    
+}
+@media  screen and (max-width: 480px){
+  
 }

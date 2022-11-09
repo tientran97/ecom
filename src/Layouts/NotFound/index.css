@@ -1,28 +1,46 @@
 .notFound-title {
   font-family: Jacques, sans-serif;
-  font-size: 80px;
+  font-size: 5rem;
   text-align: center;
 }
 .notFound-title span {
-  font-size: 150px;
+  font-size: 9.375rem;
 }
 .notFound-container {
-  margin: 100px 0;
+  margin: 6.25rem 0;
 }
 .notFound-container button {
   background: url(../../images/button.svg) center / 100% no-repeat;
-  height: 150px;
-  width: 300px;
+  height: 9.375rem;
+  width: 18.75rem;
   outline: none;
   border: none;
   font-family: Helvetica, sans-serif;
-  font-size: 20px;
+  font-size: 1.25rem;
   font-weight: bold;
-  margin-left: 600px;
+  margin-left: 40%;
 }
 .notFound-container button:hover {
   background: url(../../images/buttonHover.svg) center / 100% no-repeat;
   color: #ffd419;
   cursor: url(https://cdn.shopify.com/s/files/1/0475/8759/0310/files/gloved-hand-32x23.png?v=1636957093),
     pointer;
+}
+@media screen and (max-width: 1024px) {
+  .notFound-container button {
+    margin-left: 35%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .notFound-container button {
+    margin-left: 30%;
+  }
+}
+@media screen and (max-width: 480px) {
+   .notFound-container button {
+    margin-left: 15%;
+  }
+  .notFound-title span {
+  font-size: 5rem;
+}
 }

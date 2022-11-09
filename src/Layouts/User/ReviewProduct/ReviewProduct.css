@@ -1,44 +1,55 @@
 .review-product-wrapper {
-  padding: 0 200px;
+  padding: 0 12.5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 100px;
+  margin-top: 6.25rem;
   text-align: center;
 }
 .review-product-title {
   font-family: Jacques, san-serif;
-  font-size: 84px;
+  font-size: 5.25rem;
 }
 .review-product-container {
-  margin-top: 20px;
-  box-shadow: 3px 4px 16px 0px rgba(0, 0, 0, 0.2);
-  padding: 20px;
-  border-radius: 8px;
+  margin-top: 1.25rem;
+  box-shadow: 0.1875rem 0.25rem 1rem 0rem rgba(0, 0, 0, 0.2);
+  padding: 1.25rem;
+  border-radius: 0.5rem;
 }
 .review-product-container p {
-  font-size: 24px;
+  font-size: 1.5rem;
 }
 .review-product-container img {
-  width: 300px;
+  width: 18.75rem;
 }
 .review-product-container label {
   display: block;
-  padding: 10px 0px;
+  padding: 0.625rem 0rem;
 }
 .review-product-container button {
   display: block;
   width: 100%;
   background-color: #8d9eff;
-  margin-top: 20px;
+  margin-top: 1.25rem;
   color: #fff;
-  font-size: 20px;
-  padding: 10px 0;
-  border-radius: 12px;
+  font-size: 1.25rem;
+  padding: 0.625rem 0;
+  border-radius: 0.75rem;
+  cursor: url(https://cdn.shopify.com/s/files/1/0475/8759/0310/files/gloved-hand-32x23.png?v=1636957093),
+    pointer;
 }
 .review-product-container textarea {
   width: 100%;
-  padding: 20px;
-  font-size: 20px;
+  padding: 1.25rem;
+  font-size: 1.25rem;
+}
+@media screen and (max-width: 1024px){
+  
+}
+@media screen and (max-width: 768px){
+    
+}
+@media  screen and (max-width: 480px){
+  
 }

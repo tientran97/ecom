@@ -1,20 +1,20 @@
 .summary-container {
-    box-shadow: 3px 4px 16px 0px rgba(0, 0, 0, 0.2);
-  border-radius: 8px;
-  padding: 20px;
-  height: fit-content;  
+  box-shadow: 0.1875rem 0.25rem 1rem 0rem rgba(0, 0, 0, 0.2);
+  border-radius: 0.5rem;
+  padding: 1.25rem;
+  height: fit-content;
 }
 .back-to-shopping {
   cursor: url(https://cdn.shopify.com/s/files/1/0475/8759/0310/files/gloved-hand-32x23.png?v=1636957093),
     pointer;
-  margin-top: 50px;
-  width: 500px;
-  padding: 20px 50px;
+  margin-top: 3.125rem;
+  width: 31.25rem;
+  padding: 1.25rem 3.125rem;
   background-color: #ffd419;
-  font-size: 24px;
+  font-size: 1.5rem;
   font-family: Helvetica, sans-serif;
-  border-radius: 50px;
-  border: 5px solid #000;
+  border-radius: 3.125rem;
+  border: 0.3125rem solid #000;
   font-weight: bold;
   transition: 0.3s all;
 }
@@ -23,8 +23,8 @@
   background-color: #000;
 }
 p {
-  padding: 10px 0px;
-  font-size: 18px;
+  padding: 0.625rem 0rem;
+  font-size: 1.125rem;
 }
 .subtotal {
   display: flex;
@@ -32,21 +32,21 @@ p {
   align-items: center;
 }
 .subtotal-title {
-  font-size: 24px;
+  font-size: 1.5rem;
   font-weight: bold;
 }
 .subtotal-money {
   color: orangered;
-  font-size: 40px;
+  font-size: 2.5rem;
   text-align: right;
-  margin-right: 50px;
+  margin-right: 3.125rem;
 }
 .product-card {
-  border: 2px solid skyblue;
-  padding: 10px;
-  border-radius: 12px;
-  box-shadow: 3px 4px 16px 0px rgba(0, 0, 0, 0.2);
-  margin-top: 20px;
+  border: 0.125rem solid skyblue;
+  padding: 0.625rem;
+  border-radius: 0.75rem;
+  box-shadow: 0.1875rem 0.25rem 1rem 0rem rgba(0, 0, 0, 0.2);
+  margin-top: 1.25rem;
 }
 .product-card-infomation {
   display: flex;
@@ -54,9 +54,15 @@ p {
   align-items: center;
 }
 .product-card-infomation img {
-  width: 150px;
-  height: 150px;
+  width: 9.375rem;
+  height: 9.375rem;
 }
 .product-card h4 {
-  font-size: 24px;
+  font-size: 1.5rem;
+}
+@media screen and (max-width: 1024px) {
+}
+@media screen and (max-width: 768px) {
+}
+@media screen and (max-width: 480px) {
 }

@@ -1,27 +1,27 @@
 .compare-title p {
-  font-size: 80px;
+  font-size: 5rem;
   font-family: Jacques, sans-serif;
   text-align: center;
-  margin: 50px 0;
+  margin: 3.125rem 0;
 }
 .compare-background img {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  height: 500px;
+  height: 31.25rem;
   opacity: 0.5;
 }
 .compare-container {
   position: relative;
-  font-size: 18px;
-  padding-bottom: 50px;
+  font-size: 1.125rem;
+  padding-bottom: 3.125rem;
   background: url(https://cdn.shopify.com/s/files/1/0422/2441/8983/t/101/assets/texture_5_2880x.png?v=22199937448886215501642685296)
     center / 100% no-repeat;
 }
 .compare-container p {
   font-family: Jacques, sans-serif;
-  font-size: 60px;
-  margin-bottom: 30px;
+  font-size: 3.75rem;
+  margin-bottom: 1.875rem;
 }
 .compare-text--left {
   font-family: Babydoll, sans-serif;
@@ -29,10 +29,10 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 20px;
+  gap: 1.25rem;
   position: absolute;
-  bottom: 50px;
-  left: 500px;
+  bottom: 3.125rem;
+  left: 31.25rem;
 }
 .compare-text--right {
   font-family: Babydoll, sans-serif;
@@ -41,8 +41,44 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 20px;
+  gap: 1.25rem;
   position: absolute;
-  bottom: 50px;
-  right: 420px;
+  bottom: 3.125rem;
+  right: 26.25rem;
+}
+@media screen and (max-width: 1024px) {
+  .compare-text--left {
+    bottom: 3.125rem;
+    left: 15rem;
+    position: absolute;
+  }
+  .compare-text--right {
+    bottom: 3.125rem;
+    right: 10rem;
+    position: absolute;
+  }
+}
+@media screen and (max-width: 768px) {
+}
+@media screen and (max-width: 480px) {
+  .compare-text--left {
+    gap: 1.25rem;
+    position: absolute;
+    bottom: 3.125rem;
+    left: 3rem;
+  }
+  .compare-text--left span {
+    width: 9rem;
+    text-align: center;
+  }
+  .compare-text--right {
+    gap: 1.25rem;
+    position: absolute;
+    bottom: 3.125rem;
+    right: 0rem;
+  }
+  .compare-text--right span {
+    width: 12rem;
+    text-align: center;
+  }
 }

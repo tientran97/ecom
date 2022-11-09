@@ -24,15 +24,39 @@ const CheckOut = () => {
   const shippingAddress = useSelector(selectShippingAddress);
 
   const [isLoading, setIsLoading] = useState(false);
+
+  const [serialNumber, setSerialNumber] = useState(0);
+  const [name, setName] = useState("");
+  const [expired, setExpired] = useState("");
+  const [CVC, setCVC] = useState(0);
+
+  const serialNumberRegex = /\d{4}[- ]\d{4}[- ]\d{4}[- ]\d{4}/g;
+  const nameonCardRegex =
+    /(^[A-Z]{2,16})([ ]{0,1})([A-Z]{2,16})?([ ]{0,1})?([A-Z]{2,16})?([ ]{0,1})?([A-Z]{2,16})/g;
+  const expiredRegex = /^(0[1-9]|1[0-2])\/?([0-9]{2})$/g;
+  const CVCRegex = /^[0-9]{3,4}$/g;
   const handlePayment = (e) => {
     e.preventDefault();
     setIsLoading(true);
-
-    setTimeout(() => {
-      saveOrder();
-      toast.success("Purchase completed!");
-      navigate("/checkout-success");
-    }, 3000);
+    if (!serialNumber.match(serialNumberRegex)) {
+      toast.error("Invalid serial number");
+      setIsLoading(false);
+    } else if (!name.match(nameonCardRegex)) {
+      setIsLoading(false);
+      toast.error("Invalid name");
+    } else if (!expired.match(expiredRegex)) {
+      setIsLoading(false);
+      toast.error("Invalid expired date");
+    } else if (!CVC.match(CVCRegex)) {
+      setIsLoading(false);
+      toast.error("Invalid CVC Number");
+    } else {
+      setTimeout(() => {
+        saveOrder();
+        toast.success("Purchase completed!");
+        navigate("/checkout-success");
+      }, 3000);
+    }
   };
 
   const saveOrder = () => {
@@ -57,6 +81,9 @@ const CheckOut = () => {
       toast.error(error.message);
     }
   };
+  useEffect(() => {
+    window.scrollTo({ top: 0 });
+  }, []);
 
   return (
     <>
@@ -72,17 +99,41 @@ const CheckOut = () => {
             <h2>Payment</h2>
             <form onSubmit={handlePayment}>
               <label>Serial Number</label>
-              <input type="number" placeholder="1234 1234 1234 1234" required />
+              <input
+                type="text"
+                placeholder="1234-1234-1234-1234"
+                required
+                value={serialNumber}
+                onChange={(e) => setSerialNumber(e.target.value)}
+              />
               <label>Name on Card: </label>
-              <input type="text" placeholder="Ex. John Doe" required />
+              <input
+                type="text"
+                placeholder="Ex. JOHN DOE"
+                required
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+              />
               <div className="payment-detail">
                 <div>
                   <label>Expiration Date:</label>
-                  <input type="text" placeholder="MM/YY" required />
+                  <input
+                    type="text"
+                    placeholder="MM/YY"
+                    required
+                    value={expired}
+                    onChange={(e) => setExpired(e.target.value)}
+                  />
                 </div>
                 <div>
                   <label>CVC:</label>
-                  <input type="number" placeholder="CVC" required />
+                  <input
+                    type="text"
+                    placeholder="CVC"
+                    required
+                    value={CVC}
+                    onChange={(e) => setCVC(e.target.value)}
+                  />
                 </div>
               </div>
               <button type="submit">Pay now</button>

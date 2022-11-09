@@ -1,54 +1,54 @@
 .cartTotal-container {
   background: url(https://cdn.shopify.com/s/files/1/0422/2441/8983/t/101/assets/cart_summary_800x.png?v=141979644661353595901642685295)
     center / 100% no-repeat;
-  height: 650px;
-  width: 500px;
-  padding: 40px;
+  height: 40.625rem;
+  width: 31.25rem;
+  padding: 2.5rem;
 }
 .free-delivery {
   background: url(https://cdn.shopify.com/s/files/1/0422/2441/8983/t/101/assets/cart_summary_free_delivery_400x.png?v=129436690060137931251642685297)
     center / 100% no-repeat;
-  width: 400px;
-  height: 150px;
+  width: 25rem;
+  height: 9.375rem;
   position: relative;
 }
 .cartTotal-container .title,
 .quantity {
-  font-size: 20px;
+  font-size: 1.25rem;
   font-family: Babydoll, sans-serif;
 }
 .quantity span {
-  font-size: 30px;
+  font-size: 1.875rem;
 }
 .cartTotal-container .totalAmount {
-  font-size: 80px;
+  font-size: 5rem;
   text-align: left;
   font-family: Babydoll, sans-serif;
 }
 
 .free-delivery p {
   position: absolute;
-  top: 50px;
-  left: 50px;
+  top: 3.125rem;
+  left: 3.125rem;
   text-align: center;
   font-family: Babydoll, sans-serif;
-  font-size: 30px;
+  font-size: 1.875rem;
   font-weight: bold;
-  width: 300px;
+  width: 18.75rem;
 }
-.delivery {
+.cartTotal-container .delivery {
   font-family: Babydoll, sans-serif;
-  font-size: 20px;
+  font-size: 1.25rem;
 }
 .cartTotal-container button {
   background: url(../../../../images/buttonHover.svg) center / 100% no-repeat;
   outline: none;
   border: none;
-  height: 100px;
-  width: 250px;
-  margin-left: 80px;
+  height: 6.25rem;
+  width: 15.625rem;
+  margin-left: 5rem;
   transition: 0.3s;
-  font-size: 20px;
+  font-size: 1.25rem;
   color: #ffd419;
   font-weight: bold;
   font-family: Helvetica, sans-serif;
@@ -61,10 +61,10 @@
 }
 .cartTotal-container .term {
   font-family: Babydoll, sans-serif;
-  font-size: 18px;
+  font-size: 1.125rem;
   text-align: center;
-  width: 300px;
-  margin-left: 50px;
+  width: 18.75rem;
+  margin-left: 3.125rem;
 }
 .cartTotal-container .term a {
   text-decoration: underline;
@@ -77,8 +77,8 @@
   color: #fff;
   background-color: #000;
 }
-.deposit-card {
-  padding: 15px 0px;
+.cartTotal-container .deposit-card {
+  padding: 0.9375rem 0rem;
   display: flex;
   justify-content: space-evenly;
 }
@@ -86,7 +86,55 @@
   font-family: Babydoll, sans-serif;
   text-align: center;
 }
-.totalAmount span {
+.cartTotal-container .totalAmount span {
   font-family: Jacques, sans-serif;
-  margin-left: 10px;
+  margin-left: 0.625rem;
+}
+@media screen and (max-width: 1024px) {
+   .cartTotal-container {
+    margin-left: 25%;
+    margin-bottom: 5rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  .cartTotal-container {
+    margin-left: 20%;
+  }
+}
+@media screen and (max-width: 480px) {
+  .cartTotal-container {
+    margin-left: 3%;
+  }
+  .cartTotal-container {
+    background: url(https://cdn.shopify.com/s/files/1/0422/2441/8983/t/101/assets/cart_summary_800x.png?v=141979644661353595901642685295)
+      center / 100% no-repeat;
+    height: 40.625rem;
+    width: 25rem;
+    padding: 2.5rem;
+  }
+  .cartTotal-container .quantity {
+    width: 15rem;
+  }
+  .free-delivery {
+    width: 20rem;
+    height: 5rem;
+  }
+  .free-delivery p {
+    font-size: 1.5rem;
+  }
+  .free-delivery p {
+    position: absolute;
+    top: 0.5rem;
+    left: 3.125rem;
+    width: 15rem;
+  }
+  .cartTotal-container button {
+    margin-left: 2rem;
+  }
+  .cartTotal-container .term {
+    margin-left: 1.5rem;
+  }
+  .cartTotal-container .totalAmount {
+    font-size: 3.125rem;
+  }
 }

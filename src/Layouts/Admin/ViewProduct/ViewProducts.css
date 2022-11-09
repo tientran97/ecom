@@ -5,9 +5,9 @@
 
 }
 .all-products-table  input {
-    width: 300px;
-    padding: 10px 10px 10px 30px;
-    margin-bottom: 20px;
+    width: 18.75rem;
+    padding: 0.625rem 0.625rem 0.625rem 1.875rem;
+    margin-bottom: 1.25rem;
 }
 .all-products-table .search {
     position: relative;
@@ -15,23 +15,23 @@
 .all-products-table i {
     position: absolute;
     z-index: 1;
-    top: 10px;
-    left: 10px;
+    top: 0.625rem;
+    left: 0.625rem;
 }
 .table-row-name {
-    width: 500px;
+    width: 31.25rem;
 }
 .table-row-category {
-    padding:0px 20px;
+    padding:0rem 1.25rem;
 }
 .view-product-icon-edit {
     cursor: pointer;
-    width: 30px;
-    margin:0px 10px;
+    width: 1.875rem;
+    margin:0rem 0.625rem;
     color: green
 }.view-product-icon-delete{
     color: red;
-    width: 30px;
+    width: 1.875rem;
 
     cursor: pointer;
 }

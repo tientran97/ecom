@@ -1,22 +1,22 @@
 .order-details-container {
-  margin: 100px 0px;
-  padding: 0 50px;
+  margin: 6.25rem 0rem;
+  padding: 0 3.125rem;
   min-height: 80vh;
   height: fit-content;
 }
 .order-details-title {
-  font-size: 84px;
+  font-size: 5.25rem;
   text-align: center;
   font-family: Jacques, sans-serif;
 }
 .back-to-orders  {
-  border-radius: 12px;
-  padding: 10px;
+  border-radius: 0.75rem;
+  padding: 0.625rem;
   cursor: url(https://cdn.shopify.com/s/files/1/0475/8759/0310/files/gloved-hand-32x23.png?v=1636957093),
     pointer;
   transition: all 0.3s;
   width: fit-content;
-  font-size: 20px;
+  font-size: 1.25rem;
 }
 .back-to-orders:hover {
   background-color: #966d51;
@@ -30,8 +30,8 @@ td {
   text-align: center;
 }
 .order-details-container table button {
-  padding: 10px 20px;
-  border-radius: 12px;
+  padding: 0.625rem 1.25rem;
+  border-radius: 0.75rem;
   background-color: #8d9eff;
   color: #fff;
   border: none;
@@ -40,12 +40,25 @@ td {
     pointer;
 }
 .order-details-container textarea {
-  padding: 20px;
-  margin: 10px 0px;
+  padding: 1.25rem;
+  margin: 0.625rem 0rem;
 }
 .text-review {
-  width: 400px;
+  width: 25rem;
 }
 .rating-start {
-  margin: 0px 20px;
+  width: 18.75rem;
+}@media screen and (max-width: 1024px){
+  
+}
+@media screen and (max-width: 768px){
+    
+}
+@media  screen and (max-width: 480px){
+  .order-details-title {
+    font-size: 3.75rem;
+  }
+  .order-details-price {
+    display: none;
+  }
 }

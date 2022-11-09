@@ -1,7 +1,7 @@
 .collab-container {
   min-height: 100vh;
   height: fit-content;
-  padding: 50px 0;
+  padding: 3.125rem 0;
   width: 100%;
   background: #000
     url(https://cdn.shopify.com/s/files/1/0422/2441/8983/t/101/assets/texture_6_2880x.png?v=7659131597866323551642685297)
@@ -9,48 +9,109 @@
 }
 .collab-title {
   font-family: Jacques, sans-serif;
-  font-size: 80px;
+  font-size: 5rem;
   color: #ffd419;
   text-align: center;
-  padding: 100px 0 50px 0;
+  padding: 6.25rem 0 3.125rem 0;
 }
 .collab-title span {
-  padding: 0 10px;
+  padding: 0 0.625rem;
 }
 .collab-content {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 100px;
-  padding: 0 70px;
-  
+  gap: 6.25rem;
+  padding: 0 4.375rem;
 }
 .collab-content--item {
   display: flex;
   flex-direction: column;
-  height: 600px;
+  height: 37.5rem;
   color: #ffd419;
-  
 }
 .collab-content--item_image {
   mask-image: url(../../../../images/Mask.svg);
   mask-repeat: no-repeat;
-  mask-size: 400px 400px;
+  mask-size: 25rem 25rem;
   mask-position: center center;
   position: relative;
   z-index: 5;
-  
-}.collab-content--item span {
-  font-size: 30px;
+}
+.collab-content--item span {
+  font-size: 1.875rem;
   font-family: Jacques, sans-serif;
-  padding: 30px 0 10px;
+  padding: 1.875rem 0 0.625rem;
 }
 .collab-content--item p {
   font-family: Babydoll, sans-serif;
-  font-size: 16px;
+  font-size: 1rem;
 }
 .collab-content--item img {
-  height: 400px;
-   cursor: url(https://cdn.shopify.com/s/files/1/0475/8759/0310/files/gloved-hand-32x23.png?v=1636957093),
+  height: 25rem;
+  cursor: url(https://cdn.shopify.com/s/files/1/0475/8759/0310/files/gloved-hand-32x23.png?v=1636957093),
     pointer;
+}
+@media screen and (max-width: 1024px) {
+}
+@media screen and (max-width: 768px) {
+  .collab-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 6.25rem;
+    padding: 0 4.375rem;
+  }
+  .collab-content--item {
+    display: flex;
+    flex-direction: column;
+    height: 37.5rem;
+    color: #ffd419;
+  }
+  .collab-content--item img {
+    height: 25rem;
+    width: 40rem;
+  }
+  .collab-content--item_image {
+    mask-size: 30rem 25rem;
+    mask-position: center center;
+    position: relative;
+    z-index: 5;
+  }
+  .collab-content--item span {
+    padding: 1.875rem 0 0.625rem;
+    margin-left: 40%;
+  }
+  .collab-content--item p {
+    text-align: center;
+    width: 30rem;
+    margin-left: 15%;
+  }
+}
+@media screen and (max-width: 480px) {
+  .collab-title {
+    font-size: 3.75rem;
+    padding: 1%;
+  }
+  .collab-content--item {
+    height: 20rem;
+    color: #ffd419;
+    margin-bottom: 5rem;
+  }
+  .collab-content--item img {
+    height: 15rem;
+    width: 25rem;
+  }
+  .collab-content--item_image {
+    mask-size: 20rem 15rem;
+  }
+  .collab-content--item p {
+    text-align: center;
+    width: 20rem;
+    margin-left: 10%;
+  }
+ .collab-content--item span {
+    margin-left: 30%;
+  }
 }

@@ -78,15 +78,18 @@ const OrderDetail = () => {
             <ul>
               <b>Shipping Address</b>:
               <br />
+              <li>Customer Name : {orders.shippingAddress.name}</li>
+              <br />
               <li> Address: {orders.shippingAddress.address}</li>
               <br />
-              <li>State: {orders.shippingAddress.address}</li>
+              <li>City: {orders.shippingAddress.city}</li>
+              <br />
+              <li>State: {orders.shippingAddress.state}</li>
               <br />
               <li>Country: {orders.shippingAddress.country}</li>
               <br />
               <li>Phone Number : {orders.shippingAddress.phone_number}</li>
               <br />
-              <li>Customer Name : {orders.shippingAddress.name}</li>
             </ul>
             <br />
             <table>

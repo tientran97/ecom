@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./ProductDetails.css";
 import Accordion from "./AccordationProduct";
-import Stripe from "../Mains/Stripe";
+import Line from "../Mains/Stripe";
 import { useParams } from "react-router-dom";
 import LoadingSpinner from "../../components/Loader/LoadingSpinner";
 
@@ -26,9 +26,8 @@ const ProductDetails = () => {
   //get product from custom hook
   const { document } = useFetchDocument("products", id);
   const { data } = useFetchCollection("reviews");
-  
+
   const filterReviews = data?.filter((review) => review.productID === id);
-  console.log("🚀 ~ file: ProductDetails.jsx ~ line 32 ~ ProductDetails ~ filterReviews", filterReviews)
 
   useEffect(() => {
     setProduct(document);
@@ -117,7 +116,7 @@ const ProductDetails = () => {
                         src="https://cdn.shopify.com/s/files/1/0422/2441/8983/files/Real-Salted-Egg--min_720x.png?v=1640593101"
                         alt="logo"
                       />
-                      <span>Real Salted Egg</span>
+                      <span>Salted Egg</span>
                     </div>
                   </div>
                 </div>
@@ -137,7 +136,7 @@ const ProductDetails = () => {
                   nutrition={product.nutrition}
                 />
               </div>
-              <Stripe />
+              <Line />
               <div className="productDetails-bot">
                 <div
                   className="productDetails-bot-image-1"

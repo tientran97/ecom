@@ -6,12 +6,18 @@ import { auth } from "../../../firebase/config";
 import { signOut, onAuthStateChanged } from "firebase/auth";
 import { toast } from "react-toastify";
 import LoadingSpinner from "../../../components/Loader/LoadingSpinner";
-import { REMOVE_ACTIVE_USER } from "../../../redux/Slice/authSlice";
-import { useDispatch } from "react-redux";
+import {
+  REMOVE_ACTIVE_USER,
+  selectIsLoggedIn,
+  selectUserName,
+} from "../../../redux/Slice/authSlice";
+import { useDispatch, useSelector } from "react-redux";
 import OrderHistory from "../OrderHistory/OrderHistory";
 const AccountDetails = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [displayEmail, setDisplayEmail] = useState("");
+  const displayUserName = useSelector(selectUserName);
+  const isLoggedIn = useSelector(selectIsLoggedIn);
   const navigate = useNavigate();
   const dispatch = useDispatch();
   useEffect(() => {
@@ -28,36 +34,46 @@ const AccountDetails = () => {
     setIsLoading(true);
     signOut(auth)
       .then(() => {
-        setIsLoading(false);
         dispatch(REMOVE_ACTIVE_USER());
+        navigate("/accounts/login");
         toast.info("LOGGED OUT");
-        navigate("/");
+        setIsLoading(false);
       })
       .catch((error) => {
         setIsLoading(false);
         toast.danger(error.message);
       });
   };
+
   return (
     <>
       {isLoading && <LoadingSpinner />}
-      <section className="account-container">
-        <div className="account-top">
-          <div className="infomation">
-            <img src={Avatar} alt="avatar" />
-            <div>
-              <p className="user-email">{displayEmail}</p>
+      {isLoggedIn ? (
+        <section className="account-container">
+          <div className="account-top">
+            <div className="infomation">
+              <img src={Avatar} alt="avatar" />
+
+              <div>
+                <p className="user-email">{displayEmail}</p>
+                <p className="user-email">{displayUserName}</p>
+              </div>
+            </div>
+            <div className="log-out">
+              <p>ACCOUNT</p>
+              <button onClick={() => logOutUser()}>LOG OUT</button>
             </div>
           </div>
-          <div className="log-out">
-            <p>ACCOUNT</p>
-            <button onClick={() => logOutUser()}>LOG OUT</button>
+          <div className="account-main">
+            <OrderHistory />
           </div>
+        </section>
+      ) : (
+        <div className="log-in">
+          <p>PLEASE LOG IN FIRST</p>
+          <button onClick={() => navigate("/accounts/login")}>LOG IN</button>
         </div>
-        <div className="account-main">
-          <OrderHistory />
-        </div>
-      </section>
+      )}
     </>
   );
 };

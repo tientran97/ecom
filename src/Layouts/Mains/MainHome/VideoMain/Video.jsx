@@ -27,15 +27,16 @@ const Video = () => {
         </div>
         <div className="video-container--content_main">
           <div className="video-container--content_main__text">
-            <div className="video-container--content_main__text1">
-              <p data-aos="fade-right" data-aos-duration="1000">
-                SALTED EGG
-              </p>
-            </div>
+            <p
+              className="video-container--content_main__text1"
+              data-aos="fade-right"
+              data-aos-duration="1000"
+            >
+              SALTED EGG
+            </p>
             <p
               className="video-container--content_main__text2"
               data-aos="fade-right"
-              data-aos-delay="200"
               data-aos-duration="1000"
             >
               CURRY LEAVES
@@ -67,14 +68,14 @@ const Video = () => {
             <p
               className="video-container--content_main__text6"
               data-aos="fade-right"
-              data-aos-delay="400"
+              data-aos-delay="350"
               data-aos-duration="1000"
             >
               CASSAVA ROOT
             </p>
           </div>
           <div className="video-container--content_main__video">
-            <video width="1400" height="700" autoPlay loop muted>
+            <video autoPlay loop muted>
               <source src={Brand_Video} />
             </video>
           </div>

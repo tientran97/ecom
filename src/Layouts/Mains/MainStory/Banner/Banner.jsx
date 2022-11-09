@@ -8,7 +8,10 @@ const BannerStory = () => {
   return (
     <div className="story-banner">
       <img src={Banner} alt="banner" />
-      <p>OUR ORIGIN STORY</p>
+      <p>
+        OUR ORIGIN <br />
+        STORY
+      </p>
       <span>WHO WE ARE</span>
     </div>
   );

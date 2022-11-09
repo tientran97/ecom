@@ -49,10 +49,10 @@ const Testimonial = () => {
           </div>
         </div>
         <div className="testimonial-container--character">
-          <div className="testimonial-container--left" data-aos="fade-up">
+          <div className="testimonial-container--left" >
             <img  src={Character} alt="character" />
           </div>
-          <div className="testimonial-container--right" data-aos="fade-up">
+          <div className="testimonial-container--right" >
             <img src={Character} alt="character" />
           </div>
           <Fly className="testimonial-container--bottom" />

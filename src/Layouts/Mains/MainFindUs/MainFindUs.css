@@ -1,31 +1,31 @@
 .singapore-container {
-  padding: 50px 20px;
+  padding: 3.125rem 1.25rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 50px;
+  gap: 3.125rem;
 }
 .singapore-title {
-  font-size: 80px;
+  font-size: 5rem;
   font-family: Jacques, sans-serif;
   text-align: center;
-  padding: 50px 0;
+  padding: 3.125rem 0;
 }
 .singapore-container--content {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 30px;
+  gap: 1.875rem;
 }
 .singapore-item--title {
-  font-size: 30px;
+  font-size: 1.875rem;
   font-weight: bold;
 }
 .singapore-item img {
-  height: 340px;
-  padding: 20px 0;
+  height: 21.25rem;
+  padding: 1.25rem 0;
 }
 .singapore-item {
   display: flex;
@@ -35,21 +35,33 @@
 }
 .singapore-item--text {
   background-color: #ffd419;
-  border: 5px solid #000;
-  height: 110px;
-  width: 470px;
-  padding: 10px 50px;
-  border-radius: 20px;
+  border: 0.3125rem solid #000;
+  height: 6.875rem;
+  width: 29.375rem;
+  padding: 0.625rem 3.125rem;
+  border-radius: 1.25rem;
   text-align: center;
   font-weight: bold;
 }
 .singapore-item--text span {
-  font-size: 20px;
+  font-size: 1.25rem;
 }
 .singapore-item--text p {
-  padding: 10px 0;
-  font-size: 14px;
+  padding: 0.625rem 0;
+  font-size: 0.875rem;
 }
 .retail {
   width: 100%;
+}
+@media screen and (max-width: 1024px) {
+}
+@media screen and (max-width: 768px) {
+}
+@media screen and (max-width: 480px) {
+  .singapore-title {
+    font-size: 3.75rem;
+  }
+  .singapore-item--text {
+    width: 25rem;
+  }
 }

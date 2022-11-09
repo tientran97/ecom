@@ -103,9 +103,9 @@ const Master = () => {
           </div>
           <div className="character1">
             <img
-              data-aos="fade-up"
-              data-aos-easing="ease-in-out"
-              data-aos-delay="100"
+              // data-aos="fade-up"
+              // data-aos-easing="ease-in-out"
+              // data-aos-delay="100"
               src="https://cdn.shopify.com/s/files/1/0422/2441/8983/files/Mascot-1_1_200x.png?v=1637648190"
               alt="character1"
             />
@@ -131,7 +131,6 @@ const Master = () => {
           <div className="character4">
             <img src={Character} alt="character" />
           </div>
-          <div className="dot"></div>
         </div>
       </div>
     </section>

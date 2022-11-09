@@ -42,7 +42,7 @@ const CartTotal = () => {
       navigate("/accounts/login");
     }
   };
-  const distance = Number(30 - cartTotalAmount).toFixed(2);
+  const distance = Number(40 - cartTotalAmount).toFixed(2);
   return (
     <div className="cartTotal-container">
       <p className="quantity">

@@ -5,6 +5,7 @@ import {
   GoogleAuthProvider,
   signInWithPopup,
   signInWithEmailAndPassword,
+  FacebookAuthProvider,
 } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 import Loading from "../../../components/Loader/LoadingSpinner";
@@ -24,7 +25,7 @@ const Login = () => {
     if (previousURL.includes("cart")) {
       navigate("/cart");
     } else {
-      navigate("/");
+      navigate("/accounts/profile");
     }
   };
 
@@ -34,10 +35,10 @@ const Login = () => {
     setIsLoading(true);
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
-        setIsLoading(false);
         const user = userCredential.user;
         toast.success("Login successfully");
         redirectUser();
+        setIsLoading(false);
       })
       .catch((error) => {
         setIsLoading(false);
@@ -62,16 +63,35 @@ const Login = () => {
         toast.error(error.customData.email);
       });
   };
-
+  const provider2 = new FacebookAuthProvider();
+  const signInWithFacebook = () => {
+    setIsLoading(true);
+    signInWithPopup(auth, provider2)
+      .then((result) => {
+        const user = result.user;
+        const credential = FacebookAuthProvider.credentialFromResult(result);
+        const accessToken = credential.accessToken;
+        toast.success("Login successfully");
+        setIsLoading(false);
+        redirectUser();
+      })
+      .catch((error) => {
+        setIsLoading(false);
+        toast.error(error.customData.email);
+      });
+  };
   return (
     <>
       {isLoading && <Loading />}
-      <div className="register-wrapper">
-        <div className="register-container">
+      <div className="login-wrapper">
+        <div className="login-container">
           <>
-            <div className="register-container-top">
+            <div className="login-container-top">
               <p className="title">LOGIN VIA</p>
-              <div className="facebook-box">
+              <div
+                className="facebook-box"
+                onClick={() => signInWithFacebook()}
+              >
                 <span>Sign in with Facebook</span>
                 <i className="fa-brands fa-facebook-f"></i>
               </div>
@@ -82,14 +102,14 @@ const Login = () => {
             </div>
             <p className="or-line">OR</p>
 
-            <div className="register-container-bot">
+            <div className="login-container-bot">
               <p className="title">LOGIN</p>
               <form onSubmit={loginInUser}>
                 <div className="form-item">
                   <label htmlFor="email">EMAIL :</label>
                   <input
-                    autoComplete="off"
                     required
+                    autoComplete="off"
                     id="email"
                     name="email"
                     type="text"
@@ -101,8 +121,8 @@ const Login = () => {
                 <div className="form-item">
                   <label htmlFor="password">PASSWORD :</label>
                   <input
-                    autoComplete="off"
                     required
+                    autoComplete="off"
                     id="password"
                     name="password"
                     type="password"

@@ -1,36 +1,36 @@
 .payment-wrapper {
-  margin: 100px 0px;
-  padding: 0 100px;
+  margin: 6.25rem 0rem;
+  padding: 0 2%;
 }
 .payment-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: 1fr;
-  gap: 20px;
+  gap: 1.25rem;
   min-height: 100vh;
 }
 .payment-title {
   font-family: Jacques, sans-serif;
-  font-size: 84px;
+  font-size: 5.25rem;
   text-align: center;
-  margin-bottom: 50px;
+  margin-bottom: 3.125rem;
 }
 
 .payment-container-left p {
-  padding: 10px 0px;
+  padding: 0.625rem 0rem;
 }
 .payment-container-left {
   height: fit-content;
   min-height: 60vh;
-  padding: 20px;
-  box-shadow: 3px 4px 16px 0px rgba(0, 0, 0, 0.2);
-  border-radius: 12px;
+  padding: 1.25rem;
+  box-shadow: 0.1875rem 0.25rem 1rem 0rem rgba(0, 0, 0, 0.2);
+  border-radius: 0.75rem;
 }
 .payment-container-right {
   min-height: 60vh;
-  padding: 20px;
-  box-shadow: 3px 4px 16px 0px rgba(0, 0, 0, 0.2);
-  border-radius: 12px;
+  padding: 1.25rem;
+  box-shadow: 0.1875rem 0.25rem 1rem 0rem rgba(0, 0, 0, 0.2);
+  border-radius: 0.75rem;
 }
 .payment-container-right {
   height: fit-content;
@@ -38,11 +38,11 @@
 .payment-container-right button {
   background-color: rgb(37, 37, 192);
   width: 100%;
-  margin: 20px 0px;
-  padding: 20px 0px;
+  margin: 1.25rem 0rem;
+  padding: 1.25rem 0rem;
   color: #fff;
-  border-radius: 12px;
-  font-size: 24px;
+  border-radius: 0.75rem;
+  font-size: 1.5rem;
   font-family: Helvetica, sans-serif;
   font-weight: bold;
   cursor: url(https://cdn.shopify.com/s/files/1/0475/8759/0310/files/gloved-hand-32x23.png?v=1636957093),
@@ -51,19 +51,35 @@
 
 .payment-container-right label {
   display: block;
-  margin: 10px 0;
-  font-size: 24px;
+  margin: 0.625rem 0;
+  font-size: 1.5rem;
   font-weight: semi-bold;
   font-family: Helvetica, sans-serif;
 }
 .payment-container-right input {
   width: 100%;
-  padding: 10px 20px;
-  border-radius: 6px;
+  padding: 0.625rem 1.25rem;
+  border-radius: 0.375rem;
 }
 .payment-detail {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: 1fr;
-  gap: 30px;
+  gap: 1.875rem;
+}
+@media screen and (max-width: 1024px) {
+}
+@media screen and (max-width: 768px) {
+  .payment-detail {
+    display: block;
+  }
+}
+@media screen and (max-width: 480px) {
+  .payment-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  gap: 1.25rem;
+  min-height: 100vh;
+}
 }

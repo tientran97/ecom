@@ -15,13 +15,34 @@ import {
   REMOVE_ACTIVE_USER,
 } from "../../redux/Slice/authSlice";
 import { AdminOnlyLink } from "../../components/AdminOnlyRoute/AdminOnlyRoute";
+import Drawer from "../../components/Drawer/Drawer";
 const Heading = () => {
+  const [isShowDrawer, setIsShowDrawer] = useState(false);
+  const toggleDrawer = () => {
+    setIsShowDrawer(!isShowDrawer);
+  };
+
+  const hideDrawer = () => {
+    setIsShowDrawer(false);
+  };
+
   const cartTotalQuantity = useSelector(selectCartTotalQuantity);
   const cart = useSelector((state) => state.cart);
   const [displayName, setDisplayName] = useState("");
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const navigate = useNavigate();
   const dispatch = useDispatch();
+
+  const [size, setSize] = useState(window.innerWidth);
+  const checkSize = () => {
+    setSize(window.innerWidth);
+  };
+  useEffect(() => {
+    window.addEventListener("resize", checkSize);
+    return () => {
+      window.removeEventListener("resize", checkSize);
+    };
+  }, [size]);
 
   useEffect(() => {
     dispatch(CALCULATE_TOTAL_QUANTITY());
@@ -52,41 +73,49 @@ const Heading = () => {
 
   return (
     <>
-      <div className="header">
+      <header>
         <div className="header-main">
-          <div className="header-main--left">
-            <span onClick={() => navigate("/the-snack-shop")}>Shop</span>
-            <div className="subnav">
-              <div className="subnavbtn" onClick={() => navigate("/our-story")}>
-                About
-                <span>
-                  <Plus />
-                </span>
-              </div>
-              <div className="subnav-container">
-                <div className="subnav-content">
-                  <p onClick={() => navigate("/our-story")}>OUR STORY</p>
-                  <p onClick={() => navigate("/our-process")}>OUR PROCESS</p>
-                  <p onClick={() => navigate("/the-irv-files")}>
-                    THE IRV FILES
-                  </p>
-                  <p
-                    onClick={() => navigate("/find-irvins-near-you")}
-                    style={{ lineHeight: "30px" }}
-                  >
-                    FIND IRVING NEAR YOU
-                  </p>
+          <img
+            onClick={() => navigate("/")}
+            src="https://cdn.shopify.com/s/files/1/0422/2441/8983/files/irvins-logo_250x.png?v=1637218784"
+            alt="title"
+          />
+          {size > 768 && (
+            <ul className="header-main--left">
+              <li onClick={() => navigate("/")}>Home</li>
+
+              <li onClick={() => navigate("/the-snack-shop")}>Shop</li>
+              <li className="subnav">
+                <div
+                  className="subnavbtn"
+                  onClick={() => navigate("/our-story")}
+                >
+                  About
+                  <span>
+                    <Plus />
+                  </span>
                 </div>
-              </div>
-            </div>
-          </div>
-          <div className="header-main--tile">
-            <img
-              onClick={() => navigate("/")}
-              src="https://cdn.shopify.com/s/files/1/0422/2441/8983/files/irvins-logo_250x.png?v=1637218784"
-              alt="title"
-            />
-          </div>
+                <div className="subnav-container">
+                  <div className="subnav-content">
+                    <p onClick={() => navigate("/our-story")}>OUR STORY</p>
+                    <p onClick={() => navigate("/our-process")}>OUR PROCESS</p>
+                    <p onClick={() => navigate("/the-irv-files")}>
+                      THE IRV FILES
+                    </p>
+                    <p
+                      onClick={() => navigate("/find-irvins-near-you")}
+                      style={{ lineHeight: "30px" }}
+                    >
+                      FIND IRVING NEAR YOU
+                    </p>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          )}
+        </div>
+
+        {size > 768 && (
           <ul className="header-main--right">
             <li className="admin-btn">
               <AdminOnlyLink>
@@ -110,8 +139,23 @@ const Heading = () => {
               <div>{cartTotalQuantity}</div>
             </li>
           </ul>
-        </div>
-      </div>
+        )}
+        {size <= 768 && (
+          <button
+            onClick={() => toggleDrawer()}
+            className={isShowDrawer ? "hamburger-menu" : "hamburger-menu2"}
+          >
+            <i className="fa-solid fa-bars"></i>
+          </button>
+        )}
+      </header>
+      <Drawer
+        cartTotalQuantity={cartTotalQuantity}
+        isLoggedIn={isLoggedIn}
+        displayName={displayName}
+        isShowDrawer={isShowDrawer}
+        hideDrawer={hideDrawer}
+      />
     </>
   );
 };

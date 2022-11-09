@@ -3,18 +3,16 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { ReactComponent as ArrowLeft } from "../../../../../images/svgexport-18.svg";
-import { ReactComponent as ArrowRight } from "../../../../../images/svgexport-19.svg";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import "./Item.css";
 
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { ADD_TO_CART } from "../../../../../redux/Slice/cartSlice";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import useFetchCollection from "../../../../../customHooks/useFetchCollection";
 import LoadingSpinner from "../../../../../components/Loader/LoadingSpinner";
 import {
-  selectProducts,
   STORE_PRODUCTS,
 } from "../../../../../redux/Slice/productSlice";
 const Item = () => {
@@ -26,12 +24,55 @@ const Item = () => {
     slidesToScroll: 4,
     autoplay: true,
     autoplaySpeed: 2000,
+    responsive: [
+      {
+        breakpoint: 1240,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 980,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          dots: false,
+        },
+      },
+    ],
   };
   AOS.init();
-  const navigate = useNavigate();
   const dispatch = useDispatch();
   const { data, isLoading } = useFetchCollection("products");
-  const products = useSelector(selectProducts);
 
   const handleAddToCart = (product) => {
     dispatch(ADD_TO_CART(product));
