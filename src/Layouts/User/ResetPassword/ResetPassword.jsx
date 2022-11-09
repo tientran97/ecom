@@ -30,9 +30,9 @@ const ResetPassword = () => {
   return (
     <>
       {isLoading && <LoadingSpinner />}
-      <div className="register-wrapper">
-        <div className="register-container">
-          <div className="register-container-bot">
+      <div className="reset-wrapper">
+        <div className="reset-container">
+          <div className="reset-container-bot">
             <p className="title">RESET PASSWORD</p>
             <form onSubmit={resetPassword}>
               <div className="form-item">

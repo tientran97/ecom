@@ -1,50 +1,27 @@
-.banner-container1 {
-  font-family: Babydoll, sans-serif;
-  background-image: url(../../../../images/Banner.jpg);
-  background-size: cover;
-  height: 700px;
-  background-repeat: no-repeat;
-  color: white;
-  padding: 90px;
-  position: relative;
-}
 .banner-container2 {
   font-family: Babydoll, sans-serif;
   background-image: url(../../../../images/Banner-2.webp);
   background-size: cover;
-  height: 700px;
+  height: 43.75rem;
   background-repeat: no-repeat;
   color: white;
-  padding: 90px;
+  padding: 5.625rem;
   position: relative;
 }
-.banner-container3 {
-  font-family: Babydoll, sans-serif;
-  background-image: url(../../../../images/salmon.webp);
-  background-size: cover;
-  height: 700px;
-  background-repeat: no-repeat;
-  color: white;
-  padding: 90px;
-  position: relative;
-}
-.banner-container3 p {
-  font-family: Jacques, sans-serif;
-  font-size: 80px;
-  color: #356da0;
-}
+
 .banner-container--content {
-  font-size: 26px;
+  font-size: 1.625rem;
 }
 .banner-container--content-button {
   background-image: url(../../../../images/button.svg);
   background-repeat: no-repeat;
   position: relative;
   color: #ffd419;
-  height: 60px;
-  font-size: 20px;
-  margin-top: 20px;
+  height: 3.75rem;
+  font-size: 1.25rem;
+  margin-top: 1.25rem;
   font-weight: bold;
+  width: 18.75rem;
 }
 .banner-container--content-button:hover {
   background-image: url(../../../../images/buttonHover.svg);
@@ -66,29 +43,53 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 20px;
+  gap: 1.25rem;
   position: absolute;
-  top: 15px;
-  left: 20px;
+  top: 0.938rem;
+  left: 1.25rem;
   font-family: Helvetica, sans-serif;
 }
 .button-arrow {
   background-image: url(../../../../images/Arrow-black.svg);
   background-repeat: no-repeat;
-  height: 30px;
-  width: 70px;
+  height: 1.875rem;
+  width: 4.375rem;
 }
 
 .banner-container--content-bottom {
   font-family: Helvetica, sans-serif;
   position: absolute;
-  bottom: 70px;
-  left: 20px;
+  bottom: 4.375rem;
+  left: 1.25rem;
 }
 .banner-container--float {
   position: absolute;
-  bottom: 10px;
-  left: 0;
-  height: 30px;
+  bottom: 0.625rem;
+  left: 0rem;
+  height: 0.625rem;
   width: 100%;
+}
+@media screen and (max-width: 1024px) {
+}
+@media screen and (max-width: 768px) {
+  .banner-container--content img {
+    height: 10rem;
+  }
+  .banner-container2 {
+    height: 30rem;
+  }
+}
+@media screen and (max-width: 470px) {
+  .banner-container--content img {
+    height: 5rem;
+    margin-left: 3rem;
+  }
+  .banner-container2 {
+    height: 30rem;
+    background: url(https://cdn.shopify.com/s/files/1/0422/2441/8983/files/Truffle-Potato-Chips-Launch_Web-Banner_Mobile_750x1430px_1_750x.jpg?v=1663064656) center / 100% no-repeat;
+  }
+  .banner-container--content-button {
+  margin-left: 2rem;
+  margin-top: 0rem;
+}
 }

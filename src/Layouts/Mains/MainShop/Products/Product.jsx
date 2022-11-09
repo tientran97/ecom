@@ -40,6 +40,8 @@ const Item = () => {
     indexOfLastProduct
   );
 
+  const [category, setCategory] = useState("all");
+
   const url = window.location.href;
   useEffect(() => {
     dispatch(
@@ -63,18 +65,18 @@ const Item = () => {
     } else {
       handleFilterButton();
     }
-  }, [dispatch, data, category]);
+  }, [dispatch, data]);
+  
+  const handleFilterButton = (cat) => {
+    setCategory(cat);
+    dispatch(FILTER_BY_CATEGORY({ products, category: cat }));
+  };
+
   const allCategories = [
     "all",
     ...new Set(products.map((product) => product.category)),
   ];
 
-  const [category, setCategory] = useState("all");
-
-  const handleFilterButton = (cat) => {
-    setCategory(cat);
-    dispatch(FILTER_BY_CATEGORY({ products, category: cat }));
-  };
   return (
     <>
       <>

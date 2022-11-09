@@ -3,6 +3,21 @@ ul {
   font-family: Helvetica, sans-serif;
 }
 .order-details-container li {
-  margin-top: 10px;
-  font-size: 18px;
+  margin-top: 0.625rem;
+  font-size: 1.125rem;
+}
+.order-change-box select {
+  width: 50%;
+  padding: 1.25rem;
+  
+}
+.order-change-box button {
+  width: 50%;
+  display: block;
+  cursor: pointer;
+  padding: 0.625rem 1.25rem;
+
+  margin-top: 1.25rem;
+  background-color: #ffd419;
+  font-size: 1.25rem;
 }

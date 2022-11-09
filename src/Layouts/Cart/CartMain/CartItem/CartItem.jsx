@@ -54,7 +54,7 @@ const CartItem = () => {
               <thead>
                 <tr>
                   <th className="serial">No.</th>
-                  <th className="prodcut">Product</th>
+                  <th className="product">Product</th>
                   <th className="quantity">Quantity</th>
                   <th className="amount">Amount</th>
                   <th className="remove">Remove</th>

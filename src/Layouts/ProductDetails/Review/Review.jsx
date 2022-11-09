@@ -7,13 +7,7 @@ import AOS from "aos";
 const Review = (filterReviews) => {
   AOS.init();
   const reviewProduct = filterReviews;
-  console.log(
-    "🚀 ~ file: Review.jsx ~ line 8 ~ Review ~ reviewProduct",
-    reviewProduct.filterReviews.length,
-    typeof reviewProduct,
-    typeof reviewProduct.filterReviews,
-    reviewProduct.filterReviews
-  );
+
   return (
     <div className="review-container">
       <p
@@ -24,7 +18,7 @@ const Review = (filterReviews) => {
         WHAT PEOPLE SAY ABOUT THIS PRODUCT
       </p>
       {reviewProduct.filterReviews.length === 0 ? (
-        <p>There is no review for this product</p>
+        <p className="no-review">There is no review for this product</p>
       ) : (
         <>
           {reviewProduct.filterReviews.map((reviewItem) => {

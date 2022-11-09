@@ -1,21 +1,21 @@
 .real-container {
-  margin-top: 150px;
+  margin-top: 9.375rem;
   text-align: center;
-  padding: 0 50px 200px 50px;
+  padding: 0 3.125rem 12.5rem 3.125rem;
   background: url(https://cdn.shopify.com/s/files/1/0422/2441/8983/t/101/assets/texture_2_2880x.png?v=51736331721891025011642685296)
     center / 100% no-repeat;
 }
 .real-container--title p {
-  font-size: 80px;
+  font-size: 5rem;
   font-family: Jacques, sans-serif;
 }
 
 .real-container--content_item {
   font-family: Babydoll;
-  font-size: 16px;
+  font-size: 1rem;
   text-align: center;
-  margin-top: 80px;
-  height: 500px;
+  margin-top: 5rem;
+  height: 31.25rem;
   font-weight: bold;
   cursor: grab;
 }
@@ -23,15 +23,42 @@
   cursor: grabbing;
 }
 .real-container--content img {
-  height: 300px;
-  margin-left: 80px;
-  margin-bottom: 20px;
+  height: 18.75rem;
+  margin-left: 5rem;
+  margin-bottom: 1.25rem;
 }
 .real-container--content_item__text {
-  width: 400px;
+  width: 25rem;
   height: fit-content;
-  padding: 20px 40px;
+  padding: 1.25rem 2.5rem;
   background-color: #ffd419;
-  border-radius: 12px;
-  box-shadow: 10px 10px 0px 0px rgba(0, 0, 0, 1);
+  border-radius: 0.75rem;
+  box-shadow: 0.625rem 0.625rem 0rem 0rem rgba(0, 0, 0, 1);
+}
+@media screen and (max-width: 1024px) {
+  .real-container--content_item {
+    height: 35rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  .real-container--content_item {
+    margin-left: 20%;
+    height: 35rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  .real-container--title p {
+    font-size: 3.75rem;
+  }
+   .real-container--content_item {
+    margin-left: 0%;
+    height: 35rem;
+  }
+  .real-container--content_item img {
+    margin-left: 15%;
+  }
+  .real-container--content_item__text {
+    width: 20rem;
+    font-size: 1rem;
+  }
 }

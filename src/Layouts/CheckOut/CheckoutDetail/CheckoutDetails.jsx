@@ -6,6 +6,7 @@ import { useDispatch } from "react-redux";
 import LoadingSpinner from "../../../components/Loader/LoadingSpinner";
 import { useNavigate } from "react-router-dom";
 import CheckoutSummary from "../CheckoutSummary/CheckoutSummary";
+import { toast } from "react-toastify";
 
 const initialAddressState = {
   name: "",
@@ -18,7 +19,7 @@ const initialAddressState = {
 };
 const CheckoutDetails = () => {
   const dispatch = useDispatch();
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(false);
   const [shippingAddress, setShippingAddress] = useState({
     ...initialAddressState,
@@ -31,11 +32,34 @@ const CheckoutDetails = () => {
       [name]: value,
     });
   };
+  const nameRegEx =
+    /(^[A-Za-z]{2,16})([ ]{0,1})([A-Za-z]{3,16})?([ ]{0,1})?([A-Za-z]{3,16})?([ ]{0,1})?([A-Za-z]{3,16})/g;
+  const cityRegEx =
+    /^(?:[A-Za-z]{2,}(?:(\.\s|'s\s|\s?-\s?|\s)?(?=[A-Za-z]+))){1,2}(?:[A-Za-z]+)?$/g;
+  const postalCodeRegex = /(^\d{5}$)|(^\d{6}$)|(^\d{9}$)|(^\d{5}-\d{4}$)/g;
+  const phoneRegex =
+    /^\s*(?:\+?(\d{1,3}))?[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{4})(?: *x(\d+))?\s*$/;
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(SAVE_SHIPPING_ADDRESS(shippingAddress));
-    setShippingAddress({ ...initialAddressState });
-    navigate('/checkout')
+    if (!shippingAddress.name.match(nameRegEx)) {
+      toast.error("Invalid Full Name");
+    } else if (shippingAddress.address.length < 6) {
+      toast.error("Invalid Address !");
+    } else if (!shippingAddress.city.match(cityRegEx)) {
+      toast.error("Invalid city");
+    } else if (shippingAddress.state.length < 2) {
+      toast.error("Invalid state ");
+    } else if (!shippingAddress.postal_code.match(postalCodeRegex)) {
+      toast.error("Invalid postal code");
+    } else if (!shippingAddress.country) {
+      toast.error("Country is required!");
+    } else if (!shippingAddress.phone_number.match(phoneRegex)) {
+      toast.error("Invalid phone number");
+    } else {
+      dispatch(SAVE_SHIPPING_ADDRESS(shippingAddress));
+      setShippingAddress({ ...initialAddressState });
+      navigate("/checkout");
+    }
   };
   return (
     <>
@@ -49,7 +73,7 @@ const CheckoutDetails = () => {
               <label>Recipient Name :</label>
               <input
                 type="text"
-                placeholder="Recipient Name"
+                placeholder="Recipient Full Name"
                 name="name"
                 value={shippingAddress.name}
                 onChange={(e) => {
@@ -92,7 +116,7 @@ const CheckoutDetails = () => {
               />
               <label>Postal Code :</label>
               <input
-                type="text"
+                type="number"
                 placeholder="Postal Code"
                 name="postal_code"
                 value={shippingAddress.postal_code}
@@ -124,13 +148,13 @@ const CheckoutDetails = () => {
                 onChange={(e) => {
                   handleShipping(e);
                 }}
-                required
               />
               <button type="submit">Proceed to check out</button>
             </form>
           </div>
           <div className="checkout-container-right">
             <h3>Checkout Summary</h3>
+
             <CheckoutSummary />
           </div>
         </div>

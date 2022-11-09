@@ -18,11 +18,11 @@ const Accordion = ({
     <>
       <div className="accordion-section" key={id}>
         <div className="accordion-content">
-          <span
+          <div
             className="accordion-title"
             onClick={() => setIsActive(!isActive)}
           >
-            {title}
+            <p>{title}</p>
             <button>
               {isActive ? (
                 <div className="accordion-button1"></div>
@@ -30,7 +30,7 @@ const Accordion = ({
                 <div className="accordion-button2"></div>
               )}
             </button>
-          </span>
+          </div>
           {isActive && (
             <div
               className="accordion-ingredients"

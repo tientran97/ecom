@@ -1,5 +1,5 @@
 .feed-container {
-  margin-bottom: 100px;
+  margin-bottom: 6.25rem;
 }
 .feed-cotaniner--top {
   background: url(//cdn.shopify.com/s/files/1/0422/2441/8983/t/101/assets/texture_1_2880x.png?v=133829917100679285621642685297)
@@ -7,23 +7,23 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 50px;
+  gap: 3.125rem;
   width: 300%;
 }
 .feed-container--caption {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 50px 0;
-  height: 100px;
+  margin: 3.125rem 0;
+  height: 6.25rem;
 
-  gap: 30px;
+  gap: 1.875rem;
   animation: run 30s infinite;
 }
 .feed-container--caption p {
   color: #000;
   font-family: Jacques;
-  font-size: 80px;
+  font-size: 5rem;
 }
 
 @keyframes run {
@@ -37,19 +37,19 @@
 }
 .feed-container--caption div {
   background-color: #ffd419;
-  padding: 10px 20px;
-  border-radius: 12px;
+  padding: 0.625rem 1.25rem;
+  border-radius: 0.75rem;
   color: #000;
   font-family: Jacques;
-  font-size: 80px;
+  font-size: 5rem;
 }
 .feed-container--main {
   position: relative;
 }
 .feed-container--main img {
   display: block;
-  height: 500px;
-  width: 500px;
+  height: 31.25rem;
+  width: 31.25rem;
 }
 
 .feed-container--main:hover .overlay {
@@ -71,8 +71,8 @@
 }
 .overlay-text {
   color: white;
-  width: 400px;
-  font-size: 16px;
+  width: 25rem;
+  font-size: 1rem;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -80,4 +80,89 @@
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   text-align: center;
+}
+@media screen and (max-width: 1024px) {
+  .feed-container--caption {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 3.125rem 0;
+    height: 3.25rem;
+    animation: run 15s infinite;
+  }
+   .feed-container--caption .feed-icon {
+    width: 2rem;
+  }
+  .feed-container--caption p {
+    color: #000;
+    font-family: Jacques;
+    font-size: 3rem;
+    width: 15rem;
+  }
+  .feed-container--caption div p {
+    width: 25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  .feed-cotaniner--top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300%;
+  }
+  .feed-container--caption {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 3.125rem 0;
+    height: 3.25rem;
+    animation: run 15s infinite;
+  }
+  .feed-container--caption .feed-icon {
+    width: 2rem;
+  }
+  .feed-container--caption p {
+    color: #000;
+    font-family: Jacques;
+    font-size: 3rem;
+    width: 15rem;
+  }
+  .feed-container--caption div p {
+    width: 25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+  .overlay-text {
+    color: white;
+    width: 15rem;
+    font-size: 1rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+  }
+  .feed-container--main img {
+    display: block;
+    height: 25rem;
+    width: 31.25rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  .feed-container--caption {
+  
+  animation: run 10s infinite;
+}
+.feed-container--main img {
+  display: block;
+  height: 31.25rem;
+  width: 100%;
+}
+.feed-container {
+  margin-bottom: 2rem;
+}
 }

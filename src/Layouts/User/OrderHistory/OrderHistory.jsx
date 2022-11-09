@@ -42,9 +42,9 @@ const OrderHistory = () => {
             <table>
               <thead>
                 <tr>
-                  <th>s/n</th>
+                  <th className="serial-number">s/n</th>
                   <th>Date</th>
-                  <th>Order ID</th>
+                  <th className="order-history-id">Order ID</th>
                   <th>Order Amount</th>
                   <th>Order Status</th>
                 </tr>
@@ -59,7 +59,7 @@ const OrderHistory = () => {
                       key={index}
                       onClick={() => handleClick(id)}
                     >
-                      <td className="order-history-index">{index + 1}</td>
+                      <td className="serial-number">{index + 1}</td>
                       <td className="order-history-time">
                         {orderDate} at {orderTime}
                       </td>

@@ -1,18 +1,28 @@
 .container {
-    min-height: 100h;
+    min-height: 100vh;
     height: fit-content;
-    padding: 100px 400px;
+    padding: 6.25rem 25%;
     font-family: Babydoll,sans-serif;
-    font-size: 20px;
+    font-size: 1.25rem;
 }
 .heading {
     font-family: Jacques,sans-serif;
     text-align: center;
-    font-size: 50px;
+    font-size: 3.125rem;
 }
 .container p {
-    padding: 10px 0
+    padding: 0.625rem 0
 }
 .section {
     font-weight: bold;
+}@media screen and (max-width: 1024px){
+  
+}
+@media screen and (max-width: 768px){
+    .container {
+    padding: 6.25rem 10%;
+}
+}
+@media  screen and (max-width: 480px){
+  
 }

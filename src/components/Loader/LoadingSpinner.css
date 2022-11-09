@@ -7,10 +7,10 @@
   }
 }
 .loading-spinner {
-  width: 100px;
-  height: 100px;
-  border: 10px solid #ffd419; /* Light grey */
-  border-top: 10px solid #fff; /* Blue */
+  width: 6.25rem;
+  height: 6.25rem;
+  border: 0.625rem solid #ffd419; /* Light grey */
+  border-top: 0.625rem solid #fff; /* Blue */
   border-radius: 50%;
   animation: spinner 1.5s linear infinite;
   left: 45%;
@@ -26,4 +26,13 @@
   height: 100%;
   overflow: hidden;
   z-index: 9999;
+}
+@media screen and (max-width: 1024px){
+  
+}
+@media screen and (max-width: 768px){
+    
+}
+@media  screen and (max-width: 480px){
+  
 }

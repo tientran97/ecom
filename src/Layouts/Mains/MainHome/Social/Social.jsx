@@ -5,7 +5,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import dataSocial from "../../../../data/data.social";
-import './Social.css'
+import "./Social.css";
 const SliderBanner = () => {
   const settings = {
     dots: true,
@@ -16,18 +16,68 @@ const SliderBanner = () => {
     speed: 1000,
     autoplaySpeed: 2000,
     cssEase: "linear",
+    responsive: [
+      {
+        breakpoint: 1240,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          dots: false,
+        },
+      },
+    ],
   };
   return (
     <div className="feed-container">
       <div className="feed-cotaniner--top">
         <div className="feed-container--caption">
           <p>
-            <A />
+            <A className="feed-icon" />
             IRVINS.SG
           </p>
           <div>
-            <B />
-            DANGEROUSLYADDICTIVE
+            <p>
+              <B className="feed-icon" />
+              DANGEROUSLYADDICTIVE
+            </p>
+          </div>
+        </div>
+        <div className="feed-container--caption">
+          <p>
+            <A className="feed-icon" />
+            IRVINS.SG
+          </p>
+          <div>
+            <p>
+              <B className="feed-icon" />
+              DANGEROUSLYADDICTIVE
+            </p>
           </div>
         </div>
         <div className="feed-container--caption">
@@ -36,28 +86,22 @@ const SliderBanner = () => {
             IRVINS.SG
           </p>
           <div>
-            <B />
-            DANGEROUSLYADDICTIVE
+            <p>
+              <B className="feed-icon" />
+              DANGEROUSLYADDICTIVE
+            </p>
           </div>
         </div>
         <div className="feed-container--caption">
           <p>
-            <A />
+            <A className="feed-icon" />
             IRVINS.SG
           </p>
           <div>
-            <B />
-            DANGEROUSLYADDICTIVE
-          </div>
-        </div>
-        <div className="feed-container--caption">
-          <p>
-            <A />
-            IRVINS.SG
-          </p>
-          <div>
-            <B />
-            DANGEROUSLYADDICTIVE
+            <p>
+              <B className="feed-icon" />
+              DANGEROUSLYADDICTIVE
+            </p>
           </div>
         </div>
       </div>

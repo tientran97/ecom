@@ -17,9 +17,10 @@ const Register = () => {
   const [confirmPassword, setConFirmPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
- useEffect(() => {
-   window.scrollTo({ top: 0 });
- }, []);
+
+  useEffect(() => {
+    window.scrollTo({ top: 0 });
+  }, []);
   const registerUser = (e) => {
     e.preventDefault();
     if (password !== confirmPassword) {

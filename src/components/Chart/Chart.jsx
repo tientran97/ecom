@@ -1,5 +1,5 @@
 import React from "react";
-import './Chart.css'
+import "./Chart.css";
 import useFetchCollection from "../../customHooks/useFetchCollection";
 import {
   Chart as ChartJS,
@@ -34,7 +34,6 @@ const options = {
 const Chart = () => {
   const ordersFetch = useFetchCollection("orders");
   const array = [];
-  console.log("🚀 ~ file: Chart.jsx ~ line 36 ~ Chart ~ array", array);
   ordersFetch.data.map((item) => {
     const { orderStatus } = item;
     array.push(orderStatus);
