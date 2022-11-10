@@ -2,6 +2,7 @@
   "name": "project-fe26",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://tientran97.github.io/irvin-ecommerce",
   "dependencies": {
     "@emotion/react": "^11.10.4",
     "@emotion/styled": "^11.10.4",
@@ -15,6 +16,7 @@
     "axios": "^1.1.2",
     "firebase": "^9.12.1",
     "formik": "^2.2.9",
+    "gh-pages": "^4.0.0",
     "notiflix": "^3.2.5",
     "react": "^18.2.0",
     "react-chartjs-2": "^4.3.1",
@@ -39,7 +41,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "build-prod": "node --max_old_space_size=5048 ./node_modules/@angular/cli/bin/ng build --prod"
+    "build-prod": "node --max_old_space_size=5048 ./node_modules/@angular/cli/bin/ng build --prod",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
