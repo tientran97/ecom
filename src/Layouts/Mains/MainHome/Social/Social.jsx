@@ -108,11 +108,17 @@ const SliderBanner = () => {
 
       <div className="feed-container--social">
         <Slider {...settings}>
-          {dataSocial.map((item, index) => {
+          {dataSocial.map((item) => {
             return (
               <>
-                <div key={index} className="feed-container--main">
-                  <img src={item.img_url} alt="logo" />
+                <div key={item.id} className="feed-container--main">
+                  <img
+                    src={require("../../../../images/social/" +
+                      "social_" +
+                      item.id +
+                      ".jpg")}
+                    alt="logo"
+                  />
                   <a href={item.link} target="_blank" className="overlay">
                     <div className="overlay-text">{item.text}</div>
                   </a>
