@@ -11,7 +11,7 @@ const dataSocial = [
     id: 2,
     text: "WHY IS IRVINS TRUFFLE POTATO CHIPS SO #TruffinAddictive?You’ll have to try it for yourselves 😉 You definitely can’t stop eating once you’ve opened a pack! 🔥",
     img_url:
-      "https://scp2.elfsightcdn.com/?url=https%3A%2F%2Fscontent-qro1-2.cdninstagram.com%2Fv%2Ft51.29350-15%2F309983265_1586787878404675_8575943534535942074_n.jpg%3F_nc_cat%3D103%26ccb%3D1-7%26_nc_sid%3D8ae9d6%26_nc_ohc%3Deb9FgFRDNZQAX9A7aox%26_nc_ht%3Dscontent-qro1-2.cdninstagram.com%26edm%3DAM6HXa8EAAAA%26oh%3D00_AfASEExCNafYklX-iihBjEc5VESSWYgcvgn_yDRMP0fjHA%26oe%3D6372160C",
+      "../images/social/social_2.jpg",
     link: "https://www.instagram.com/p/CjPNjxwPywd/",
   },
   {
