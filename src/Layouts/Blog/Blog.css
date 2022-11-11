@@ -8,7 +8,7 @@
   width: 100%;
 }
 .blog-content {
-  padding: 3.125rem 25rem;
+  padding: 3.125rem 20%;
 }
 .irvfiles,
 .blog-time {
@@ -45,7 +45,7 @@
   outline: none;
   position: relative;
   margin-left: 15.625rem;
-   cursor: url(https://cdn.shopify.com/s/files/1/0475/8759/0310/files/gloved-hand-32x23.png?v=1636957093),
+  cursor: url(https://cdn.shopify.com/s/files/1/0475/8759/0310/files/gloved-hand-32x23.png?v=1636957093),
     pointer;
 }
 .blog-container .button-text {
@@ -59,12 +59,21 @@
 .blog-container .button:hover .button-text {
   color: #ffd419;
 }
-@media screen and (max-width: 1024px){
-  
+@media screen and (max-width: 1024px) {
+  .blog-container .button {
+    margin-left: 30%;
+  }
 }
-@media screen and (max-width: 768px){
-    
+@media screen and (max-width: 768px) {
+  .blog-container .button {
+    margin-left: 30%;
+  }
 }
-@media  screen and (max-width: 480px){
-  
+@media screen and (max-width: 480px) {
+  .blog-content {
+    padding: 3.125rem 10%;
+  }
+  .blog-container .button {
+    margin-left: 15%;
+  }
 }

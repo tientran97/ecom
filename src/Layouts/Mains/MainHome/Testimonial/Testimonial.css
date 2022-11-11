@@ -108,17 +108,17 @@
     animation: fly 5s ease-in-out infinite;
   }
 }
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 425px) {
   .testimonial-container--content {
     margin-left: -2rem;
   }
   .testimonial-container--right {
     top: -32rem;
-    left: 0rem;
+    left: -8rem;
   }
   .testimonial-container--left {
     position: absolute;
-    top: -15.625rem;
+    top: -13.625rem;
     left: 10rem;
   }
 }

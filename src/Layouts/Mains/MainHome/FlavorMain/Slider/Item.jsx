@@ -12,9 +12,7 @@ import { ADD_TO_CART } from "../../../../../redux/Slice/cartSlice";
 import { Link } from "react-router-dom";
 import useFetchCollection from "../../../../../customHooks/useFetchCollection";
 import LoadingSpinner from "../../../../../components/Loader/LoadingSpinner";
-import {
-  STORE_PRODUCTS,
-} from "../../../../../redux/Slice/productSlice";
+import { STORE_PRODUCTS } from "../../../../../redux/Slice/productSlice";
 const Item = () => {
   const settings = {
     dots: true,
@@ -61,7 +59,7 @@ const Item = () => {
         },
       },
       {
-        breakpoint: 480,
+        breakpoint: 500,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,

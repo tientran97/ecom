@@ -12,7 +12,41 @@ const Drawer = ({
   displayName,
 }) => {
   const navigate = useNavigate();
-
+  const homeClick = () => {
+    hideDrawer();
+    navigate("/");
+  };
+  const userClick = () => {
+    hideDrawer();
+    if (isLoggedIn === false) {
+      navigate("/accounts/login");
+    }
+    navigate("/accounts/profile");
+  };
+  const shopClick = () => {
+    hideDrawer();
+    navigate("/the-snack-shop");
+  };
+  const cartClick = () => {
+    hideDrawer();
+    navigate("/cart");
+  };
+  const storyClick = () => {
+    hideDrawer();
+    navigate("/our-story");
+  };
+  const processClick = () => {
+    hideDrawer();
+    navigate("/our-process");
+  };
+  const filesClick = () => {
+    hideDrawer();
+    navigate("/the-irv-files");
+  };
+  const findClick = () => {
+    hideDrawer();
+    navigate("/find-irvins-near-you");
+  };
   return (
     <>
       {isShowDrawer && (
@@ -21,16 +55,16 @@ const Drawer = ({
             <ul className="drawer-content">
               <li className="drawer-image">
                 <img
-                  onClick={() => navigate("/")}
+                  onClick={() => homeClick()}
                   src="https://cdn.shopify.com/s/files/1/0422/2441/8983/files/irvins-logo_250x.png?v=1637218784"
                   alt="title"
                 />
               </li>
               {isLoggedIn === false && (
-                <li onClick={() => navigate("/accounts/login")}>Login</li>
+                <li onClick={() => userClick()}>Login</li>
               )}
               {isLoggedIn && (
-                <li onClick={() => navigate("/accounts/profile")}>
+                <li onClick={() => userClick()}>
                   <p> Hi,{displayName}</p>
                 </li>
               )}
@@ -39,21 +73,16 @@ const Drawer = ({
                   <button onClick={() => navigate("/admin/home")}>ADMIN</button>
                 </AdminOnlyLink>
               </li>
-              <li
-                onClick={() => navigate("/cart")}
-                className="cartIcon-container"
-              >
+              <li onClick={() => cartClick()} className="cartIcon-container">
                 <CartIcon className="cartIcon-symbol" />
                 <div>{cartTotalQuantity}</div>
               </li>
-              <li onClick={() => navigate("/")}>Home</li>
-              <li onClick={() => navigate("/the-snack-shop")}>Shop</li>
-              <li onClick={() => navigate("/our-story")}>OUR STORY</li>
-              <li onClick={() => navigate("/our-process")}>OUR PROCESS</li>
-              <li onClick={() => navigate("/the-irv-files")}>THE IRV FILES</li>
-              <li onClick={() => navigate("/find-irvins-near-you")}>
-                FIND IRVING NEAR YOU
-              </li>
+              <li onClick={() => homeClick()}>Home</li>
+              <li onClick={() => shopClick()}>Shop</li>
+              <li onClick={() => storyClick()}>OUR STORY</li>
+              <li onClick={() => processClick()}>OUR PROCESS</li>
+              <li onClick={() => filesClick()}>THE IRV FILES</li>
+              <li onClick={() => findClick()}>FIND IRVING NEAR YOU</li>
             </ul>
           </section>
           <section

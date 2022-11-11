@@ -79,17 +79,18 @@
     height: 30rem;
   }
 }
-@media screen and (max-width: 470px) {
+@media screen and (max-width: 450px) {
   .banner-container--content img {
     height: 5rem;
     margin-left: 3rem;
   }
   .banner-container2 {
     height: 30rem;
-    background: url(https://cdn.shopify.com/s/files/1/0422/2441/8983/files/Truffle-Potato-Chips-Launch_Web-Banner_Mobile_750x1430px_1_750x.jpg?v=1663064656) center / 100% no-repeat;
+    background: url(https://cdn.shopify.com/s/files/1/0422/2441/8983/files/Truffle-Potato-Chips-Launch_Web-Banner_Mobile_750x1430px_1_750x.jpg?v=1663064656)
+      center / 100% no-repeat;
   }
   .banner-container--content-button {
-  margin-left: 2rem;
-  margin-top: 0rem;
-}
+    margin-left: 2rem;
+    margin-top: 0rem;
+  }
 }
