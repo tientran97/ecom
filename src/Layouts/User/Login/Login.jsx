@@ -5,7 +5,6 @@ import {
   GoogleAuthProvider,
   signInWithPopup,
   signInWithEmailAndPassword,
-  FacebookAuthProvider,
 } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 import Loading from "../../../components/Loader/LoadingSpinner";
@@ -33,6 +32,7 @@ const Login = () => {
   const loginInUser = (e) => {
     e.preventDefault();
     setIsLoading(true);
+
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         const user = userCredential.user;
@@ -63,23 +63,7 @@ const Login = () => {
         toast.error(error.customData.email);
       });
   };
-  const provider2 = new FacebookAuthProvider();
-  const signInWithFacebook = () => {
-    setIsLoading(true);
-    signInWithPopup(auth, provider2)
-      .then((result) => {
-        const user = result.user;
-        const credential = FacebookAuthProvider.credentialFromResult(result);
-        const accessToken = credential.accessToken;
-        toast.success("Login successfully");
-        setIsLoading(false);
-        redirectUser();
-      })
-      .catch((error) => {
-        setIsLoading(false);
-        toast.error(error.customData.email);
-      });
-  };
+
   return (
     <>
       {isLoading && <Loading />}
@@ -88,13 +72,7 @@ const Login = () => {
           <>
             <div className="login-container-top">
               <p className="title">LOGIN VIA</p>
-              <div
-                className="facebook-box"
-                onClick={() => signInWithFacebook()}
-              >
-                <span>Sign in with Facebook</span>
-                <i className="fa-brands fa-facebook-f"></i>
-              </div>
+
               <div className="google-box" onClick={() => signInWithGoogle()}>
                 <span>Sign in with Google</span>
                 <i className="fa-brands fa-google"></i>
@@ -108,7 +86,6 @@ const Login = () => {
                 <div className="form-item">
                   <label htmlFor="email">EMAIL :</label>
                   <input
-                    required
                     autoComplete="off"
                     id="email"
                     name="email"
@@ -121,7 +98,6 @@ const Login = () => {
                 <div className="form-item">
                   <label htmlFor="password">PASSWORD :</label>
                   <input
-                    required
                     autoComplete="off"
                     id="password"
                     name="password"

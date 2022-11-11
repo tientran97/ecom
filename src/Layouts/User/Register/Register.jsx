@@ -66,10 +66,7 @@ const Register = () => {
         <div className="register-container">
           <div className="register-container-top">
             <p className="title">LOGIN VIA</p>
-            <div className="facebook-box">
-              <span>Sign in with Facebook</span>
-              <i className="fa-brands fa-facebook-f"></i>
-            </div>
+
             <div className="google-box" onClick={() => signInWithGoogle()}>
               <span>Sign in with Google</span>
               <i className="fa-brands fa-google"></i>
@@ -87,7 +84,6 @@ const Register = () => {
                   name="email"
                   type="text"
                   placeholder="Enter your e-mail"
-                  required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                 />
@@ -96,7 +92,6 @@ const Register = () => {
                 <label htmlFor="password">PASSWORD</label>
                 <input
                   autoComplete="off"
-                  required
                   id="password"
                   name="password"
                   type="password"
@@ -109,7 +104,6 @@ const Register = () => {
                 <label htmlFor="confirmedPassword">CONFIRM PASSWORD</label>
                 <input
                   autoComplete="off"
-                  required
                   id="confirmedPassword"
                   name="confirmedPassword"
                   type="password"
