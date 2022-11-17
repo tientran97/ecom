@@ -16,9 +16,7 @@ const ReviewProduct = () => {
   const products = useSelector(selectProducts);
   const userID = useSelector(selectUserId);
   const userName = useSelector(selectUserName);
-  useEffect(() => {
-     
-  },[id])
+
   const product = products.find((item) => {
     return item.id === id;
   });

@@ -50,7 +50,7 @@
   .real-container--title p {
     font-size: 3.75rem;
   }
-   .real-container--content_item {
+  .real-container--content_item {
     margin-left: 0%;
     height: 35rem;
   }
@@ -60,5 +60,21 @@
   .real-container--content_item__text {
     width: 20rem;
     font-size: 1rem;
+  }
+}
+@media screen and (max-width: 376px) {
+  
+  .real-container--content_item {
+    margin-left: 0%;
+    height: 40rem;
+  }
+  .real-container--content_item img {
+    margin-left: 10%;
+  }
+
+  .real-container--content_item__text {
+    width: 17rem;
+    padding: 1rem;
+    font-size: 0.5rem;
   }
 }

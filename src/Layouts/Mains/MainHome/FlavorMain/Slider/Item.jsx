@@ -99,8 +99,7 @@ const Item = () => {
                 <div
                   key={product.id}
                   className="slider-container--items"
-                  data-aos="zoom-in"
-                  data-aos-duration="1000"
+                
                 >
                   <div
                     className="slider-container--items_image"

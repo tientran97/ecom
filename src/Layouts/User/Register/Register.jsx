@@ -21,25 +21,35 @@ const Register = () => {
   useEffect(() => {
     window.scrollTo({ top: 0 });
   }, []);
+  const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
   const registerUser = (e) => {
     e.preventDefault();
-    if (password !== confirmPassword) {
+    if (!email && !password) {
+      toast.error("Please Enter Email and Password");
+    } else if (!email) {
+      toast.error("Please Enter Your Email");
+    } else if (!password) {
+      toast.error("Please Enter Your Password");
+    } else if (!email.match(emailRegex)) {
+      toast.error("Invalid Email");
+    } else if (password.length < 6) {
+      toast.error("Password must be atleast 6 characters");
+    } else if (password !== confirmPassword) {
       toast.error("Password does not match!");
+    } else {
+      setIsLoading(true);
+      createUserWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+          setIsLoading(false);
+          const user = userCredential.user;
+          toast.success("Registration successful");
+          navigate("/");
+        })
+        .catch((error) => {
+          toast.error(error.message);
+          setIsLoading(false);
+        });
     }
-
-    setIsLoading(true);
-
-    createUserWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        setIsLoading(false);
-        const user = userCredential.user;
-        toast.success("Registration successful");
-        navigate("/");
-      })
-      .catch((error) => {
-        toast.error(error.message);
-        setIsLoading(false);
-      });
   };
   const provider = new GoogleAuthProvider();
   const signInWithGoogle = () => {

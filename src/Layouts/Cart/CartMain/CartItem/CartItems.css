@@ -96,7 +96,6 @@ table {
   margin-bottom: 1.25rem;
   text-align: center;
   margin-left: 53%;
-
 }
 .cart-empty button {
   background: url(../../../../images/buttonHover.svg) center / 100% no-repeat;
@@ -104,7 +103,7 @@ table {
   border: none;
   height: 6.25rem;
   width: 23.125rem;
-   margin-left: 59%;
+  margin-left: 59%;
   transition: 0.3s;
   font-size: 1.875rem;
   color: #ffd419;
@@ -112,7 +111,6 @@ table {
   font-family: Helvetica, sans-serif;
   cursor: url(https://cdn.shopify.com/s/files/1/0475/8759/0310/files/gloved-hand-32x23.png?v=1636957093),
     pointer;
-
 }
 .cart-empty button:hover {
   background: url(../../../../images/button.svg) center / 100% no-repeat;
@@ -120,60 +118,62 @@ table {
 }
 .serial {
   padding-left: 1.25rem;
-}@media screen and (max-width: 1024px){
-     .cartItem-wrapper {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr;
-  grid-column-gap: 1.25rem;
-  margin-bottom: 6.25rem;
 }
-.cart-empty p {
-  margin-left: 0%;
-
+@media screen and (max-width: 1024px) {
+  .cartItem-wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-column-gap: 1.25rem;
+    margin-bottom: 6.25rem;
+  }
+  .cart-empty p {
+    margin-left: 0%;
+  }
+  .cart-empty button {
+    margin-left: 32%;
+  }
 }
-.cart-empty button {
-  margin-left: 32%;
-
+@media screen and (max-width: 768px) {
+  .cartItem-wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-column-gap: 1.25rem;
+    margin-bottom: 6.25rem;
+  }
+  .cart-empty p {
+    margin-left: 0%;
+  }
+  .cart-empty button {
+    margin-left: 25%;
+  }
 }
-}
-@media screen and (max-width: 768px){
-    .cartItem-wrapper {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr;
-  grid-column-gap: 1.25rem;
-  margin-bottom: 6.25rem;
-}
-.cart-empty p {
-  margin-left: 0%;
-
-}
-.cart-empty button {
-  margin-left: 25%;
-
-}
-}
-@media  screen and (max-width: 480px){
+@media screen and (max-width: 480px) {
   .serial {
     display: none;
   }
   .cartItem-container img {
     display: none;
+  }
+  .amount {
+    width: 1rem;
+  }
+  .quantity {
+    width: 1rem;
+  }
+  .remove {
+    width: 1rem;
+  }
+  .product {
+    width: 1.5rem;
+  }
+  .cart-empty button {
+    margin-left: 5%;
+  }
 }
-.amount {
-  width: 1rem;
-}
-.quantity {
-  width: 1rem;
-}
-.remove {
-  width: 1rem;
-}
-.product {
-  width: 1.5rem;
-}
-.cart-empty button {
-  margin-left: 5%;
-}
+@media screen and (max-width: 376px) {
+  .cart-empty button {
+    margin-left: 2%;
+  }
 }

@@ -41,14 +41,22 @@ const CheckoutDetails = () => {
     /^\s*(?:\+?(\d{1,3}))?[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{4})(?: *x(\d+))?\s*$/;
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!shippingAddress.name.match(nameRegEx)) {
+    setIsLoading(true);
+    if (
+      !shippingAddress.name &&
+      !shippingAddress.address &&
+      !shippingAddress.city &&
+      !shippingAddress.postal_code &&
+      !shippingAddress.country &&
+      !shippingAddress.phone_number
+    ) {
+      toast.error("Please enter your infomation");
+    } else if (!shippingAddress.name.match(nameRegEx)) {
       toast.error("Invalid Full Name");
     } else if (shippingAddress.address.length < 6) {
       toast.error("Invalid Address !");
     } else if (!shippingAddress.city.match(cityRegEx)) {
       toast.error("Invalid city");
-    } else if (shippingAddress.state.length < 2) {
-      toast.error("Invalid state ");
     } else if (!shippingAddress.postal_code.match(postalCodeRegex)) {
       toast.error("Invalid postal code");
     } else if (!shippingAddress.country) {
@@ -59,6 +67,7 @@ const CheckoutDetails = () => {
       dispatch(SAVE_SHIPPING_ADDRESS(shippingAddress));
       setShippingAddress({ ...initialAddressState });
       navigate("/checkout");
+      setIsLoading(false);
     }
   };
   return (
@@ -79,7 +88,6 @@ const CheckoutDetails = () => {
                 onChange={(e) => {
                   handleShipping(e);
                 }}
-                required
               />
               <label>Address Line :</label>
               <input
@@ -90,7 +98,6 @@ const CheckoutDetails = () => {
                 onChange={(e) => {
                   handleShipping(e);
                 }}
-                required
               />
               <label>City :</label>
               <input
@@ -101,18 +108,6 @@ const CheckoutDetails = () => {
                 onChange={(e) => {
                   handleShipping(e);
                 }}
-                required
-              />
-              <label>State :</label>
-              <input
-                type="text"
-                placeholder="State"
-                name="state"
-                value={shippingAddress.state}
-                onChange={(e) => {
-                  handleShipping(e);
-                }}
-                required
               />
               <label>Postal Code :</label>
               <input
@@ -123,7 +118,6 @@ const CheckoutDetails = () => {
                 onChange={(e) => {
                   handleShipping(e);
                 }}
-                required
               />
               <label> Country :</label>
               <CountryDropdown

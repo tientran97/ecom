@@ -1,5 +1,8 @@
 .order-history-container {
   width: 100%;
+  background-color: #ffd419;
+  padding: 20px;
+  border-radius: 12px;
 }
 .order-history-container th,
 tr {
@@ -32,7 +35,7 @@ tr {
   .order-history-display .serial-number {
     display: none;
   }
-   .order-history-display .order-history-id {
- display: none;
+  .order-history-display .order-history-id {
+    display: none;
   }
 }

@@ -1,9 +1,9 @@
-.testimonial-wrapper {
-  background: url(//cdn.shopify.com/s/files/1/0422/2441/8983/t/101/assets/texture_3_2880x.png?v=15004560659256832661642685295)
-    right / 100% no-repeat;
-  height: fit-content;
-  min-height: 50vh;
-}
+  .testimonial-wrapper {
+    background: url(//cdn.shopify.com/s/files/1/0422/2441/8983/t/101/assets/texture_3_2880x.png?v=15004560659256832661642685295)
+      right / 100% no-repeat;
+    height: fit-content;
+    min-height: 50vh;
+  }
 .testimonial-container {
   position: relative;
   background-image: url(//cdn.shopify.com/s/files/1/0422/2441/8983/files/PressBackground_1800x.png?v=1637219747);
@@ -119,6 +119,19 @@
   .testimonial-container--left {
     position: absolute;
     top: -13.625rem;
+    left: 10rem;
+  }
+}
+@media screen and (max-width: 376px) {
+.testimonial-wrapper {
+  min-height: 80vh;
+}
+.testimonial-container--right {
+     top: -28rem;
+    left: -8rem;
+  }
+  .testimonial-container--left {
+    top: -10.625rem;
     left: 10rem;
   }
 }

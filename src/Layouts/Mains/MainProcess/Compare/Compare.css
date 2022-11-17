@@ -82,3 +82,22 @@
     text-align: center;
   }
 }
+@media screen and (max-width: 376px) {
+.compare-text--left {
+    left: 1rem;
+  }
+  .compare-text--left span {
+    width: 9rem;
+    text-align: center;
+  }
+  .compare-text--right {
+    gap: 1.25rem;
+    position: absolute;
+    bottom: 1.9rem;
+    right: 0rem;
+  }
+  .compare-text--right span {
+    width: 10rem;
+    text-align: center;
+  }
+}

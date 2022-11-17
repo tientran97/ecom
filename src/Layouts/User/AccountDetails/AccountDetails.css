@@ -67,6 +67,21 @@
   cursor: url(https://cdn.shopify.com/s/files/1/0475/8759/0310/files/gloved-hand-32x23.png?v=1636957093),
     pointer;
 }
+.profile-button button {
+  margin-bottom: 20px;
+  font-family: Babydoll, sans-serif;
+  font-size: 24px;
+  width: 250px;
+  padding: 25px;
+  background-color: #ffd419;
+  margin-right: 2rem;
+  outline: none;
+  border: none;
+  border-radius: 8px;
+  cursor: url(https://cdn.shopify.com/s/files/1/0475/8759/0310/files/gloved-hand-32x23.png?v=1636957093),
+    pointer;
+}
+
 @media screen and (max-width: 1024px) {
   .account-top {
     display: flex;
@@ -105,5 +120,10 @@
   .account-container .log-in p {
     font-size: 3.75rem;
     margin-left: 0%;
+  }
+  .profile-button button {
+    width: 150px;
+    font-size: 20px;
+    padding: 10px;
   }
 }

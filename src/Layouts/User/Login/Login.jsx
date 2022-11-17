@@ -29,21 +29,34 @@ const Login = () => {
   };
 
   const navigate = useNavigate();
+  const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
   const loginInUser = (e) => {
     e.preventDefault();
+    if (!email && !password) {
+      toast.error("Please Enter Email and Password");
+    } else if (!email) {
+      toast.error("Please Enter Your Email");
+    } else if (!password) {
+      toast.error("Please Enter Your Password");
+    } else if (!email.match(emailRegex)) {
+      toast.error("Invalid Email");
+    } else if (password.length < 6) {
+      toast.error("Password must be atleast 6 characters");
+    } else {
     setIsLoading(true);
 
-    signInWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        const user = userCredential.user;
-        toast.success("Login successfully");
-        redirectUser();
-        setIsLoading(false);
-      })
-      .catch((error) => {
-        setIsLoading(false);
-        toast.error(error.message);
-      });
+      signInWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+          const user = userCredential.user;
+          toast.success("Login successfully");
+          redirectUser();
+          setIsLoading(false);
+        })
+        .catch((error) => {
+          setIsLoading(false);
+          toast.error(error.message);
+        });
+    }
   };
 
   const provider = new GoogleAuthProvider();

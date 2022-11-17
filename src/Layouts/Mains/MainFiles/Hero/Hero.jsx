@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import "./Banner.css";
+import "./Hero.css";
 const Hero = () => {
   useEffect(() => {
     window.scrollTo({ top: 0 });

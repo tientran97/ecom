@@ -12,13 +12,13 @@ const Banner = () => {
     <section className="banner-container ">
       <div className="banner-shop--content">
       
-        <p data-aos="fade-up" data-aos-delay="500">
+        <p  >
           THE
         </p>
-        <p data-aos="fade-up" data-aos-delay="700">
+        <p  >
           SNACK
         </p>
-        <p data-aos="fade-up" data-aos-delay="900">
+        <p  >
           SHOP
         </p>
       </div>

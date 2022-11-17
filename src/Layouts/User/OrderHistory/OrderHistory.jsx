@@ -12,7 +12,6 @@ import LoadingSpinner from "../../../components/Loader/LoadingSpinner";
 import { useNavigate } from "react-router-dom";
 const OrderHistory = () => {
   const { data, isLoading } = useFetchCollection("orders");
-
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(STORE_ORDER(data));
