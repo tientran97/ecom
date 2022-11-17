@@ -64,5 +64,10 @@ p {
 }
 @media screen and (max-width: 768px) {
 }
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 376px) {
+  .subtotal-money {
+  color: orangered;
+  font-size: 2rem;
+  text-align: right;
+}
 }

@@ -9,7 +9,7 @@
   text-align: center;
   font-family: Jacques, sans-serif;
 }
-.back-to-orders  {
+.back-to-orders {
   border-radius: 0.75rem;
   padding: 0.625rem;
   cursor: url(https://cdn.shopify.com/s/files/1/0475/8759/0310/files/gloved-hand-32x23.png?v=1636957093),
@@ -48,13 +48,40 @@ td {
 }
 .rating-start {
   width: 18.75rem;
-}@media screen and (max-width: 1024px){
-  
 }
-@media screen and (max-width: 768px){
-    
+.order-details-top {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-gap: 50%;
 }
-@media  screen and (max-width: 480px){
+.cancel-order {
+  outline: none;
+  border: none;
+  color: red;
+  width: 200px;
+  height: 50px;
+  font-size: 24px;
+  background-color: transparent;
+  cursor: url(https://cdn.shopify.com/s/files/1/0475/8759/0310/files/gloved-hand-32x23.png?v=1636957093),
+    pointer;
+}
+.cancel-order:disabled,
+.cancel-order[disabled]{
+  color: #666666;
+  cursor: not-allowed;
+}
+@media screen and (max-width: 1024px) {
+}
+@media screen and (max-width: 768px) {
+}
+@media screen and (max-width: 480px) {
+  .order-details-top {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 10%;
+  }
   .order-details-title {
     font-size: 3.75rem;
   }

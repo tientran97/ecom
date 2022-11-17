@@ -122,50 +122,63 @@
 .video-container--content_image {
   margin-bottom: 50px;
 }
-.video-container--content_main__video {
-  width: 87.5rem;
-  height: 43.75rem;
+.video-container--content_main__video video {
+  width: 100%;
+  height: auto;
 }
 @media screen and (max-width: 1024px) {
-  .video-container--content_main__video {
+  .video-container--content_main__video video {
     mask: url(../../../../images/video-mask.png) center / 50rem 30rem no-repeat;
-    width: 80rem;
-    height: 30rem;
+    width: 100%;
+    height: auto;
   }
+  .video-container--content_main__text p {
+    font-size: 2rem;
+    background-color: #000;
+    margin-bottom: 5px;
+    padding: 0.3125rem;
+    width: fit-content;
+    height: fit-content;
+    color: #ffd419;
+    text-transform: uppercase;
+    position: absolute;
+  }
+
   .video-container--content_main__text1 {
     top: 3rem;
-    left:55rem;
+    left: 5rem;
   }
   .video-container--content_main__text2 {
-    top: 8rem;
-    left: 55rem;
+    top: 7rem;
+    left: 5rem;
   }
   .video-container--content_main__text3 {
-    top: 13rem;
-    left: 55rem;
+    top: 11rem;
+    left: 5rem;
   }
   .video-container--content_main__text4 {
-    top: 18rem;
-    left: 55rem;
+    top: 15rem;
+    left: 5rem;
   }
   .video-container--content_main__text5 {
-    top: 23rem;
-    left: 55rem;
+    top: 18rem;
+    left: 5rem;
   }
   .video-container--content_main__text6 {
-    top: 28rem;
-    left: 55rem;
+    top: 23rem;
+    left: 5rem;
   }
   .video-container--content_button {
     margin-left: 10%;
   }
 }
 @media screen and (max-width: 768px) {
-  .video-container--content_main__video {
+  .video-container--content_main__video video {
     mask: url(../../../../images/video-mask.png) center / 40rem 30rem no-repeat;
-    width: 50rem;
-    height: 30rem;
+    width: 100%;
+    height: auto;
   }
+
   .video-container--content_title p {
     font-size: 5.3125rem;
     margin: 3.125rem 3rem;
@@ -187,7 +200,7 @@
     left: 3rem;
   }
   .video-container--content_main__text5 {
-    top: 19rem;
+    top: 20rem;
     left: 3rem;
   }
   .video-container--content_main__text6 {
@@ -216,10 +229,10 @@
     margin: 3.125rem 0rem;
     line-height: 2.8125rem;
   }
-  .video-container--content_main__video {
+  .video-container--content_main__video video {
     mask: url(../../../../images/video-mask.png) center / 25rem 15rem no-repeat;
-    width: 25rem;
-    height: 15rem;
+    width: 100%;
+    height: auto;
   }
   .video-container--content_main__text p {
     font-size: 1.5rem;

@@ -215,3 +215,27 @@
     left: 1rem;
   }
 }
+
+@media screen and (max-width: 376px) {
+  .critical-container {
+    min-height: 150vh;
+  }
+
+  .critical-container--content_2 {
+    background-size: 90%;
+    background-repeat: no-repeat;
+  }
+  .critical-container--content_1 {
+    background-size: 90%;
+    background-repeat: no-repeat;
+  }
+
+  .critical-container--content_3 {
+    background-size: 90%;
+    background-repeat: no-repeat;
+  }
+  .critical-container--content_4 {
+    background-size: 90%;
+    background-repeat: no-repeat;
+  }
+}

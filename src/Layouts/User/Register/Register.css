@@ -8,37 +8,16 @@
   margin-bottom: 6.25rem;
 }
 .register-container-top {
-    padding: 10rem 3.125rem 3.125rem 3.125rem;
-
+  padding: 10rem 3.125rem 3.125rem 3.125rem;
 }
 .register-container-top .title {
   font-family: Jacques, sans-serif;
   font-size: 5rem;
   text-align: center;
 }
-.facebook-box {
-  background-color: #3b5998;
-  border-color: #2d5073;
-  height: 3.125rem;
-  width: 100%;
-  color: #fff;
-  padding: 0.9375rem 0 0.9375rem 0.9375rem;
-  font-size: 1.125rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 1.25rem 0;
-  cursor: url(https://cdn.shopify.com/s/files/1/0475/8759/0310/files/gloved-hand-32x23.png?v=1636957093),
-    pointer;
-}
-.facebook-box i {
-  background-color: #4f6aa3;
-  padding: 1rem 1.125rem;
-}
-.facebook-box:hover {
-  background-color: #4f6aa3;
-}
+
 .google-box {
+  margin-top: 2rem;
   background-color: #dd4b39;
   border-color: #c23321;
   height: 3.125rem;
@@ -121,54 +100,35 @@
   background: url(../../../images/buttonHover.svg) center / 100% no-repeat;
   color: #ffd419;
 }
-.error-message {
-  color: #c23321;
-  font-family: Babydoll, sans-serif;
-  font-size: 1.125rem;
-  padding: 0rem 1.25rem;
-}
+
 .login-text {
   font-size: 1.25rem;
   font-family: Babydoll, sans-serif;
   text-align: center;
   margin: 1.25rem 0;
 }
-.forgot-password {
-  display: inline-block;
-  padding: 0.3125rem;
-  border-bottom: 0.0625rem solid #000;
-  margin-left: 9.375rem;
-}
-.forgot-password:hover {
-  background-color: #000;
-  color: #fff;
-  cursor: url(https://cdn.shopify.com/s/files/1/0475/8759/0310/files/gloved-hand-32x23.png?v=1636957093),
-    pointer;
-}
-.forgotPassword {
-  margin-top: 6.25rem;
-}
+
 @media screen and (max-width: 1024px) {
-   .register-container {
+  .register-container {
     padding: 0 20%;
   }
-  .register-container button  {
+  .register-container button {
     margin-left: 30%;
   }
 }
 @media screen and (max-width: 768px) {
-   .register-container {
+  .register-container {
     padding: 0 10%;
   }
-  .register-container button  {
+  .register-container button {
     margin-left: 30%;
   }
 }
 @media screen and (max-width: 480px) {
-    .register-container {
+  .register-container {
     padding: 0 10%;
   }
-  .register-container button  {
+  .register-container button {
     margin-left: 15%;
   }
 }

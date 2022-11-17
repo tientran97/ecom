@@ -102,15 +102,15 @@
   }
 }
 @media screen and (max-width: 480px) {
-  .cartTotal-container {
-    margin-left: 3%;
-  }
+  
   .cartTotal-container {
     background: url(https://cdn.shopify.com/s/files/1/0422/2441/8983/t/101/assets/cart_summary_800x.png?v=141979644661353595901642685295)
       center / 100% no-repeat;
     height: 40.625rem;
     width: 25rem;
     padding: 2.5rem;
+    margin-left: 3%;
+
   }
   .cartTotal-container .quantity {
     width: 15rem;
@@ -136,5 +136,13 @@
   }
   .cartTotal-container .totalAmount {
     font-size: 3.125rem;
+  }
+}
+@media screen and (max-width: 376px) {
+   .cartTotal-container {
+    margin-left: 0%;
+     height: 40.625rem;
+    width: 23.5rem;
+    padding: 1.5rem;
   }
 }

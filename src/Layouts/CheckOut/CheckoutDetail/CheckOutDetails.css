@@ -90,3 +90,12 @@
     height: 130vh;
   }
 }
+@media screen and (max-width: 376px) {
+  .checkout-container-left {
+    height: 100vh;
+  }
+  .checkout-container-right {
+  height: fit-content;
+  min-height: 100vh;
+}
+}

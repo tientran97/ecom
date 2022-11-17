@@ -108,3 +108,22 @@
     left: 2rem;
   }
 }
+@media screen and (max-width: 376px) {
+  .comment-container {
+    min-height: 130vh;
+  }
+
+  .comment-1 {
+    top: 30rem;
+    right: 0rem;
+    width: 24rem;
+  }
+  .comment-2 {
+    top: 43rem;
+    right: 2rem;
+  }
+  .comment-3 {
+    top: 51rem;
+    left: 1rem;
+  }
+}

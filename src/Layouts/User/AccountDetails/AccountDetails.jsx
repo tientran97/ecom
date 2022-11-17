@@ -25,7 +25,6 @@ const AccountDetails = () => {
 
     onAuthStateChanged(auth, (user) => {
       if (user) {
-        const uid = user.uid;
         setDisplayEmail(user.email);
       }
     });

@@ -1,11 +1,9 @@
 import { doc, setDoc, Timestamp } from "firebase/firestore";
 import React, { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 import LoadingSpinner from "../../../components/Loader/LoadingSpinner";
 import { db } from "../../../firebase/config";
-import { selectUserId, selectUserName } from "../../../redux/Slice/authSlice";
 import useFetchDocument from "../../../customHooks/useFetchDocument";
 import "./OrderDetail.css";
 const OrderDetail = () => {
@@ -21,10 +19,7 @@ const OrderDetail = () => {
   }, [document, orders]);
   const navigate = useNavigate();
   const [status, setStatus] = useState("");
-  console.log(
-    "🚀 ~ file: OrderDetail.jsx ~ line 26 ~ OrderDetail ~ status",
-    status
-  );
+
   const [isLoading, setIsLoading] = useState(false);
 
   const orderStatusChange = (e, id) => {
@@ -75,16 +70,16 @@ const OrderDetail = () => {
             <p>
               <b>Order Status</b>: {orders.orderStatus}
             </p>
+
             <ul>
               <b>Shipping Address</b>:
               <br />
+              <br></br>
               <li>Customer Name : {orders.shippingAddress.name}</li>
               <br />
               <li> Address: {orders.shippingAddress.address}</li>
               <br />
               <li>City: {orders.shippingAddress.city}</li>
-              <br />
-              <li>State: {orders.shippingAddress.state}</li>
               <br />
               <li>Country: {orders.shippingAddress.country}</li>
               <br />

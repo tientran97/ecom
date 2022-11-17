@@ -100,3 +100,8 @@
     display: none;
   }
 }
+@media screen and (max-width: 376px){
+  .story-wrapper {
+    min-height: 120vh;
+  }
+}

@@ -122,7 +122,7 @@
   height: 5rem;
   position: absolute;
   top: 84.375rem;
-  left: 44.375rem;
+  left: 47rem;
 }
 
 @media screen and (max-width: 1024px) {
@@ -174,35 +174,37 @@
     right: -5rem;
   }
   .character1 img {
-  height: 5rem;
-  position: absolute;
-  top: 12.5rem;
-  right: 35rem;
-}
-.character2 img {
-  height: 5rem;
-  position: absolute;
-  top: 55rem;
-  right: 10rem;
-}
-.character3 img {
-  height: 5rem;
-  position: absolute;
-  top: 55rem;
-  left: 5rem;
-  z-index: 10;
-}
-.character4 img {
-  height: 5rem;
-  position: absolute;
-  top: 100rem;
-  left: 31rem;
-}.master-tree-line {
+    height: 5rem;
+    position: absolute;
+    top: 12.5rem;
+    right: 35rem;
+  }
+  .character2 img {
+    height: 5rem;
+    position: absolute;
+    top: 55rem;
+    right: 10rem;
+  }
+  .character3 img {
+    height: 5rem;
+    position: absolute;
+    top: 55rem;
+    left: 5rem;
+    z-index: 10;
+  }
+  .character4 img {
+    height: 5rem;
+    position: absolute;
+    top: 100rem;
+    left: 31rem;
+  }
+  .master-tree-line {
     height: 200vh;
   }
-}.master-container {
-    min-height: 280vh;
-  }
+}
+.master-container {
+  min-height: 280vh;
+}
 @media screen and (max-width: 768px) {
   .master-tree img {
     height: 80%;
@@ -293,7 +295,7 @@
   .master-title p {
     font-size: 3.75rem;
   }
-  
+
   .master-tree img {
     height: 70%;
   }
@@ -358,5 +360,46 @@
   }
   .character4 img {
     display: none;
+  }
+}
+@media screen and (max-width: 376px) {
+  .master-tree img {
+    height: 60%;
+  }
+  .master-tree-content {
+    width: 20rem;
+  }
+  .master-tree-content p {
+    font-size: 1.25rem;
+  }
+  .step-1 {
+    top: 6.25rem;
+    right: 2rem;
+  }
+
+  .step-2 {
+    top: 25rem;
+    left: 2rem;
+  }
+
+  .step-3 {
+    top: 43rem;
+    right: 2rem;
+  }
+
+  .step-4 {
+    top: 61rem;
+    left: 2rem;
+  }
+
+  .step-5 {
+    top: 79rem;
+    right: 2rem;
+  }
+  .master-container {
+    min-height: 250vh;
+  }
+  .master-tree-line {
+    height: 200vh;
   }
 }
