@@ -1,4 +1,4 @@
-import { doc, setDoc, Timestamp } from "firebase/firestore";
+import { deleteDoc, doc, setDoc, Timestamp } from "firebase/firestore";
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
@@ -48,6 +48,15 @@ const OrderDetail = () => {
       setIsLoading(false);
     }
   };
+  const orderDelete = async (id) => {
+    try {
+      await deleteDoc(doc(db, "orders", id));
+      toast.error("Product deleted");
+      navigate("/admin/orders");
+    } catch (error) {
+      toast.error(error.message);
+    }
+  };
   return (
     <>
       {isLoading && <LoadingSpinner />}
@@ -61,15 +70,24 @@ const OrderDetail = () => {
           <LoadingSpinner />
         ) : (
           <>
-            <p>
-              <b>Order ID</b> : {orders.id}
-            </p>
-            <p>
-              <b>Order Amount</b> : S$ {orders.orderAmount}
-            </p>
-            <p>
-              <b>Order Status</b>: {orders.orderStatus}
-            </p>
+            <div className="order-details-top">
+              <div>
+                <p>
+                  <b>Order ID</b> : {orders.id}
+                </p>
+                <p>
+                  <b>Order Amount</b> : S$ {orders.orderAmount}
+                </p>
+                <p>
+                  <b>Order Status</b>: {orders.orderStatus}
+                </p>
+              </div>
+              <div>
+                <button onClick={() => orderDelete(id)}>
+                  DELETE ORDER HISTORY
+                </button>
+              </div>
+            </div>
 
             <ul>
               <b>Shipping Address</b>:

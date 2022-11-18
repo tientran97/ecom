@@ -9,7 +9,6 @@ ul {
 .order-change-box select {
   width: 50%;
   padding: 1.25rem;
-  
 }
 .order-change-box button {
   width: 50%;
@@ -20,4 +19,19 @@ ul {
   margin-top: 1.25rem;
   background-color: #ffd419;
   font-size: 1.25rem;
+}
+.order-details-top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.order-details-top button {
+  color: orangered;
+  outline: none;
+  font-size: 24px;
+  border-radius: none;
+  background-color: #ffd419;
+  border-radius: 20px;
+  padding: 15px;
+  cursor: pointer;
 }
