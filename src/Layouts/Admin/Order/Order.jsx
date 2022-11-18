@@ -1,9 +1,8 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import LoadingSpinner from "../../../components/Loader/LoadingSpinner";
 import useFetchCollection from "../../../customHooks/useFetchCollection";
-import { selectUserId } from "../../../redux/Slice/authSlice";
 import {
   selectOrderHistory,
   STORE_ORDER,
@@ -11,14 +10,19 @@ import {
 import "./Order.css";
 const OrderAdmin = () => {
   const { data, isLoading } = useFetchCollection("orders");
+  const orders = useSelector(selectOrderHistory);
 
+  const ordersClone = [...orders];
+  ordersClone.sort(function (a, b) {
+    return a.createAt - b.createAt;
+  });
+
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(STORE_ORDER(data));
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, [dispatch, data]);
-  const navigate = useNavigate();
-  const orders = useSelector(selectOrderHistory);
 
   const handleClick = (id) => {
     navigate(`/admin/order-details/${id}`);
@@ -26,17 +30,19 @@ const OrderAdmin = () => {
   return (
     <section className="order-history-container">
       {orders.length !== 0 && (
-        <div>
-          <h2> ALL ORDER HISTORY</h2>
-          <p>
-            Open an order to <b>change order status</b>
-          </p>
+        <div className="order-history-top">
+          <div>
+            <h2> ALL ORDER HISTORY</h2>
+            <p>
+              Open an order to <b>change order status</b>
+            </p>
+          </div>
         </div>
       )}
       <>
         {isLoading && <LoadingSpinner />}
         <div className="order-history-display">
-          {orders.length === 0 ? (
+          {ordersClone.length === 0 ? (
             <p>You haven't had any orders yet</p>
           ) : (
             <table>
@@ -50,7 +56,7 @@ const OrderAdmin = () => {
                 </tr>
               </thead>
               <tbody>
-                {orders.map((order, index) => {
+                {ordersClone.reverse().map((order, index) => {
                   const { id, orderDate, orderTime, orderAmount, orderStatus } =
                     order;
                   return (

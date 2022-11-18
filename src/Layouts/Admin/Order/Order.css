@@ -1,0 +1,10 @@
+.order-history-top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+}
+.order-history-top select {
+    width: 150px;
+    padding: 5px
+}

@@ -28,12 +28,14 @@ const filterSlice = createSlice({
           product.name.toLowerCase().includes(search.toLowerCase()) ||
           product.category.toLowerCase().includes(search.toLowerCase())
       );
-      state.filteredProducts = tempProduct
+      state.filteredProducts = tempProduct;
     },
+   
   },
 });
 
-export const { FILTER_BY_CATEGORY, FILTER_BY_SEARCH } = filterSlice.actions;
+export const { FILTER_BY_CATEGORY, FILTER_BY_SEARCH, SORT_PRODUCT } =
+  filterSlice.actions;
 
 export const selectFilterProducts = (state) => state.filter.filteredProducts;
 export default filterSlice.reducer;

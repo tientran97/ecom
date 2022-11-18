@@ -38,7 +38,7 @@ const CheckoutDetails = () => {
     /^(?:[A-Za-z]{2,}(?:(\.\s|'s\s|\s?-\s?|\s)?(?=[A-Za-z]+))){1,2}(?:[A-Za-z]+)?$/g;
   const postalCodeRegex = /(^\d{5}$)|(^\d{6}$)|(^\d{9}$)|(^\d{5}-\d{4}$)/g;
   const phoneRegex =
-    /^\s*(?:\+?(\d{1,3}))?[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{4})(?: *x(\d+))?\s*$/;
+    /^\s*(?:\+?(\d{1,3}))?[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{4})(?: *x(\d+))?\s*$/g;
   const handleSubmit = (e) => {
     e.preventDefault();
     setIsLoading(true);
@@ -135,7 +135,7 @@ const CheckoutDetails = () => {
               />
               <label>Phone Number :</label>
               <input
-                type="number"
+                type="text"
                 placeholder="Phone Number"
                 name="phone_number"
                 value={shippingAddress.phone_number}
