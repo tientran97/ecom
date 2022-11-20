@@ -34,8 +34,7 @@ const CheckoutDetails = () => {
   };
   const nameRegEx =
     /(^[A-Za-z]{2,16})([ ]{0,1})([A-Za-z]{3,16})?([ ]{0,1})?([A-Za-z]{3,16})?([ ]{0,1})?([A-Za-z]{3,16})/g;
-  const cityRegEx =
-    /^(?:[A-Za-z]{2,}(?:(\.\s|'s\s|\s?-\s?|\s)?(?=[A-Za-z]+))){1,2}(?:[A-Za-z]+)?$/g;
+
   const postalCodeRegex = /(^\d{5}$)|(^\d{6}$)|(^\d{9}$)|(^\d{5}-\d{4}$)/g;
   const phoneRegex =
     /^\s*(?:\+?(\d{1,3}))?[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{4})(?: *x(\d+))?\s*$/g;
@@ -51,18 +50,22 @@ const CheckoutDetails = () => {
       !shippingAddress.phone_number
     ) {
       toast.error("Please enter your infomation");
+      setIsLoading(false);
     } else if (!shippingAddress.name.match(nameRegEx)) {
+      setIsLoading(false);
       toast.error("Invalid Full Name");
     } else if (shippingAddress.address.length < 6) {
+      setIsLoading(false);
       toast.error("Invalid Address !");
-    } else if (!shippingAddress.city.match(cityRegEx)) {
-      toast.error("Invalid city");
     } else if (!shippingAddress.postal_code.match(postalCodeRegex)) {
+      setIsLoading(false);
       toast.error("Invalid postal code");
     } else if (!shippingAddress.country) {
+      setIsLoading(false);
       toast.error("Country is required!");
     } else if (!shippingAddress.phone_number.match(phoneRegex)) {
       toast.error("Invalid phone number");
+      setIsLoading(false);
     } else {
       dispatch(SAVE_SHIPPING_ADDRESS(shippingAddress));
       setShippingAddress({ ...initialAddressState });
