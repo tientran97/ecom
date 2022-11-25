@@ -8,10 +8,11 @@ import {
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
-const CheckoutSummary = ({}) => {
+const CheckoutSummary = () => {
   const cartItems = useSelector(selectCartItems);
   const cartTotalQuantity = useSelector(selectCartTotalQuantity);
   const cartTotalAmount = useSelector(selectCartTotalAmount);
+  console.log("🚀 ~ file: CheckoutSummary.jsx ~ line 15 ~ CheckoutSummary ~ cartTotalAmount", cartTotalAmount)
   const [subTotal, setSubTotal] = useState(0);
 
   const navigate = useNavigate();

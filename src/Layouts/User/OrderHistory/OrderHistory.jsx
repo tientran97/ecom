@@ -49,7 +49,7 @@ const OrderHistory = () => {
                 </tr>
               </thead>
               <tbody>
-                {filteredOrders.map((order, index) => {
+                {filteredOrders?.map((order, index) => {
                   const { id, orderDate, orderTime, orderAmount, orderStatus } =
                     order;
                   return (

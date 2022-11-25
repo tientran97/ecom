@@ -1,11 +1,15 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { toast } from "react-toastify";
 const initialState = {
-  cartItems: localStorage.getItem("cartItems")
-    ? JSON.parse(localStorage.getItem("cartItems"))
+  cartItems: localStorage?.getItem("cartItems")
+    ? JSON.parse(localStorage?.getItem("cartItems"))
     : [],
-  cartTotalQuantity: 0,
-  cartTotalAmount: 0,
+  cartTotalQuantity: localStorage?.getItem("cartTotalQuantity")
+    ? JSON.parse(localStorage?.getItem("cartTotalQuantity"))
+    : 0,
+  cartTotalAmount: localStorage?.getItem("cartSubtotal")
+    ? JSON.parse(localStorage?.getItem("cartSubtotal"))
+    : 0,
   previousURL: "",
 };
 
@@ -14,7 +18,7 @@ const cartSlice = createSlice({
   initialState,
   reducers: {
     ADD_TO_CART(state, action) {
-      const itemIndex = state.cartItems.findIndex(
+      const itemIndex = state?.cartItems?.findIndex(
         (item) => item.id === action.payload.id
       );
       if (itemIndex >= 0) {
@@ -75,7 +79,7 @@ const cartSlice = createSlice({
     },
     CALCULATE_SUBTOTAL(state, action) {
       const array = [];
-      state.cartItems.map((item) => {
+      state.cartItems?.map((item) => {
         const { cartQuantity, price } = item;
         const cartItemAmount = price * cartQuantity;
         return array.push(cartItemAmount);
@@ -84,15 +88,23 @@ const cartSlice = createSlice({
         return a + b;
       }, 0);
       state.cartTotalAmount = totalAmount.toFixed(2);
+      localStorage.setItem(
+        "cartSubtotal",
+        JSON.stringify(state.cartTotalAmount)
+      );
     },
     CALCULATE_TOTAL_QUANTITY(state, action) {
       const array = [];
 
-      state.cartItems.map((item) => {
+      state.cartItems?.map((item) => {
         const { cartQuantity } = item;
         return array.push(cartQuantity);
       });
       state.cartTotalQuantity = array.length;
+      localStorage.setItem(
+        "cartTotalQuantity",
+        JSON.stringify(state.cartTotalQuantity)
+      );
     },
     SAVE_URL(state, action) {
       state.previousURL = action.payload;

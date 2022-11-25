@@ -14,6 +14,7 @@ const OrderDetails = () => {
   const [orders, setOrders] = useState(null);
 
   const { document } = useFetchDocument("orders", id);
+  
   useEffect(() => {
     setOrders(document);
   }, [document, orders]);
@@ -75,7 +76,8 @@ const OrderDetails = () => {
                 <b>Order Status</b>: {orders.orderStatus}
               </p>
             </div>
-            {orders.orderStatus === "Order Placed..." || orders.orderStatus === 'Processing...' ? (
+            {orders.orderStatus === "Order Placed..." ||
+            orders.orderStatus === "Processing..." ? (
               <button
                 className="cancel-order"
                 onClick={() => confirmDelete(id)}
@@ -104,7 +106,7 @@ const OrderDetails = () => {
               </tr>
             </thead>
             <tbody>
-              {orders.cartItems.map((cartItem, index) => {
+              {orders?.cartItems?.map((cartItem, index) => {
                 const { id, name, price, main_image_url, cartQuantity } =
                   cartItem;
                 return (
