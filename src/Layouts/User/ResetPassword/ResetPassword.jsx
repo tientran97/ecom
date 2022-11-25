@@ -9,6 +9,7 @@ const ResetPassword = () => {
   const [email, setEmail] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
+
   const resetPassword = (e) => {
     e.preventDefault();
     setIsLoading(true);
