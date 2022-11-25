@@ -43,7 +43,7 @@ const Login = () => {
     } else if (password.length < 6) {
       toast.error("Password must be atleast 6 characters");
     } else {
-    setIsLoading(true);
+      setIsLoading(true);
 
       signInWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
@@ -64,8 +64,6 @@ const Login = () => {
     setIsLoading(true);
     signInWithPopup(auth, provider)
       .then((result) => {
-        const credential = GoogleAuthProvider.credentialFromResult(result);
-        const token = credential.accessToken;
         const user = result.user;
         toast.success("Login successfully");
         setIsLoading(false);
@@ -86,7 +84,7 @@ const Login = () => {
             <div className="login-container-top">
               <p className="title">LOGIN VIA</p>
 
-              <div className="google-box" onClick={() => signInWithGoogle()}>
+              <div className="google-box" onClick={signInWithGoogle}>
                 <span>Sign in with Google</span>
                 <i className="fa-brands fa-google"></i>
               </div>
