@@ -18,7 +18,7 @@ const ReviewProduct = () => {
   const userName = useSelector(selectUserName);
 
   const product = products.find((item) => {
-    return item.id === id;
+    return item?.id === id;
   });
 
   const navigate = useNavigate();
@@ -49,9 +49,9 @@ const ReviewProduct = () => {
       <p className="review-product-title">REVIEW PRODUCTS</p>
       <div className="review-product-container">
         <p>
-          <b>Product Name : {product.name}</b>
+          <b>Product Name : {product?.name}</b>
         </p>
-        <img src={product.main_image_url} alt={product.name} />
+        <img src={product?.main_image_url} alt={product?.name} />
         <form onSubmit={submitReview}>
           <label> Rating:</label>
           <StarsRating
