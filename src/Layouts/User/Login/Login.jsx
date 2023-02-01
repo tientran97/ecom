@@ -91,8 +91,15 @@ const Login = () => {
             </div>
             <p className="or-line">OR</p>
 
+
             <div className="login-container-bot">
               <p className="title">LOGIN</p>
+              <div>
+                Admin Account: 
+                <p>Email : admin@gmail.com</p>
+                <p>Password: 123123</p>
+
+              </div>
               <form onSubmit={loginInUser}>
                 <div className="form-item">
                   <label htmlFor="email">EMAIL :</label>
