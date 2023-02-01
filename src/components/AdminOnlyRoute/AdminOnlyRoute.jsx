@@ -6,7 +6,10 @@ import "./AdminOnlyRout.css";
 const AdminOnlyRoute = ({ children }) => {
   const navigate = useNavigate();
   const userEmail = useSelector(selectEmail);
-  if (userEmail === "tien.minhtran615034@gmail.com") {
+  if (
+    userEmail === "tien.minhtran615034@gmail.com" ||
+    userEmail === "admin@gmail.com"
+  ) {
     return children;
   } else
     return (
@@ -19,7 +22,10 @@ const AdminOnlyRoute = ({ children }) => {
 };
 export const AdminOnlyLink = ({ children }) => {
   const userEmail = useSelector(selectEmail);
-  if (userEmail === "tien.minhtran615034@gmail.com") {
+  if (
+    userEmail === "tien.minhtran615034@gmail.com" ||
+    userEmail === "admin@gmail.com"
+  ) {
     return children;
   } else return null;
 };

@@ -66,7 +66,7 @@ const Item = () => {
       handleFilterButton();
     }
   }, [dispatch, data]);
-  
+
   const handleFilterButton = (cat) => {
     setCategory(cat);
     dispatch(FILTER_BY_CATEGORY({ products, category: cat }));
