@@ -18,6 +18,15 @@ const SliderBanner = () => {
     cssEase: "linear",
     responsive: [
       {
+        breakpoint: 2134,
+        settings: {
+          slidesToShow: 5,
+          slidesToScroll: 5,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
         breakpoint: 1240,
         settings: {
           slidesToShow: 3,
@@ -26,6 +35,7 @@ const SliderBanner = () => {
           dots: true,
         },
       },
+
       {
         breakpoint: 1024,
         settings: {

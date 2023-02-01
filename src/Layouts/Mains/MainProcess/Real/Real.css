@@ -35,6 +35,11 @@
   border-radius: 0.75rem;
   box-shadow: 0.625rem 0.625rem 0rem 0rem rgba(0, 0, 0, 1);
 }
+@media screen and (max-width: 2150px) {
+  .real-container--content_item {
+    height: 40rem;
+  }
+}
 @media screen and (max-width: 1024px) {
   .real-container--content_item {
     height: 35rem;
@@ -63,7 +68,6 @@
   }
 }
 @media screen and (max-width: 376px) {
-  
   .real-container--content_item {
     margin-left: 0%;
     height: 40rem;

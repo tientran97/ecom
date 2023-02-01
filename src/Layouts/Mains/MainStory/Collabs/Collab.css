@@ -52,7 +52,14 @@
   cursor: url(https://cdn.shopify.com/s/files/1/0475/8759/0310/files/gloved-hand-32x23.png?v=1636957093),
     pointer;
 }
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 2150px) {
+   .collab-content--item_image {
+    mask-size: 100rem;
+  }
+   .collab-content--item img {
+    height:25rem;
+    width: 25rem;
+  }
 }
 @media screen and (max-width: 768px) {
   .collab-content {

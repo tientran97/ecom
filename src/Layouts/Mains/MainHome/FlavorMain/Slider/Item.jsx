@@ -33,6 +33,15 @@ const Item = () => {
         },
       },
       {
+        breakpoint: 2134,
+        settings: {
+          slidesToShow: 5,
+          slidesToScroll: 5,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
         breakpoint: 1024,
         settings: {
           slidesToShow: 3,
@@ -96,11 +105,7 @@ const Item = () => {
           <Slider {...settings}>
             {data.map((product) => {
               return (
-                <div
-                  key={product.id}
-                  className="slider-container--items"
-                
-                >
+                <div key={product.id} className="slider-container--items">
                   <div
                     className="slider-container--items_image"
                     style={{ backgroundColor: `${product.background_color}` }}

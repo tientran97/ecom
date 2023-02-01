@@ -20,6 +20,14 @@ const Real = () => {
     speed: 1000,
     responsive: [
       {
+        breakpoint: 2134,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 0,
+          dots: false,
+        },
+      },
+      {
         breakpoint: 1240,
         settings: {
           slidesToShow: 3,
