@@ -12,14 +12,16 @@
   height: fit-content;
 }
 
-th {
+ th {
   font-family: Babydoll, sans-serif;
   font-size: 1.25rem;
   font-weight: normal;
   text-align: left;
   padding: 0.625rem 0.625rem;
+   border-top: 0.125rem solid black;
+  border-bottom: 0.0625rem solid black;
 }
-tr {
+ tr {
   font-family: Babydoll, sans-serif;
   font-size: 1.5rem;
 }
@@ -67,16 +69,17 @@ tr {
   font-size: 1.875rem;
   font-weight: bold;
 }
-th {
+ th {
   border-top: 0.125rem solid black;
   border-bottom: 0.0625rem solid black;
 }
-td {
+ td {
   border-top: 0.1875rem solid black;
   border-bottom: 0.1875rem solid black;
 }
-table {
+ table {
   border-collapse: collapse;
+  width: 100%;
 }
 .clear-cart {
   font-family: Babydoll, sans-serif;
@@ -118,6 +121,13 @@ table {
 }
 .serial {
   padding-left: 1.25rem;
+}
+@media screen and (max-width: 2150px) {
+  .cartItem-wrapper {
+  grid-template-columns: 70% 1fr;
+  grid-template-rows: 1fr;
+  }
+ 
 }
 @media screen and (max-width: 1024px) {
   .cartItem-wrapper {

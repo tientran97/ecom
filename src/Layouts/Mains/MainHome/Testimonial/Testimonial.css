@@ -6,7 +6,7 @@
   }
 .testimonial-container {
   position: relative;
-  background-image: url(//cdn.shopify.com/s/files/1/0422/2441/8983/files/PressBackground_1800x.png?v=1637219747);
+  background-image: url(//cdn.shopify.com/s/files/1/0422/2441/8983/files/PressBackground_1800x.png?v=1637219747) ;
   background-repeat: no-repeat;
   background-size: contain;
   height: 18.75rem;
@@ -71,6 +71,16 @@
   100% {
     transform: translateX(100vw);
   }
+}
+@media screen and (max-width: 2150px) {
+.testimonial-container {
+  height: 25rem;
+  padding: 1.875rem 3.125rem;
+  margin: 3.125rem 1.875rem 6.25rem 10rem;
+}
+.testimonial-container--right {
+  right: 5rem;
+}
 }
 @media screen and (max-width: 1024px) {
   .testimonial-container--content p {

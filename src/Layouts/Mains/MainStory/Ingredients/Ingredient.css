@@ -50,15 +50,22 @@
   right: 3.125rem;
   animation: float 3s ease-in-out infinite;
 }
+@media screen and (max-width: 2150px) {
+    .story-ingredients {
+    height: 28.125rem;
+    width: 100rem;
+    margin: 5% 15%;
+    gap: 10px;
+  }
+}
 @media screen and (max-width: 1024px) {
   .story-ingredients {
-  height: 28.125rem;
-  width: 60rem;
-  margin: 5% 3% ;
-  gap: 10px;
-
-}
-.story-ingredients--item p {
+    height: 28.125rem;
+    width: 60rem;
+    margin: 5% 3%;
+    gap: 10px;
+  }
+  .story-ingredients--item p {
     width: 14rem;
   }
 }
@@ -100,7 +107,7 @@
     display: none;
   }
 }
-@media screen and (max-width: 376px){
+@media screen and (max-width: 376px) {
   .story-wrapper {
     min-height: 120vh;
   }
